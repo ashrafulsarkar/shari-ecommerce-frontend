@@ -53,24 +53,24 @@ const menu_data = [
           { title: 'Login', link: '/login' },
           { title: 'Register', link: '/register' },
           { title: 'Forgot Password', link: '/forgot' },
-          { title: '404 Error', link: '/404' },
         ]
       },
     ]
   },
   {
     id: 3,
-    sub_menu: true,
+    single_link: true,
     title: 'Shop',
     link: '/shop',
-    sub_menus: [
-      { title: 'Shop', link: '/shop' },
-      { title: 'Right Sidebar', link: '/shop-right-sidebar' },
-      { title: 'Hidden Sidebar', link: '/shop-hidden-sidebar' },
-    ],
   },
   {
-    id: 6,
+    id: 4,
+    single_link: true,
+    title: 'Blog',
+    link: '/blog',
+  },
+  {
+    id: 5,
     single_link: true,
     title: 'Contact',
     link: '/contact',
