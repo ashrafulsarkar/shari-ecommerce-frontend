@@ -3,13 +3,13 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Scrollbar } from 'swiper/modules';
 // internal
-import { useGetProductTypeQuery } from '@/redux/features/productApi';
+import { useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import ProductSliderItem from './product-slider-item';
 import ErrorMsg from '@/components/common/error-msg';
 import { HomeTwoPopularPrdLoader } from '@/components/loader';
 
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 5,
   spaceBetween: 25,
@@ -47,7 +47,7 @@ const slider_setting = {
 
 const PopularProducts = () => {
   const { data: products, isError, isLoading } =
-    useGetProductTypeQuery({ type: 'jewelry', query: `new=true` });
+  useGetPopularProductByTypeQuery({ type: 'popular', query: `new=true` });
   // decide what to render
   let content = null;
 

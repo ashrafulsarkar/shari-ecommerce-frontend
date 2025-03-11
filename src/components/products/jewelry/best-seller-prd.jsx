@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // internal
 import ProductItem from './product-item';
 import ErrorMsg from '@/components/common/error-msg';
-import { useGetProductTypeQuery } from '@/redux/features/productApi';
+import { useGetPopularProductByTypeQuery } from '@/redux/features/productApi';
 import { HomeTwoBestSellPrdPrdLoader } from '@/components/loader';
 
 // slider setting
@@ -39,8 +39,8 @@ const slider_setting = {
 }
 
 const BestSellerPrd = () => {
-  const { data: products, isError, isLoading } =
-    useGetProductTypeQuery({ type: 'jewelry', query: `topSeller=true` });
+    const { data: products, isError, isLoading } =
+    useGetPopularProductByTypeQuery({ type: 'typeTopSeller', query: `new=true` });
   // decide what to render
   let content = null;
 
@@ -72,7 +72,7 @@ const BestSellerPrd = () => {
   return (
     <>
       <section className="tp-best-area pt-115">
-        <div className="container"> 
+        <div className="container">
             <div className="row">
               <div className="col-xl-12">
                   <div className="tp-section-title-wrapper-4 mb-50 text-center">

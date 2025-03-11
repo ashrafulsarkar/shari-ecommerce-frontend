@@ -16,7 +16,7 @@ export const productApi = apiSlice.injectEndpoints({
       providesTags:['OfferProducts']
     }),
     getPopularProductByType: builder.query({
-      query: (type) => `/api/product/popular/${type}`,
+      query: (type) => `/api/product/popular/${type.type}?${type.query}`,
       providesTags:['PopularProducts']
     }),
     getTopRatedProducts: builder.query({
