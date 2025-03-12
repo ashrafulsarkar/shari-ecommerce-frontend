@@ -8,7 +8,7 @@ import { useState } from 'react';
 // internal
 import PopupVideo from '@/components/common/popup-video';
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -34,14 +34,14 @@ const BlogItem = ({ item = {} }) => {
           !item.slider && (
             <div className="tp-postbox-thumb w-img">
               <Link href={`/blog-details/${item.id}`}>
-                <Image src={item.img} alt="blog img" />
+                <Image src={item.img} alt="blog img" width={500} height={300} alt={item.title} />
               </Link>
             </div>
           )}
-        {item.video && (
+        {item?.video && (
           <div className="tp-postbox-thumb tp-postbox-video w-img p-relative">
             <Link href={`/blog-details/${item.id}`}>
-              <Image src={item.img} alt="blog img" />
+              <Image src={item.img} alt="blog img" width={500} height={300} alt={item.title} />
             </Link>
             <a
               onClick={() => setIsVideoOpen(true)}
@@ -51,7 +51,7 @@ const BlogItem = ({ item = {} }) => {
             </a>
           </div>
         )}
-        {item.audio && (
+        {item?.audio && (
           <div className="tp-postbox-thumb tp-postbox-audio w-img p-relative">
             <iframe
               allow="autoplay"
@@ -59,7 +59,7 @@ const BlogItem = ({ item = {} }) => {
             ></iframe>
           </div>
         )}
-        {item.slider && (
+        {item?.slider && (
           <Swiper {...slider_setting} modules={[Navigation, Autoplay]} className="tp-postbox-thumb tp-postbox-slider swiper-container w-img p-relative">
             {item.slider_images.map((img, i) => (
               <SwiperSlide key={i} className="tp-postbox-slider-item">
@@ -80,32 +80,32 @@ const BlogItem = ({ item = {} }) => {
           <div className="tp-postbox-content">
             <div className="tp-postbox-meta">
               <span>
-                <i className="far fa-calendar-check"></i> {item.date}
+                <i className="far fa-calendar-check"></i> {item?.createdAt}
               </span>
               <span>
                 <a href="#">
-                  <i className="far fa-user"></i> {item.author}
+                  <i className="far fa-user"></i> {item?.created_by?.name}
                 </a>
               </span>
               <span>
                 <a href="#">
-                  <i className="fal fa-comments"></i> {item.comments} Comments
+                  <i className="fal fa-comments"></i> {item?.comment} Comments
                 </a>
               </span>
             </div>
             <h3 className="tp-postbox-title">
-              <Link href={`/blog-details/${item.id}`}>
+              <Link href={`/blog-details/${item.slug}`}>
                 {item.title}
               </Link>
             </h3>
             <div className="tp-postbox-text">
               <p>
-                {item.desc}
+                {item.description.slice(0,150)}
                 […]
               </p>
             </div>
             <div className="tp-postbox-read-more">
-              <Link href={`/blog-details/${item.id}`} className="tp-btn">
+              <Link href={`/blog-details/${item.slug}`} className="tp-btn">
                 Read More
               </Link>
             </div>
@@ -116,7 +116,7 @@ const BlogItem = ({ item = {} }) => {
             <blockquote>
               <p>
                 {item.title}
-                <cite>{item.author}</cite>
+                <cite>{item.created_by?.name}</cite>
               </p>
             </blockquote>
           </div>

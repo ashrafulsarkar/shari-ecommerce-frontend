@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
-// internal
-import author_img from "@assets/img/users/user-11.jpg";
-import social_data from "@/data/social-data";
 
-const BlogDetailsAuthor = () => {
+const BlogDetailsAuthor = ({blog}) => {
   return (
     <div
       className="tp-postbox-details-author d-sm-flex align-items-start"
@@ -12,22 +9,21 @@ const BlogDetailsAuthor = () => {
     >
       <div className="tp-postbox-details-author-thumb">
         <a href="#">
-          <Image src={author_img} alt="author_img" />
+          <Image src={blog?.created_by?.image} alt="author_img" width={90} height={90} />
         </a>
       </div>
       <div className="tp-postbox-details-author-content">
         <span>Written by</span>
         <h5 className="tp-postbox-details-author-title">
-          <a href="#">Theodore Handle</a>
+          <a href="#">{blog?.created_by?.name}</a>
         </h5>
         <p>
-          By defining and following internal and external processes, your team
-          will have clarity on resources to attract and retain customers for
-          your business.
+        {blog?.created_by?.bio}
+
         </p>
 
         <div className="tp-postbox-details-author-social">
-          {social_data.map((s) => (
+          {blog?.social_data.map((s) => (
             <a href={s.link} target="_blank" className="me-1" key={s.id}>
               <i className={s.icon}></i>
             </a>

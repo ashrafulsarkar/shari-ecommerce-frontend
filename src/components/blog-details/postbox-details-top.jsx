@@ -3,25 +3,25 @@ import React from "react";
 import { Comment, Date, UserTwo } from "@/svg";
 
 const PostboxDetailsTop = ({blog}) => {
-  const {category,title,date,comments,author} = blog || {};
-  return ( 
+  const {category,title,createdAt,comments,created_by} = blog || {};
+  return (
     <div className="tp-postbox-details-top">
       <div className="tp-postbox-details-category">
         <span>
-          <a href="#" className="text-capitalize">{category}</a>
+          <a href="#" className="text-capitalize">{category?.name}</a>
         </span>
       </div>
       <h3 className="tp-postbox-details-title">
         {title}
       </h3>
       <div className="tp-postbox-details-meta mb-50">
-        <span data-meta="author">
+        <span data-meta="created_by">
           <UserTwo />
-          By <a href="#">{" "}{author}</a>
+          By <a href="#">{" "}{created_by?.name}</a>
         </span>
         <span>
           <Date />
-          {" "}{date}
+          {" "}{createdAt}
         </span>
         <span>
           <Comment />

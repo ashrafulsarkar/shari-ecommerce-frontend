@@ -1,35 +1,37 @@
 'use client';
-import { useEffect, useState } from "react";
+
+import { useRouter, useSearchParams } from "next/navigation";
 import { PaginationNext, PaginationPrev } from "@/svg";
 
 const Pagination = ({
-  items = [],
-  countOfPage = 12,
-  paginatedData,
+  totalPages,
   currPage,
-  setCurrPage,
 }) => {
-  const pageStart = (currPage - 1) * countOfPage;
-  const totalPage = Math.ceil(items.length / countOfPage);
+
+  const totalPage = totalPages;
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  // Update URL with current page
+  function updateURL(pageNumber) {
+    const queryParams = new URLSearchParams(searchParams.toString());
+    queryParams.set("page", pageNumber);
+    router.push(`?${queryParams.toString()}`);
+  }
 
   function setPage(idx) {
     if (idx <= 0 || idx > totalPage) {
       return;
     }
-    setCurrPage(idx);
+    updateURL(idx);
     window.scrollTo(0, 0);
-    paginatedData(items, pageStart, countOfPage);
   }
 
-  useEffect(() => {
-    paginatedData(items, pageStart, countOfPage);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items, pageStart, countOfPage]);
 
   return (
     <nav>
       {totalPage > 1 && (
-        <ul>
+        <ul className="flex items-center space-x-2">
           <li>
             <button
               onClick={() => setPage(currPage - 1)}
@@ -42,8 +44,13 @@ const Pagination = ({
           </li>
 
           {Array.from({ length: totalPage }, (_, i) => i + 1).map((n) => (
-            <li key={n} onClick={() => setPage(n)}>
-              <span className={`${currPage === n ? "current" : ""}`}>{n}</span>
+            <li key={n}>
+              <button
+                onClick={() => setPage(n)}
+                className={`page-numbers ${currPage === n ? "current" : ""}`}
+              >
+                {n}
+              </button>
             </li>
           ))}
 
