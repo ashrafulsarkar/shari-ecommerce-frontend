@@ -1,5 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "swiper/css/bundle";
 @import 'node_modules/react-modal-video/scss/modal-video.scss';
 @import '../../public/assets/scss/main.scss';
+
+.zoomImage div+div {
+    background: #2196F3;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+    /* position: relative !important; */
+    height: 800px !important;
+}
+// .tp-product-details-variation-list {
+//     position: relative;
+//     z-index: -1;
+// }
+// .tp-product-details-rating {
+//     position: relative;
+//     z-index: -1;
+// }
+// .tp-product-details-quantity {
+//     position: relative;
+//     z-index: -1;
+// }
+// .tp-product-details-action-sm {
+//     position: relative;
+//     z-index: -1;
+// }
+// .tp-product-details-msg.mb-15 {
+//     position: relative;
+//     z-index: -1;
+// }

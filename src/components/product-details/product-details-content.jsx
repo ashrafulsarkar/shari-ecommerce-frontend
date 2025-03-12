@@ -9,6 +9,7 @@ import RelatedProducts from "./related-products";
 const ProductDetailsContent = ({ productItem }) => {
   const { _id, img, imageURLs, videoId,status } = productItem || {};
   const [activeImg, setActiveImg] = useState(img);
+  const [hoverClass, setHoverClass] = useState("");
   const dispatch = useDispatch();
   // active image change when img change
   useEffect(() => {
@@ -34,17 +35,22 @@ const ProductDetailsContent = ({ productItem }) => {
                 imgHeight={670}
                 videoId={videoId}
                 status={status}
+                setHoverClass={setHoverClass}
               />
               {/* product-details-thumb-wrapper end */}
             </div>
             <div className="col-xl-5 col-lg-6">
               {/* product-details-wrapper start */}
+              {
+                !hoverClass &&
+
               <DetailsWrapper
                 productItem={productItem}
                 handleImageActive={handleImageActive}
                 activeImg={activeImg}
                 detailsBottom={true}
               />
+            }
               {/* product-details-wrapper end */}
             </div>
           </div>
