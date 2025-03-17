@@ -32,7 +32,7 @@ const BlogSidebar = async () => {
             <div className="tp-sidebar-about">
               <div className="tp-sidebar-about-thumb mb-25">
                 <a href="#">
-                  <Image src={user} alt="user" />
+                  <Image src={user} alt="user" width={'auto'} height={'auto'} />
                 </a>
               </div>
               <div className="tp-sidebar-about-content">
@@ -42,7 +42,7 @@ const BlogSidebar = async () => {
                 <span className="tp-sidebar-about-designation">Photographer & Blogger</span>
                 <p>Lorem ligula eget dolor. Aenean massa. Cum sociis que penatibus magnis dis parturient</p>
                 <div className="tp-sidebar-about-signature">
-                  <Image src={signature} alt="signature" />
+                  <Image src={signature} alt="signature" width={'auto'} height={'auto'} />
                 </div>
               </div>
             </div>

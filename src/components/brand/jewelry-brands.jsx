@@ -13,10 +13,10 @@ import logo_6 from '@assets/img/brand/logo_02.png';
 import logo_7 from '@assets/img/brand/logo_04.png';
 import { ArrowNextSm, ArrowPrevSm } from '@/svg';
 
-// brand data 
+// brand data
 const brand_data = [logo_1, logo_2, logo_3, logo_4, logo_5,logo_6,logo_7]
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 5,
   spaceBetween: 0,
@@ -52,7 +52,7 @@ const JewelryBrands = () => {
                   {brand_data.map((logo, i) => (
                     <SwiperSlide key={i} className="tp-brand-item text-center">
                       <a href="#">
-                        <Image src={logo} alt="brand img" />
+                        <Image src={logo} alt="brand img" width={'auto'} height={'auto'} />
                       </a>
                     </SwiperSlide>
                   ))}

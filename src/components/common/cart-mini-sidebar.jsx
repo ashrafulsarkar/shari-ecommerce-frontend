@@ -19,7 +19,7 @@ const CartMiniSidebar = () => {
     dispatch(remove_product(prd))
   }
 
-// handle close cart mini 
+// handle close cart mini
 const handleCloseCartMini = () => {
   dispatch(closeCartMini())
 }
@@ -64,7 +64,7 @@ const handleCloseCartMini = () => {
             </div>}
             {/* if no item in cart */}
             {cart_products.length === 0 && <div className="cartmini__empty text-center">
-              <Image src={empty_cart_img} alt="empty-cart-img" />
+              <Image src={empty_cart_img} alt="empty-cart-img" width={'auto'} height={'auto'} />
               <p>Your Cart is empty</p>
               <Link href="/shop" className="tp-btn">Go to Shop</Link>
             </div>}

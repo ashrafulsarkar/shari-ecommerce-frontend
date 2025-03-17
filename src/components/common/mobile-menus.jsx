@@ -35,7 +35,7 @@ const MobileMenus = () => {
                         <div className="home-menu-item">
                           <Link href={home.link}>
                             <div className="home-menu-thumb p-relative fix">
-                              <Image src={home.img} alt="home img" />
+                              <Image src={home.img} alt="home img" width={'auto'} height={'auto'} />
                             </div>
                             <div className="home-menu-content">
                               <h5 className="home-menu-title">{home.title}</h5>

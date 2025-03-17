@@ -75,6 +75,12 @@ const menu_data = [
     title: 'Contact',
     link: '/contact',
   },
+  {
+    id: 6,
+    single_link: true,
+    title: 'Album',
+    link: '/album',
+  },
 ]
 
 export default menu_data;
@@ -174,5 +180,11 @@ export const mobile_menu = [
     single_link: true,
     title: 'Contact',
     link: '/contact',
+  },
+  {
+    id: 7,
+    single_link: true,
+    title: 'Album',
+    link: '/album',
   },
 ]

@@ -11,7 +11,7 @@ const ListItem = ({blog}) => {
     <div className="tp-blog-list-item d-md-flex d-lg-block d-xl-flex">
       <div className="tp-blog-list-thumb">
         <Link href={`/blog-details/${id}`}>
-          <Image src={list_img} alt="blog img"/>
+          <Image src={list_img} alt="blog img" width={'auto'} height={'auto'}/>
         </Link>
       </div>
       <div className="tp-blog-list-content">

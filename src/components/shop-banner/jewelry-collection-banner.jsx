@@ -17,7 +17,7 @@ const JewelryCollectionBanner = () => {
             <div className="row gx-0">
               <div className="col-xl-6 col-lg-6">
                 <div className="tp-collection-thumb-wrapper-4 p-relative fix z-index-1" >
-                  <div className="tp-collection-thumb-4 include-bg black-bg" 
+                  <div className="tp-collection-thumb-4 include-bg black-bg"
                     style={{backgroundImage:`url(${thumb_bg.src})`}}>
                   </div>
                   <span className="tp-collection-thumb-info-4">WITH NEW LOOK & NEW COLLECTION</span>
@@ -45,10 +45,10 @@ const JewelryCollectionBanner = () => {
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
-                <div className="tp-collection-wrapper-4 p-relative pt-90 pb-95" 
+                <div className="tp-collection-wrapper-4 p-relative pt-90 pb-95"
                 style={{backgroundColor:`#F6F6F6`}}>
                   <span className="tp-collection-side-text">
-                    <Image src={side_text} alt="text img" />
+                    <Image src={side_text} alt="text img" width={'auto'} height={'auto'}/>
                   </span>
                   <div className="row justify-content-center">
                     <div className="col-xl-6 col-lg-8">
@@ -56,7 +56,7 @@ const JewelryCollectionBanner = () => {
                         <span className="tp-collection-subtitle-4">BUILD YOUR OWN SETS</span>
                         <div className="tp-collection-thumb-banner-4 m-img">
                           <Link href="/shop">
-                            <Image src={collection_sm} alt="collection_sm img" />
+                            <Image src={collection_sm} alt="collection_sm img" width={'auto'} height={'auto'} />
                           </Link>
                         </div>
                         <div className="tp-collection-content-4">

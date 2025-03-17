@@ -32,6 +32,7 @@ const DetailsThumbWrapper = ({
                   width={78}
                   height={100}
                   style={{ width: "100%", height: "100%" }}
+
                 />
               </button>
             ))}

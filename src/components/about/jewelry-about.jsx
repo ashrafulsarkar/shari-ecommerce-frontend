@@ -16,10 +16,10 @@ const JewelryAbout = () => {
             <div className="col-xl-5 col-lg-6">
               <div className="tp-about-thumb-wrapper p-relative mr-35">
                 <div className="tp-about-thumb m-img">
-                  <Image src={about_img} alt="about_img" />
+                  <Image src={about_img} alt="about_img" width={'auto'} height={'auto'}/>
                 </div>
                 <div className="tp-about-thumb-2">
-                  <Image src={about_thumb} alt="about_thumb" />
+                  <Image src={about_thumb} alt="about_thumb" width={'auto'} height={'auto'} />
                 </div>
               </div>
             </div>

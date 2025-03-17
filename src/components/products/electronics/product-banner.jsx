@@ -41,7 +41,7 @@ const bannerProducts = [
   },
 ]
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -80,11 +80,11 @@ const ProductBanner = () => {
                       <div className="tp-product-banner-thumb-wrapper p-relative">
                         <div className="tp-product-banner-thumb-shape">
                           <span className="tp-product-banner-thumb-gradient"></span>
-                          <Image className="tp-offer-shape" src={offer_img} alt="tp-offer-shape" />
+                          <Image className="tp-offer-shape" src={offer_img} alt="tp-offer-shape" width={'auto'} height={'auto'} />
                         </div>
 
                         <div className="tp-product-banner-thumb text-end p-relative z-index-1">
-                          <Image src={item.img} alt="banner-slider img" />
+                          <Image src={item.img} alt="banner-slider img" width={'auto'} height={'auto'} />
                         </div>
                       </div>
                     </div>

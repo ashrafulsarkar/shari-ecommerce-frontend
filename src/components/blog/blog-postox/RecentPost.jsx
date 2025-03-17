@@ -26,7 +26,10 @@ export default async function RecentPost() {
         <div key={index} className="tp-sidebar-blog-item d-flex align-items-center">
         <div className="tp-sidebar-blog-thumb">
           <Link href={`/blog-details/${b.slug}`}>
+          {
+            b?.slug &&
             <Image src={b.img} alt="blog img" width={100} height={100} />
+          }
           </Link>
         </div>
         <div className="tp-sidebar-blog-content">

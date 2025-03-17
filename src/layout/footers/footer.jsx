@@ -20,15 +20,15 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <div className="tp-footer-widget-content">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" />
+                        <Image src={logo} alt="logo" width={'auto'} height={'auto'} />
                       </Link>
                     </div>
                     <p className="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
                     <div className="tp-footer-social">
-                      {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
+                      {/* {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
                         <i className={s.icon}></i>
                       </a>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                 <div className="col-md-6">
                   <div className="tp-footer-payment text-md-end">
                     <p>
-                      <Image src={pay} alt="pay" />
+                      <Image src={pay} alt="pay"  width={'auto'} height={'auto'}/>
                     </p>
                   </div>
                 </div>

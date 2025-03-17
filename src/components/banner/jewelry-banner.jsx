@@ -16,7 +16,7 @@ import nav_icon_4 from '@assets/img/slider/4/nav/icon-4.png';
 import { ArrowNextTwo, ArrowPrevTwo, Pause, Play } from '@/svg';
 import text_shape from '@assets/img/slider/4/shape/rounded-test.png';
 
-// slider data 
+// slider data
 const slider_data = [
   { subtitle: 'The original', title: 'Shine bright', img: slider_img_1 },
   { subtitle: 'The original', title: 'Creative Design', img: slider_img_2 },
@@ -36,7 +36,7 @@ const JewelryBanner = () => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
 
-  //  slider setting 
+  //  slider setting
   const main_slider_setting = {
     infinite: true,
     slidesToShow: 1,
@@ -45,7 +45,7 @@ const JewelryBanner = () => {
     fade: true,
     centerMode: false,
   }
-  // nav slider setting 
+  // nav slider setting
   const nav_slider_setting = {
     infinite: true,
     slidesToShow: 3,
@@ -57,7 +57,7 @@ const JewelryBanner = () => {
     focusOnSelect: true,
   }
 
-  // 
+  //
   const [play, setPlay] = useState(false);
 
   const handleToggle = () => {
@@ -78,7 +78,7 @@ const JewelryBanner = () => {
           {slider_data.map((item, i) => (
             <div key={i} className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center" >
               <div className="tp-slider-thumb-4">
-                <Image src={item.img} alt="slider img" />
+                <Image src={item.img} alt="slider img" width={'auto'} height={'auto'} />
                 <div className="tp-slider-thumb-4-shape">
                   <span className="tp-slider-thumb-4-shape-1"></span>
                   <span className="tp-slider-thumb-4-shape-2"></span>
@@ -97,7 +97,7 @@ const JewelryBanner = () => {
                 <div className="tp-slider-play">
 
                   <button onClick={handleToggle} type="button" className={`tp-slider-play-btn tp-slider-video-move-btn tp-video-toggle-btn ${play?'hide':''}`}>
-                    <Image className="text-shape" src={text_shape} alt="text shape" priority />
+                    <Image className="text-shape" src={text_shape} alt="text shape" priority  width={'auto'} height={'auto'}/>
                     <span className="play-icon">
                       <Play/>
                     </span>
@@ -143,7 +143,7 @@ const JewelryBanner = () => {
               <div key={i} className="tp-slider-nav-item d-flex align-items-center">
                 <div className="tp-slider-nav-icon">
                   <span>
-                    <Image src={item.icon} alt="icon" />
+                    <Image src={item.icon} alt="icon" width={'auto'} height={'auto'}/>
                   </span>
                 </div>
                 <div className="tp-slider-nav-content">

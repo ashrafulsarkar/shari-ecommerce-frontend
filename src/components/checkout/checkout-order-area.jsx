@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 // internal
 import useCartInfo from "@/hooks/use-cart-info";
 import ErrorMsg from "../common/error-msg";
+import { useGetShippingInfoQuery } from "@/redux/features/order/orderApi";
 
 const CheckoutOrderArea = ({ checkoutData }) => {
   const {
@@ -18,10 +19,16 @@ const CheckoutOrderArea = ({ checkoutData }) => {
     showCard,
     setShowCard,
     shippingCost,
-    discountAmount
+    discountAmount,
+    setShippingType,
+    shippingType
   } = checkoutData;
   const { cart_products } = useSelector((state) => state.cart);
   const { total } = useCartInfo();
+  const { data: settings, isError, isLoading } = useGetShippingInfoQuery();
+
+
+
   return (
     <div className="tp-checkout-place white-bg">
       <h3 className="tp-checkout-place-title">Your Order</h3>
@@ -58,10 +65,13 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                   name="shippingOption"
                 />
                 <label
-                  onClick={() => handleShippingCost(60)}
+                  onClick={() => {
+                    handleShippingCost(Number(settings?.inside_dhaka))
+                    setShippingType('inside_dhaka')
+                  }}
                   htmlFor="flat_shipping"
                 >
-                  Delivery: Today Cost :<span>$60.00</span>
+                  Delivery: Inside Dhaka :<span>${Number(settings?.inside_dhaka)}</span>
                 </label>
                 <ErrorMsg msg={errors?.shippingOption?.message} />
               </span>
@@ -75,10 +85,13 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                   name="shippingOption"
                 />
                 <label
-                  onClick={() => handleShippingCost(20)}
+                  onClick={() => {
+                    handleShippingCost(Number(settings?.outside_dhaka))
+                    setShippingType('outside_dhaka')
+                  }}
                   htmlFor="flat_rate"
                 >
-                  Delivery: 7 Days Cost: <span>$20.00</span>
+                  Delivery: Out Side Dhaka: <span>${Number(settings?.outside_dhaka)} </span>
                 </label>
                 <ErrorMsg msg={errors?.shippingOption?.message} />
               </span>
@@ -111,6 +124,9 @@ const CheckoutOrderArea = ({ checkoutData }) => {
         </ul>
       </div>
       <div className="tp-checkout-payment">
+
+
+
         <div className="tp-checkout-payment-item">
           <input
             {...register(`payment`, {
@@ -121,7 +137,12 @@ const CheckoutOrderArea = ({ checkoutData }) => {
             name="payment"
             value="Card"
           />
-          <label onClick={() => setShowCard(true)} htmlFor="back_transfer" data-bs-toggle="direct-bank-transfer">
+          {/* sslcommerze  */}
+          <label htmlFor="back_transfer" data-bs-toggle="direct-bank-transfer">
+          SSL Commerze
+          </label>
+
+          {/* <label onClick={() => setShowCard(true)} htmlFor="back_transfer" data-bs-toggle="direct-bank-transfer">
             Credit Card
           </label>
           {showCard && (
@@ -145,9 +166,14 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                 />
               </div>
             </div>
-          )}
+          )} */}
           <ErrorMsg msg={errors?.payment?.message} />
         </div>
+
+
+{
+  shippingType ==='inside_dhaka' &&
+
         <div className="tp-checkout-payment-item">
           <input
             {...register(`payment`, {
@@ -162,6 +188,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
           <label htmlFor="cod">Cash on Delivery</label>
           <ErrorMsg msg={errors?.payment?.message} />
         </div>
+        }
       </div>
 
       <div className="tp-checkout-btn-wrapper">

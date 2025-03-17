@@ -12,7 +12,7 @@ const ProductBrand = ({setCurrPage,shop_right=false}) => {
   const { data: brands, isError, isLoading } = useGetActiveBrandsQuery();
   const router = useRouter();
   const dispatch = useDispatch();
-  // handle brand route 
+  // handle brand route
   const handleBrandRoute = (brand) => {
     setCurrPage(1);
     router.push(
@@ -37,14 +37,17 @@ const ProductBrand = ({setCurrPage,shop_right=false}) => {
     const all_brands = brands.result;
     const sortedBrands = all_brands.slice().sort((a, b) => b.products.length - a.products.length);
     const brand_items = sortedBrands.slice(0,6);
-    
+
     content = brand_items.map((b) => (
       <div key={b._id} className="tp-shop-widget-brand-item">
         <a
           onClick={() => handleBrandRoute(b.name)}
           style={{ cursor: "pointer" }}
         >
+          {
+            b?.logo &&
           <Image src={b.logo} alt="brand" width={60} height={50} />
+          }
         </a>
       </div>
     ));

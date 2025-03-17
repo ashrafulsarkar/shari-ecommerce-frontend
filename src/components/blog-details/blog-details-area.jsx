@@ -10,28 +10,32 @@ import PostboxDetailsNav from './postbox-details-nav';
 import PostboxDetailsTop from './postbox-details-top';
 import social_data from '@/data/social-data';
 import comment_data from '@/data/blog-comment-data';
+import BlogShare from './BlogShare';
 
 const BlogDetailsArea = ({blog}) => {
   return (
     <section className="tp-postbox-details-area pb-120 pt-95">
       <div className="container">
         <div className="row">
-          <div className="col-xl-9">
+          <div className="col-xl-12">
             {/* PostboxDetailsTop */}
             <PostboxDetailsTop blog={blog} />
             {/* PostboxDetailsTop */}
           </div>
           <div className="col-xl-12">
             <div className="tp-postbox-details-thumb">
-              <Image src={blog.img} alt="blog-big-img" width={1000} height={500} />
+              <Image src={blog.img} alt="blog-big-img m-auto " width={1000} height={500} />
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-xl-9 col-lg-8">
+          <div className="col-xl-12 col-lg-12">
             <div className="tp-postbox-details-main-wrapper">
               <div className="tp-postbox-details-content">
-                {blog?.description}
+                {
+                  blog?.description &&
+              <div dangerouslySetInnerHTML={{__html: blog?.description}}></div>
+                }
 
                 <div className="tp-postbox-details-share-wrapper">
                   <div className="row">
@@ -51,15 +55,9 @@ const BlogDetailsArea = ({blog}) => {
                       </div>
                     </div>
                     }
+
                     <div className="col-xl-4 col-lg-6">
-                      <div className="tp-postbox-details-share text-md-end">
-                        <span>Share:</span>
-                        {social_data.map((s) => (
-                          <a href={s.link} className="me-1" target="_blank" key={s.id}>
-                            <i className={s.icon}></i>
-                          </a>
-                        ))}
-                      </div>
+                      <BlogShare title="Blog Post"/>
                     </div>
                   </div>
                 </div>
@@ -89,11 +87,7 @@ const BlogDetailsArea = ({blog}) => {
               </div>
             </div>
           </div>
-          <div className="col-xl-3 col-lg-4">
-            {/* sidebar start */}
-            <BlogSidebar />
-            {/* sidebar end */}
-          </div>
+
         </div>
       </div>
     </section>

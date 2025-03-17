@@ -41,7 +41,7 @@ const ProductGadgetArea = () => {
     ))
   }
 
-  // gadget banner 
+  // gadget banner
   function GadgetBanner() {
 
     const settings = {
@@ -60,7 +60,7 @@ const ProductGadgetArea = () => {
     return (
       <Swiper {...settings} effect='fade' modules={[Pagination, EffectFade]} className="tp-product-gadget-banner-slider-active swiper-container">
         {banner_data.map((b, i) => (
-          <SwiperSlide key={i} className="tp-product-gadget-banner-item include-bg" 
+          <SwiperSlide key={i} className="tp-product-gadget-banner-item include-bg"
           style={{ backgroundImage: `url(${b.bg.src})`}}>
             <div className="tp-product-gadget-banner-content">
               <span className="tp-product-gadget-banner-price">Only ${b.price.toFixed(2)}</span>
@@ -83,7 +83,7 @@ const ProductGadgetArea = () => {
               <div className="tp-product-gadget-sidebar mb-40">
                 <div className="tp-product-gadget-categories p-relative fix mb-10">
                   <div className="tp-product-gadget-thumb">
-                    <Image src={gadget_girl} alt="gadget_girl img" priority />
+                    <Image src={gadget_girl} alt="gadget_girl img" priority width={'auto'} height={'auto'} />
                   </div>
                   <h3 className="tp-product-gadget-categories-title">Electronics <br /> Gadgets</h3>
 

@@ -20,7 +20,7 @@ const FooterTwo = () => {
                   <div className="tp-footer-widget footer-col-4-1 mb-50">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" />
+                        <Image src={logo} alt="logo" width={'auto'} height={'auto'} />
                       </Link>
                     </div>
                     <div className="tp-footer-widget-content">
@@ -124,7 +124,7 @@ const FooterTwo = () => {
                   <div className="col-md-6">
                     <div className="tp-footer-payment text-md-end">
                       <p>
-                        <Image src={pay} alt="pay" />
+                        <Image src={pay} alt="pay"  width={'auto'} height={'auto'}/>
                       </p>
                     </div>
                   </div>

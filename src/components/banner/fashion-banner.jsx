@@ -12,7 +12,7 @@ import slider_shape from '@assets/img/slider/2/shape/shape-1.png';
 import thumb_shape_1 from '@assets/img/slider/2/shape/shape-2.png';
 import thumb_shape_2 from '@assets/img/slider/2/shape/shape-3.png';
 
-// slider data 
+// slider data
 const slider_data = [
   {
     id: 1,
@@ -34,7 +34,7 @@ const slider_data = [
   },
 ]
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -58,7 +58,7 @@ const FashionBanner = () => {
             <SwiperSlide key={item.id}>
               <div className="tp-slider-item-2 tp-slider-height-2 p-relative grey-bg-5 d-flex align-items-end">
                 <div className="tp-slider-2-shape">
-                  <Image className="tp-slider-2-shape-1" src={slider_shape} alt="slider_shape" />
+                  <Image className="tp-slider-2-shape-1" src={slider_shape} alt="slider_shape" width={'auto'} height={'auto'} />
                 </div>
                 <div className="container">
                   <div className="row align-items-center">
@@ -74,12 +74,12 @@ const FashionBanner = () => {
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-slider-thumb-2-wrapper p-relative">
                         <div className="tp-slider-thumb-2-shape">
-                          <Image className="tp-slider-thumb-2-shape-1" src={thumb_shape_1} alt="shape" />
-                          <Image className="tp-slider-thumb-2-shape-2" src={thumb_shape_2} alt="shape" />
+                          <Image className="tp-slider-thumb-2-shape-1" src={thumb_shape_1} alt="shape" width={'auto'} height={'auto'} />
+                          <Image className="tp-slider-thumb-2-shape-2" src={thumb_shape_2} alt="shape" width={'auto'} height={'auto'} />
                         </div>
                         <div className="tp-slider-thumb-2 text-end">
                           <span className="tp-slider-thumb-2-gradient"></span>
-                          <Image src={item.img} alt="slider img" priority />
+                          <Image src={item.img} alt="slider img" priority width={'auto'} height={'auto'} />
                         </div>
                       </div>
                     </div>

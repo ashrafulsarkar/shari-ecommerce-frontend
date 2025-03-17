@@ -9,7 +9,7 @@ import featured_3 from '@assets/img/product/featured/featured-3.png';
 
 
 
-// featured data 
+// featured data
 const featured_data = [
   {
     id: 1,
@@ -44,7 +44,7 @@ const BeautyFeatured = () => {
               <div key={item.id} className="col-lg-4 col-md-6">
                 <div className="tp-featured-item-3 text-center">
                   <div className="tp-featured-thumb-3 d-flex align-items-end justify-content-center">
-                    <Image src={item.img} alt="featured image" />
+                    <Image src={item.img} alt="featured image" width={'auto'} height={'auto'} />
                   </div>
                   <div className="tp-featured-content-3">
                     <h3 className="tp-featured-title-3">

@@ -10,23 +10,8 @@
     /* position: relative !important; */
     height: 800px !important;
 }
-// .tp-product-details-variation-list {
-//     position: relative;
-//     z-index: -1;
-// }
-// .tp-product-details-rating {
-//     position: relative;
-//     z-index: -1;
-// }
-// .tp-product-details-quantity {
-//     position: relative;
-//     z-index: -1;
-// }
-// .tp-product-details-action-sm {
-//     position: relative;
-//     z-index: -1;
-// }
-// .tp-product-details-msg.mb-15 {
-//     position: relative;
-//     z-index: -1;
-// }
+.tp-postbox-details-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

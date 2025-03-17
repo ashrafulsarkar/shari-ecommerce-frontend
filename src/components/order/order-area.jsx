@@ -21,7 +21,7 @@ const OrderArea = ({ orderId }) => {
     content = <ErrorMsg msg="There was an error" />;
   }
   if (!isLoading && !isError) {
-    const { name, country, city, contact, invoice, createdAt, cart, shippingCost, discount, totalAmount,paymentMethod} = order.order;
+    const { name, country, city, contact, payment_status,invoice, createdAt, cart, shippingCost, discount, totalAmount,paymentMethod} = order.order;
     content = (
       <>
         <section className="invoice__area pt-120 pb-120">
@@ -43,7 +43,7 @@ const OrderArea = ({ orderId }) => {
                       <div className="row align-items-end">
                         <div className="col-md-4 col-sm-6">
                           <div className="invoice__left">
-                            <Image src={logo} alt="logo" />
+                            <Image src={logo} alt="logo" width={'auto'} height={'auto'}/>
                             <p>2879 Elk Creek Road <br /> Stone Mountain, Georgia </p>
                           </div>
                         </div>
@@ -71,6 +71,9 @@ const OrderArea = ({ orderId }) => {
                     <div className="invoice__details mt-md-0 mt-20 text-md-end">
                       <p className="mb-0">
                         <strong>Invoice ID:</strong> #{invoice}
+                      </p>
+                      <p className="mb-0">
+                        <strong>Payment Status:</strong> #{payment_status}
                       </p>
                       <p className="mb-0">
                         <strong>Date:</strong> {dayjs(createdAt).format("MMMM D, YYYY")}
@@ -161,7 +164,7 @@ const OrderArea = ({ orderId }) => {
       </>
     );
   }
-  
+
   return (
     <>
       {content}

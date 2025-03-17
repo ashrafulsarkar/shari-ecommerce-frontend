@@ -46,7 +46,7 @@ const charm = Charm({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${body.variable} ${heading.variable} ${p.variable} ${jost.variable} ${roboto.variable} ${oregano.variable} ${charm.variable}`}>
+      <body >
         <Providers>
           {children}
         </Providers>

@@ -9,7 +9,7 @@ import dynamic from 'next/dynamic';
 import { beauty_testi_data } from '@/data/testimonial-data';
 import quote from '@assets/img/testimonial/testimonial-quote.png';
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 2,
   spaceBetween: 24,
@@ -54,7 +54,7 @@ const BeautyTestimonial = () => {
                   {beauty_testi_data.map((item) => (
                     <SwiperSlide key={item.id} className="tp-testimonial-item-3 grey-bg-7 p-relative z-index-1">
                       <div className="tp-testimonial-shape-3">
-                        <Image className="tp-testimonial-shape-3-quote" src={quote} alt="quote img" />
+                        <Image className="tp-testimonial-shape-3-quote" src={quote} alt="quote img" width={'auto'} height={'auto'} />
                       </div>
                       <div className="tp-testimonial-rating tp-testimonial-rating-3">
                         <Rating fillColor='#010F1C' readonly={true} allowFraction size={20} initialValue={item.review} />
@@ -65,7 +65,7 @@ const BeautyTestimonial = () => {
                       <div className="tp-testimonial-user-wrapper-3 d-flex">
                         <div className="tp-testimonial-user-3 d-flex align-items-center">
                           <div className="tp-testimonial-avater-3 mr-10">
-                            <Image src={item.user} alt="user img" />
+                            <Image src={item.user} alt="user img" width={'auto'} height={'auto'} />
                           </div>
                           <div className="tp-testimonial-user-3-info tp-testimonial-user-translate">
                             <h3 className="tp-testimonial-user-3-title">{item.name} /</h3>

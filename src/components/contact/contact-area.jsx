@@ -31,7 +31,7 @@ const ContactArea = () => {
                   <div className="tp-contact-info-item">
                     <div className="tp-contact-info-icon">
                       <span>
-                        <Image src={contact_icon_1} alt="contact-icon" />
+                        <Image src={contact_icon_1} alt="contact-icon" width={'auto'} height={'auto'} />
                       </span>
                     </div>
                     <div className="tp-contact-info-content">
@@ -46,7 +46,7 @@ const ContactArea = () => {
                   <div className="tp-contact-info-item">
                     <div className="tp-contact-info-icon">
                       <span>
-                        <Image src={contact_icon_2} alt="contact-icon" />
+                        <Image src={contact_icon_2} alt="contact-icon" width={'auto'} height={'auto'} />
                       </span>
                     </div>
                     <div className="tp-contact-info-content">
@@ -63,7 +63,7 @@ const ContactArea = () => {
                   <div className="tp-contact-info-item">
                     <div className="tp-contact-info-icon">
                       <span>
-                        <Image src={contact_icon_3} alt="contact-icon" />
+                        <Image src={contact_icon_3} alt="contact-icon" width={'auto'} height={'auto'} />
                       </span>
                     </div>
                     <div className="tp-contact-info-content">

@@ -11,7 +11,7 @@ import ErrorMsg from '@/components/common/error-msg';
 import ProductItem from './product-item';
 import { HomeThreeTrendingPrdLoader } from '@/components/loader';
 
-// slider setting 
+// slider setting
 const sliderSetting = {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -63,7 +63,7 @@ const TrendingSpecialPrd = () => {
             <div className="col-xl-5 col-md-6">
               <div className="tp-special-slider-thumb">
                 <div className="tp-special-thumb">
-                  <Image src={special_thumb} alt="special-big img" priority />
+                  <Image src={special_thumb} alt="special-big img" priority width={'auto'} height={'auto'} />
                   <div className="tp-special-hotspot-item tp-special-hotspot-1">
                     <span className="tp-hotspot tp-pulse-border ">
                       <PlusTwo />

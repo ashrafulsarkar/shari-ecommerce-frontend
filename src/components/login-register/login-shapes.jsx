@@ -13,22 +13,26 @@ const LoginShapes = () => {
         className="tp-login-shape-1"
         src={shape_1}
         alt="shape"
+        width={'auto'} height={'auto'}
       />
       <Image
         className="tp-login-shape-2"
         src={shape_2}
         alt="shape"
+        width={'auto'} height={'auto'}
       />
       <Image
         className="tp-login-shape-3"
         src={shape_3}
         alt="shape"
+        width={'auto'} height={'auto'}
       />
       <Image
         className="tp-login-shape-4"
         src={shape_4}
         priority
         alt="shape"
+        width={'auto'} height={'auto'}
       />
     </div>
   );

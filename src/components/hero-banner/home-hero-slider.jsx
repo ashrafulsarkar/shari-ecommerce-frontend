@@ -57,7 +57,7 @@ const sliderData = [
 
 function Shape({ img, num }) {
   return (
-    <Image className={`tp-slider-shape-${num}`} src={img} alt="slider-shape" priority />
+    <Image className={`tp-slider-shape-${num}`} src={img} alt="slider-shape" priority width={'auto'} height={'auto'} />
   );
 }
 
@@ -137,7 +137,7 @@ const HomeHeroSlider = () => {
                   </div>
                   <div className="col-xl-7 col-lg-6 col-md-6">
                     <div className="tp-slider-thumb text-end">
-                      <Image src={item.img} alt="slider-img" />
+                      <Image src={item.img} alt="slider-img" width={'auto'} height={'auto'} />
                     </div>
                   </div>
                 </div>

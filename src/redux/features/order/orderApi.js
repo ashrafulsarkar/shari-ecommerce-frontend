@@ -56,6 +56,27 @@ export const authApi = apiSlice.injectEndpoints({
       providesTags: (result, error, arg) => [{ type: "UserOrder", id: arg }],
       keepUnusedDataFor: 600,
     }),
+    // getUserOrders
+    getShippingInfo: builder.query({
+      query: () => `/api/business_setting/front_end/shipping_info`,
+      keepUnusedDataFor: 600,
+    }),
+    // sslcommerze
+    getSSLCommerzeOrderById: builder.query({
+      query: (id) => `/api/sslcommerze/pay_sslcommerze/${id}`,
+      keepUnusedDataFor: 600,
+    }),
+     // add category
+     addSSLCommerzeOrderById: builder.mutation({
+      query(id) {
+        return {
+          url: `/api/sslcommerze/pay_sslcommerze/${id}`,
+          method: "POST",
+          body: id,
+        };
+      },
+    }),
+
   }),
 });
 
@@ -64,4 +85,6 @@ export const {
   useSaveOrderMutation,
   useGetUserOrderByIdQuery,
   useGetUserOrdersQuery,
+  useGetShippingInfoQuery,
+  useAddSSLCommerzeOrderByIdMutation,
 } = authApi;

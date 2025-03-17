@@ -9,7 +9,7 @@ import insta_4 from '@assets/img/instagram/4/instagram-4.jpg';
 import insta_5 from '@assets/img/instagram/4/instagram-5.jpg';
 import insta_6 from '@assets/img/instagram/4/instagram-6.jpg';
 
-// instagram data 
+// instagram data
 const instagram_data = [
   { id: 1, link: 'https://www.instagram.com/', img: insta_1 },
   { id: 2, link: 'https://www.instagram.com/', img: insta_2 },
@@ -36,7 +36,7 @@ const InstagramAreaFour = () => {
             {instagram_data.map((item, i) => (
               <div className="col" key={i}>
                 <div className="tp-instagram-item-2 w-img">
-                  <Image src={item.img} alt="instagram img" style={{ width: '100%', height: '100%' }} />
+                  <Image src={item.img} alt="instagram img" style={{ width: '100%', height: '100%' }} width={'auto'} height={'auto'} />
                   <div className="tp-instagram-icon-2">
                     <a href={item.link} target="_blank" className="popup-image">
                       <i className="fa-brands fa-instagram"></i>

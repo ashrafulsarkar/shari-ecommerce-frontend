@@ -11,12 +11,13 @@ import useCartInfo from "./use-cart-info";
 import { set_shipping } from "@/redux/features/order/orderSlice";
 import { set_coupon } from "@/redux/features/coupon/couponSlice";
 import { notifyError, notifySuccess } from "@/utils/toast";
-import {useCreatePaymentIntentMutation,useSaveOrderMutation} from "@/redux/features/order/orderApi";
+import {useAddSSLCommerzeOrderByIdMutation, useCreatePaymentIntentMutation,useSaveOrderMutation} from "@/redux/features/order/orderApi";
 import { useGetOfferCouponsQuery } from "@/redux/features/coupon/couponApi";
 
 const useCheckoutSubmit = () => {
   // offerCoupons
   const { data: offerCoupons, isError, isLoading } = useGetOfferCouponsQuery();
+  const [ addSSLCommerzeOrderById,{} ] = useAddSSLCommerzeOrderByIdMutation();
   // addOrder
   const [saveOrder, {}] = useSaveOrderMutation();
   // createPaymentIntent
@@ -37,6 +38,7 @@ const useCheckoutSubmit = () => {
   const [minimumAmount, setMinimumAmount] = useState(0);
   // shippingCost
   const [shippingCost, setShippingCost] = useState(0);
+  const [shippingType, setShippingType] = useState('');
   // discountAmount
   const [discountAmount, setDiscountAmount] = useState(0);
   // discountPercentage
@@ -110,19 +112,19 @@ const useCheckoutSubmit = () => {
   ]);
 
   // create payment intent
-  useEffect(() => {
-    if (cartTotal) {
-      createPaymentIntent({
-        price: parseInt(cartTotal),
-      })
-        .then((data) => {
-          setClientSecret(data?.data?.clientSecret);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [createPaymentIntent, cartTotal]);
+  // useEffect(() => {
+  //   if (cartTotal) {
+  //     createPaymentIntent({
+  //       price: parseInt(cartTotal),
+  //     })
+  //       .then((data) => {
+  //         setClientSecret(data?.data?.clientSecret);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }
+  // }, [createPaymentIntent, cartTotal]);
 
   // handleCouponCode
   const handleCouponCode = (e) => {
@@ -215,31 +217,67 @@ const useCheckoutSubmit = () => {
       orderNote:data.orderNote,
       user: `${user?._id}`,
     };
-    if (data.payment === 'Card') {
-      if (!stripe || !elements) {
-        return;
-      }
-      const card = elements.getElement(CardElement);
-      if (card == null) {
-        return;
-      }
-      const { error, paymentMethod } = await stripe.createPaymentMethod({
-        type: 'card',
-        card: card,
-      });
-      if (error && !paymentMethod) {
-        setCardError(error.message);
-        setIsCheckoutSubmit(false);
-      } else {
-        setCardError('');
-        const orderData = {
-          ...orderInfo,
-          cardInfo: paymentMethod,
-        };
+    // Card  stripe
+    // if (data.payment === 'Card') {
+    //   if (!stripe || !elements) {
+    //     return;
+    //   }
+    //   const card = elements.getElement(CardElement);
+    //   if (card == null) {
+    //     return;
+    //   }
+    //   const { error, paymentMethod } = await stripe.createPaymentMethod({
+    //     type: 'card',
+    //     card: card,
+    //   });
+    //   if (error && !paymentMethod) {
+    //     setCardError(error.message);
+    //     setIsCheckoutSubmit(false);
+    //   } else {
+    //     setCardError('');
+    //     const orderData = {
+    //       ...orderInfo,
+    //       cardInfo: paymentMethod,
+    //     };
 
-       return handlePaymentWithStripe(orderData);
-      }
+    //    return handlePaymentWithStripe(orderData);
+    //   }
+    // }
+
+
+    if (data.payment === 'Card') {
+      saveOrder({
+        ...orderInfo
+      }).then(res => {
+        if(res?.error){
+        }
+        else {
+           localStorage.removeItem("cart_products")
+           localStorage.removeItem("couponInfo");
+          setIsCheckoutSubmit(false)
+
+          // ssl commerze
+          const sslcommerze =  addSSLCommerzeOrderById(res.data?.order?._id);
+
+          sslcommerze.then(result=>{
+            if(result?.error){
+             notifyError("Your Order Confirmed! but payment errors");
+             router.push(`/order/${res.data?.order?._id}`);
+            }else{
+              console.log(result)
+              if (result.data) {
+                window.location.href =result.data.data;
+              }
+            }
+          })
+
+
+        }
+      })
     }
+
+
+    // COD
     if (data.payment === 'COD') {
       saveOrder({
         ...orderInfo
@@ -295,7 +333,7 @@ const useCheckoutSubmit = () => {
             router.push(`/order/${result.data?.order?._id}`);
           }
         })
-       } 
+       }
     catch (err) {
       console.log(err);
     }
@@ -308,6 +346,8 @@ const useCheckoutSubmit = () => {
     discountAmount,
     total,
     shippingCost,
+    shippingType,
+    setShippingType,
     discountPercentage,
     discountProductType,
     isCheckoutSubmit,

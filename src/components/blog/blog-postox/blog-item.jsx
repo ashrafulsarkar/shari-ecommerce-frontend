@@ -63,7 +63,7 @@ const BlogItem = ({ item = {} }) => {
           <Swiper {...slider_setting} modules={[Navigation, Autoplay]} className="tp-postbox-thumb tp-postbox-slider swiper-container w-img p-relative">
             {item.slider_images.map((img, i) => (
               <SwiperSlide key={i} className="tp-postbox-slider-item">
-                <Image src={img} alt="slider img" />
+                <Image src={img} alt="slider img" width={'auto'} height={'auto'} />
               </SwiperSlide>
             ))}
             <div className="tp-postbox-nav">
