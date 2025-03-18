@@ -39,11 +39,11 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <div className="tp-footer-widget-content">
                     <ul>
                       <li><a href="#">Track Orders</a></li>
-                      <li><a href="#">Shipping</a></li>
+                      <li><a href="/shipping-and-delivery">Shipping</a></li>
                       <li><a href="#">Wishlist</a></li>
                       <li><a href="#">My Account</a></li>
                       <li><a href="#">Order History</a></li>
-                      <li><a href="#">Returns</a></li>
+                      <li><a href="/return-exchange">Returns</a></li>
                     </ul>
                   </div>
                 </div>
@@ -55,10 +55,11 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                     <ul>
                       <li><a href="#">Our Story</a></li>
                       <li><a href="#">Careers</a></li>
-                      <li><a href="#">Privacy Policy</a></li>
-                      <li><a href="#">Terms & Conditions</a></li>
+                      <li><a href="/policy">Privacy Policy</a></li>
+                      <li><a href="/terms-conditions">Terms & Conditions</a></li>
                       <li><a href="#">Latest News</a></li>
                       <li><a href="#">Contact Us</a></li>
+                      <li><a href="/how-to-order">How to order</a></li>
                     </ul>
                   </div>
                 </div>
@@ -105,7 +106,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
               <div className="row align-items-center">
                 <div className="col-md-6">
                   <div className="tp-footer-copyright">
-                    <p>© {new Date().getFullYear()} All Rights Reserved  |  Next js Template by
+                    <p>© {new Date().getFullYear()} All Rights Reserved
                       <Link href="/">{" "}ThemePure</Link>.
                     </p>
                   </div>

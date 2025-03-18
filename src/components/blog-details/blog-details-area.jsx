@@ -2,14 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 // internal
-import BlogSidebar from '../blog/blog-postox/blog-sidebar';
 import BlogPostCommentForm from '../forms/blog-post-comment-form';
 import BlogDetailsAuthor from './blog-details-author';
 import BlogDetailsComments from './blog-details-comments';
-import PostboxDetailsNav from './postbox-details-nav';
 import PostboxDetailsTop from './postbox-details-top';
-import social_data from '@/data/social-data';
-import comment_data from '@/data/blog-comment-data';
 import BlogShare from './BlogShare';
 
 const BlogDetailsArea = ({blog}) => {
@@ -41,13 +37,13 @@ const BlogDetailsArea = ({blog}) => {
                   <div className="row">
 
                     {
-                      blog.tags.length > 0 &&
+                      blog?.tags.length > 0 &&
 
                     <div className="col-xl-8 col-lg-6">
                       <div className="tp-postbox-details-tags tagcloud">
                         <span>Tags:</span>
                         {
-                      blog.tags.map((item,index)=>(
+                      blog?.tags?.map((item,index)=>(
                             <a href="#" key={index}>{item}</a>
                       ))
                     }

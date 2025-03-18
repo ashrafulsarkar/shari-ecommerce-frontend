@@ -3,12 +3,37 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // internal
-import social_data from '@/data/social-data';
 import { Email, Location } from '@/svg';
 import logo from '@assets/img/logo/logo.svg';
 import pay from '@assets/img/footer/footer-pay.png';
 
 const FooterTwo = () => {
+  const social_data =[
+    {
+      id: 1,
+      link: `https://www.facebook.com/`,
+      icon: "fa-brands fa-facebook-f",
+      title: "Facebook",
+    },
+    {
+      id: 2,
+      link: `https://twitter.com/intent`,
+      icon: "fa-brands fa-twitter",
+      title: "Twitter",
+    },
+    {
+      id: 3,
+      link: `https://www.linkedin.com`,
+      icon: "fa-brands fa-linkedin-in",
+      title: "LinkedIn",
+    },
+    {
+      id: 4,
+      link: `https://www.reddit.com`,
+      icon: "fa-brands fa-reddit",
+      title: "Reddit",
+    },
+  ]
   return (
     <>
       <footer>
@@ -99,7 +124,7 @@ const FooterTwo = () => {
                         </div>
                         <div className="tp-footer-social-4 tp-footer-social">
                           <h4 className="tp-footer-social-title-4">Follow Us On</h4>
-                          {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
+                          {social_data?.map(s => <a href={s.link} key={s.id} target="_blank">
                             <i className={s.icon}></i>
                           </a>
                           )}

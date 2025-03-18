@@ -10,7 +10,7 @@ async function getBlogDetails(id) {
     });
 
   if (!response.ok) {
-      return [];
+      return null;
   }
   const data = await response.json();
   return data ;
@@ -20,10 +20,12 @@ async function getBlogDetails(id) {
 const BlogDetails = async({ params }) => {
   const {id} = await params
   const result = await getBlogDetails(id);
+  const blogData = result || null;
+
   return (
     <Wrapper>
       <HeaderTwo style_2={true} />
-      <BlogDetailsArea blog={result} />
+      <BlogDetailsArea blog={blogData} />
       <Footer primary_style={true} />
     </Wrapper>
   );

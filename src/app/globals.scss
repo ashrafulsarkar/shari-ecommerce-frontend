@@ -4,11 +4,12 @@
 @import 'node_modules/react-modal-video/scss/modal-video.scss';
 @import '../../public/assets/scss/main.scss';
 
-.zoomImage div+div {
-    background: #2196F3;
-    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+.zoomImage div >  div + div {
+    background: #F5F6F8;
+    z-index: 100000 !important;
     /* position: relative !important; */
-    height: 800px !important;
+    height: 100% !important;
+    width: 100% !important;
 }
 .tp-postbox-details-thumb {
     display: flex;

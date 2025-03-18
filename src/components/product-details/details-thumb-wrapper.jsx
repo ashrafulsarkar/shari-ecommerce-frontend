@@ -49,7 +49,7 @@ const DetailsThumbWrapper = ({
                       src={activeImg}
                       width={imgWidth}
                       height={imgHeight}
-                      magnifierSize={200}
+                      magnifierSize={100}
                       zoomLevel={2}
                       enabled={true}
                     />

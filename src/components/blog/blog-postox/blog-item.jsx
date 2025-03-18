@@ -33,7 +33,7 @@ const BlogItem = ({ item = {} }) => {
           !item.audio &&
           !item.slider && (
             <div className="tp-postbox-thumb w-img">
-              <Link href={`/blog-details/${item.id}`}>
+              <Link href={`/blog-details/${item.slug}`}>
                 <Image src={item.img}  width={500} height={300} alt={item.title} />
               </Link>
             </div>

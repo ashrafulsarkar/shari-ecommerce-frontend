@@ -12,7 +12,6 @@ async function getProducts(apiUrl) {
   if (!response.ok) {
       return [];
   }
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   const data = await response.json();
   return data ;
 }
