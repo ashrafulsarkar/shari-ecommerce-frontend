@@ -81,6 +81,18 @@ const menu_data = [
     title: 'Album',
     link: '/album',
   },
+  {
+    id: 7,
+    single_link: true,
+    title: 'Hanloom',
+    link: '/brand/handloom-jamdani',
+  },
+  {
+    id: 8,
+    single_link: true,
+    title: 'Lee',
+    link: '/brand/lee',
+  },
 ]
 
 export default menu_data;
@@ -186,5 +198,17 @@ export const mobile_menu = [
     single_link: true,
     title: 'Album',
     link: '/album',
+  },
+  {
+    id: 8,
+    single_link: true,
+    title: 'Hanloom',
+    link: '/brand/handloom-jamdani',
+  },
+  {
+    id: 9,
+    single_link: true,
+    title: 'Lee',
+    link: '/brand/lee',
   },
 ]

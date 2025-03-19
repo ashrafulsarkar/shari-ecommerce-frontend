@@ -4,6 +4,7 @@ import BlogBreadcrumb from "@/components/breadcrumb/blog-breadcrumb";
 import BlogPostboxArea from "@/components/blog/blog-postox/blog-postbox-area";
 import Footer from "@/layout/footers/footer";
 import { constructApiUrl } from "@/lib/constructApiUrl";
+import HeaderFour from "@/layout/headers/header-4";
 
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default async function BlogPage({ params, searchParams }) {
 
   return (
     <Wrapper>
-      <HeaderTwo style_2={true} />
+      <HeaderFour/>
       <BlogBreadcrumb />
       <BlogPostboxArea
       query={{

@@ -49,14 +49,14 @@ const slider_setting = {
   },
 }
 
-const FashionBanner = () => {
+const FashionBanner = ({bg="grey-bg-5"}) => {
   return (
     <>
       <section className="tp-slider-area p-relative z-index-1">
         <Swiper {...slider_setting} modules={[Pagination, Navigation, EffectFade]} className="tp-slider-active-2 swiper-container">
           {slider_data.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="tp-slider-item-2 tp-slider-height-2 p-relative grey-bg-5 d-flex align-items-end">
+              <div className={`tp-slider-item-2 tp-slider-height-2 p-relative ${bg} d-flex align-items-end`}>
                 <div className="tp-slider-2-shape">
                   <Image className="tp-slider-2-shape-1" src={slider_shape} alt="slider_shape" width={'auto'} height={'auto'} />
                 </div>

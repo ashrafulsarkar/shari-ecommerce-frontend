@@ -1,0 +1,21 @@
+import BannerArea from '@/components/banner/banner-area'
+import FashionCategory from '@/components/categories/fashion-category'
+import HomeHeroSlider from '@/components/hero-banner/home-hero-slider'
+import PopularProducts from '@/components/products/fashion/popular-products'
+import Footer from '@/layout/footers/footer'
+import HeaderFour from '@/layout/headers/header-4'
+import Wrapper from '@/layout/wrapper'
+import React from 'react'
+
+export default function page() {
+  return (
+    <Wrapper>
+      <HeaderFour/>
+      <HomeHeroSlider/>
+      <FashionCategory/>
+      <PopularProducts/>
+      <BannerArea/>
+      <Footer primary_style={true} />
+    </Wrapper>
+  )
+}

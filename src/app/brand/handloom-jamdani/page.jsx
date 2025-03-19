@@ -1,7 +1,23 @@
+
+import FashionBanner from '@/components/banner/fashion-banner'
+import BeautyFeatured from '@/components/features/beauty-featured'
+import HomeHeroSlider from '@/components/hero-banner/home-hero-slider'
+import ProductArea from '@/components/products/beauty/product-area'
+import ProductBanner from '@/components/products/electronics/product-banner'
+import Footer from '@/layout/footers/footer'
+import HeaderFour from '@/layout/headers/header-4'
+import Wrapper from '@/layout/wrapper'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>page</div>
+    <Wrapper>
+      <HeaderFour/>
+      <FashionBanner bg={'khaki-bg'} />
+      <BeautyFeatured />
+      <ProductArea />
+      <ProductBanner/>
+      <Footer primary_style={true} />
+    </Wrapper>
   )
 }
