@@ -12,6 +12,7 @@ import ShopListItem from "./shop-list-item";
 import ShopTopLeft from "./shop-top-left";
 import ShopTopRight from "./shop-top-right";
 import ResetButton from "./shop-filter/reset-button";
+import PaginationShop from '@/ui/PaginationShop';
 
 const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar}) => {
   const {priceFilterValues,selectHandleFilter,currPage,setCurrPage} = otherProps;
@@ -130,7 +131,7 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
                 {products.length > 0 && (
                   <div className="tp-shop-pagination mt-20">
                     <div className="tp-pagination">
-                      <Pagination
+                      <PaginationShop
                         items={products}
                         countOfPage={12}
                         paginatedData={paginatedData}
@@ -168,7 +169,7 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
             )}
           </div>
         </div>
-      </section> 
+      </section>
     </>
   );
 };

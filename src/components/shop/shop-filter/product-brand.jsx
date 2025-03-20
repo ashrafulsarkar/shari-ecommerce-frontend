@@ -38,6 +38,7 @@ const ProductBrand = ({setCurrPage,shop_right=false}) => {
     const sortedBrands = all_brands.slice().sort((a, b) => b.products.length - a.products.length);
     const brand_items = sortedBrands.slice(0,6);
 
+
     content = brand_items.map((b) => (
       <div key={b._id} className="tp-shop-widget-brand-item">
         <a
@@ -47,7 +48,7 @@ const ProductBrand = ({setCurrPage,shop_right=false}) => {
           {
             b?.logo &&
           <Image src={b.logo} alt="brand" width={60} height={50} />
-          }
+          } <span>{b?.name}</span>
         </a>
       </div>
     ));

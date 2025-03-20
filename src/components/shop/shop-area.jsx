@@ -147,33 +147,34 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
     }
 
     if(minPrice && maxPrice){
-      product_items = product_items.filter((p) => Number(p.price) >= Number(minPrice) && 
+      product_items = product_items.filter((p) => Number(p.price) >= Number(minPrice) &&
       Number(p.price) <= Number(maxPrice))
     }
-    
+    console.log("product_items",product_items)
+
 
     content = (
       <>
 
-      <ShopContent 
+      <ShopContent
         all_products={products.data}
         products={product_items}
         otherProps={otherProps}
         shop_right={shop_right}
         hidden_sidebar={hidden_sidebar}
       />
-        
+
          <ShopFilterOffCanvas
           all_products={products.data}
           otherProps={otherProps}
-        /> 
+        />
       </>
     );
   }
 
 
 
- 
+
 
 
   return (
