@@ -2,7 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // internal
-import logo from '@assets/img/logo/logo.svg';
+// import logo from '@assets/img/logo/logo.svg';
+import logo from '@assets/img/ja-logo.png'
 import pay from '@assets/img/footer/footer-pay.png';
 import social_data from '@/data/social-data';
 import { Email, Location } from '@/svg';
@@ -20,7 +21,10 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <div className="tp-footer-widget-content">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" width={'auto'} height={'auto'} />
+                        <Image style={{
+                        width:"180px",
+                        height:'80px'
+                      }} src={logo} alt="logo" width={'auto'} height={'auto'} />
                       </Link>
                     </div>
                     <p className="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
