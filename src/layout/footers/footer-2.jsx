@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // internal
 import { Email, Location } from '@/svg';
-import logo from '@assets/img/logo/logo.svg';
+// import logo from '@assets/img/logo/logo.svg';
+import logo from '@assets/img/ja-logo.png'
 import pay from '@assets/img/footer/footer-pay.png';
 
 const FooterTwo = () => {
@@ -45,7 +46,12 @@ const FooterTwo = () => {
                   <div className="tp-footer-widget footer-col-4-1 mb-50">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image src={logo} alt="logo" width={'auto'} height={'auto'} />
+                        <Image
+                        style={{
+                          width:"180px",
+                          height:'80px'
+                        }}
+                         src={logo} alt="logo" width={'auto'} height={'auto'} />
                       </Link>
                     </div>
                     <div className="tp-footer-widget-content">
