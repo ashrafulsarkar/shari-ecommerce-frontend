@@ -8,9 +8,9 @@ import ErrorMsg from '@/components/common/error-msg';
 import { useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import { HomeThreePrdLoader } from '@/components/loader';
 
-const ProductArea = () => {
+const ProductArea = ({type}) => {
   const { data: products, isError, isLoading } =
-  useGetPopularProductByTypeQuery({ type: 'popular', query: `topSellers=true` });
+  useGetPopularProductByTypeQuery({ type: type ? type :'popular', query: `topSellers=true` });
   // decide what to render
   let content = null;
 

@@ -15,7 +15,7 @@ export default function page() {
       <HeaderFour/>
       <FashionBanner bg={'khaki-bg'} />
       <BeautyFeatured />
-      <ProductArea />
+      <ProductArea type="ja" />
       <ProductBanner/>
       <Footer primary_style={true} />
     </Wrapper>
