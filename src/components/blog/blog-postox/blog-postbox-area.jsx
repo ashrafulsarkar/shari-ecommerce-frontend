@@ -4,6 +4,7 @@ import BlogItem from "./blog-item";
 import Pagination from "@/ui/Pagination";
 
 async function getProducts(apiUrl) {
+ try {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/${apiUrl}`);
   const response = await fetch(url.toString(), {
       cache: 'no-store',
@@ -14,6 +15,12 @@ async function getProducts(apiUrl) {
   }
   const data = await response.json();
   return data ;
+ } catch (error) {
+  console.log(error)
+  return {
+
+  }
+ }
 }
 
 const BlogPostboxArea = async ({query}) => {

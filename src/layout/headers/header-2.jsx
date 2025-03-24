@@ -1,12 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 // internal
 import Menus from './header-com/menus';
-// import logo from '@assets/img/logo/logo.svg';
-import logo from '@assets/img/ja-logo.png'
 import useSticky from '@/hooks/use-sticky';
 import useCartInfo from '@/hooks/use-cart-info';
 import { openCartMini } from '@/redux/features/cartSlice';
@@ -15,6 +12,7 @@ import CartMiniSidebar from '@/components/common/cart-mini-sidebar';
 import { CartTwo, Compare, Facebook, Menu, PhoneTwo, Wishlist, Search } from '@/svg';
 import useSearchFormSubmit from '@/hooks/use-search-form-submit';
 import OffCanvas from '@/components/common/off-canvas';
+import Logo from '@/components/Logo/Logo';
 
 const HeaderTwo = ({ style_2 = false }) => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -64,22 +62,23 @@ const HeaderTwo = ({ style_2 = false }) => {
                   <div className="col-xl-2 col-lg-5 col-md-5 col-sm-4 col-6">
                     <div className="logo">
                       <Link href="/">
-                        <Image style={{
-                        width:"170px",
-                        height:'70px',
-                        marginRight:"10px"
-                      }} src={logo} alt="logo" priority width={'auto'} height={'auto'}/>
+                      <Logo/>
                       </Link>
                     </div>
                   </div>
-                  <div className="col-xl-5 d-none d-xl-block">
-                    <div className="main-menu menu-style-2">
+                  <div className="col-xl-6 d-none d-xl-block">
+                    <div className="main-menu" style={{
+                      display:"flex",
+                      justifyContent:'center',
+                      alignItems:'center',
+                      width:'100%'
+                    }} >
                       <nav className="tp-main-menu-content">
                         <Menus />
                       </nav>
                     </div>
                   </div>
-                  <div className="col-xl-5 col-lg-7 col-md-7 col-sm-8 col-6">
+                  <div className="col-xl-4 col-lg-7 col-md-7 col-sm-8 col-6">
                     <div className="tp-header-bottom-right d-flex align-items-center justify-content-end pl-30">
                       <div className="tp-header-search-2 d-none d-sm-block">
                         <form onSubmit={handleSubmit}>

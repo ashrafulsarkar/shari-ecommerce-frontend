@@ -16,6 +16,7 @@ import OffCanvas from '@/components/common/off-canvas';
 import useCartInfo from '@/hooks/use-cart-info';
 import CartMiniSidebar from '@/components/common/cart-mini-sidebar';
 import { openCartMini } from '@/redux/features/cartSlice';
+import Logo from '@/components/Logo/Logo';
 
 const HeaderFour = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -34,10 +35,7 @@ const HeaderFour = () => {
                 <div className="col-xl-2 col-lg-2 col-6">
                   <div className="logo">
                     <Link href="/">
-                      <Image className="logo-light" style={{
-                        width:"180px",
-                        height:'80px'
-                      }}  src={logo_white} alt="logo" width={'auto'} height={'auto'} />
+                      <Logo/>
                       <Image
                       style={{
                         width:"180px",

@@ -8,7 +8,7 @@ export default function SideBarLinks() {
     const pathname = usePathname()
 
   const sidebarLinks = [
-    { title: 'How To Order', href: '/how-to-order' },
+    { title: 'How To Order', href: '/faq' },
     { title: 'Billing & Payments', href: '/billing-and-payments',  },
     { title: 'Shipping & Delivery', href: '/shipping-and-delivery' },
     { title: 'Track Your Orders', href: '/track-orders' },

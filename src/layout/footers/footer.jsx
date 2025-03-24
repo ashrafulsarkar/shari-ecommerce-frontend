@@ -2,11 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // internal
-// import logo from '@assets/img/logo/logo.svg';
 import logo from '@assets/img/ja-logo.png'
 import pay from '@assets/img/footer/footer-pay.png';
-import social_data from '@/data/social-data';
 import { Email, Location } from '@/svg';
+import Logo from '@/components/Logo/Logo';
 
 const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
   return (
@@ -21,10 +20,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <div className="tp-footer-widget-content">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image style={{
-                        width:"180px",
-                        height:'80px'
-                      }} src={logo} alt="logo" width={'auto'} height={'auto'} />
+                      <Logo/>
                       </Link>
                     </div>
                     <p className="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
@@ -42,12 +38,11 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <h4 className="tp-footer-widget-title">My Account</h4>
                   <div className="tp-footer-widget-content">
                     <ul>
-                      <li><a href="#">Track Orders</a></li>
-                      <li><a href="/shipping-and-delivery">Shipping</a></li>
-                      <li><a href="#">Wishlist</a></li>
-                      <li><a href="#">My Account</a></li>
-                      <li><a href="#">Order History</a></li>
-                      <li><a href="/return-exchange">Returns</a></li>
+                      <li><Link href="/track">Track Orders</Link></li>
+                      <li><Link href="/shipping-and-delivery">Shipping</Link></li>
+                      <li><Link href="/wishlist">Wishlist</Link></li>
+                      <li><Link href="/profile">My Account</Link></li>
+                      <li><Link href="/return-exchange">Returns</Link></li>
                     </ul>
                   </div>
                 </div>
@@ -57,13 +52,12 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <h4 className="tp-footer-widget-title">Information</h4>
                   <div className="tp-footer-widget-content">
                     <ul>
-                      <li><a href="#">Our Story</a></li>
-                      <li><a href="#">Careers</a></li>
-                      <li><a href="/policy">Privacy Policy</a></li>
-                      <li><a href="/terms-conditions">Terms & Conditions</a></li>
-                      <li><a href="#">Latest News</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="/how-to-order">How to order</a></li>
+                      <li><Link href="/album">Album</Link></li>
+                      <li><Link href="/policy">Privacy Policy</Link></li>
+                      <li><Link href="/terms-conditions">Terms & Conditions</Link></li>
+                      <li><Link href="/blog">Latest News</Link></li>
+                      <li><Link href="/contact">Contact Us</Link></li>
+                      <li><Link href="/faq">Faq</Link></li>
                     </ul>
                   </div>
                 </div>

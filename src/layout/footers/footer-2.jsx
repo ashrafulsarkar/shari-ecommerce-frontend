@@ -4,9 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // internal
 import { Email, Location } from '@/svg';
-// import logo from '@assets/img/logo/logo.svg';
-import logo from '@assets/img/ja-logo.png'
 import pay from '@assets/img/footer/footer-pay.png';
+import Logo from '@/components/Logo/Logo';
 
 const FooterTwo = () => {
   const social_data =[
@@ -46,12 +45,8 @@ const FooterTwo = () => {
                   <div className="tp-footer-widget footer-col-4-1 mb-50">
                     <div className="tp-footer-logo">
                       <Link href="/">
-                        <Image
-                        style={{
-                          width:"180px",
-                          height:'80px'
-                        }}
-                         src={logo} alt="logo" width={'auto'} height={'auto'} />
+                      <Logo/>
+
                       </Link>
                     </div>
                     <div className="tp-footer-widget-content">
@@ -89,12 +84,11 @@ const FooterTwo = () => {
                     <h4 className="tp-footer-widget-title">My Account</h4>
                     <div className="tp-footer-widget-content">
                       <ul>
-                        <li><a href="#">Track Orders</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Returns</a></li>
+                      <li><Link href="/track">Track Orders</Link></li>
+                      <li><Link href="/shipping-and-delivery">Shipping</Link></li>
+                      <li><Link href="/wishlist">Wishlist</Link></li>
+                      <li><Link href="/profile">My Account</Link></li>
+                      <li><Link href="/return-exchange">Returns</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -104,12 +98,12 @@ const FooterTwo = () => {
                     <h4 className="tp-footer-widget-title">Infomation</h4>
                     <div className="tp-footer-widget-content">
                       <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Latest News</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                      <li><Link href="/album">Album</Link></li>
+                      <li><Link href="/policy">Privacy Policy</Link></li>
+                      <li><Link href="/terms-conditions">Terms & Conditions</Link></li>
+                      <li><Link href="/blog">Latest News</Link></li>
+                      <li><Link href="/contact">Contact Us</Link></li>
+                      <li><Link href="/faq">Faq</Link></li>
                       </ul>
                     </div>
                   </div>
