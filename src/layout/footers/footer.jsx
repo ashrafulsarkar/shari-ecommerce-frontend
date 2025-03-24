@@ -23,7 +23,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                       <Logo/>
                       </Link>
                     </div>
-                    <p className="tp-footer-desc">We are a team of designers and developers that create high quality WordPress</p>
+                    <p className="tp-footer-desc">Jo is your go-to destination for authentic Bangladeshi sarees;  from the timeless elegance of Dhakaiya Jamdani, and the vibrant charm of Sylheti Monipuri, to the cultural grace of Basak and Tangail sarees. Each piece at Jo is a tribute to heritage, handpicked to connect you with your roots.</p>
                     <div className="tp-footer-social">
                       {/* {social_data.map(s => <a href={s.link} key={s.id} target="_blank">
                         <i className={s.icon}></i>
