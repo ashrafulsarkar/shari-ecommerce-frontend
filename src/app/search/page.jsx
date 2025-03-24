@@ -6,7 +6,7 @@ import Footer from "@/layout/footers/footer";
 
 
 export const metadata = {
-  title: "Shofy - Search Page",
+  title: "Jo - Search",
 };
 
 export default function SearchPage() {

@@ -4,7 +4,7 @@ import Footer from "@/layout/footers/footer";
 import ProfileArea from "@/components/my-account/profile-area";
 
 export const metadata = {
-  title: "Shofy - Profile Page",
+  title: "Jo - Profile",
 };
 
 export default function ProfilePage() {

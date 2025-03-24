@@ -4,10 +4,11 @@ import BlogPostboxArea from "@/components/blog/blog-postox/blog-postbox-area";
 import Footer from "@/layout/footers/footer";
 import { constructApiUrl } from "@/lib/constructApiUrl";
 import HeaderFour from "@/layout/headers/header-4";
+import HeaderTwo from "@/layout/headers/header-2";
 
 
 export const metadata = {
-  title: "Shofy - Blog Page",
+  title: "Jo",
 };
 
 export default async function BlogPage({ params, searchParams }) {
@@ -21,8 +22,7 @@ export default async function BlogPage({ params, searchParams }) {
 
   return (
     <Wrapper>
-      <HeaderFour/>
-      <BlogBreadcrumb />
+      <HeaderTwo style_2={true} />
       <BlogPostboxArea
       query={{
         apiUrl: constructApiUrl(filters, currentPage)

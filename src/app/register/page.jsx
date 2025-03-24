@@ -5,7 +5,7 @@ import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
 import RegisterArea from "@/components/login-register/register-area";
 
 export const metadata = {
-  title: "Shofy - Register Page",
+  title: "Jo - Register",
 };
 
 export default function RegisterPage() {

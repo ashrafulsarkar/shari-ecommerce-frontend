@@ -38,7 +38,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                   <h4 className="tp-footer-widget-title">My Account</h4>
                   <div className="tp-footer-widget-content">
                     <ul>
-                      <li><Link href="/track">Track Orders</Link></li>
+                      {/* <li><Link href="/track">Track Orders</Link></li> */}
                       <li><Link href="/shipping-and-delivery">Shipping</Link></li>
                       <li><Link href="/wishlist">Wishlist</Link></li>
                       <li><Link href="/profile">My Account</Link></li>

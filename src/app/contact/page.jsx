@@ -6,7 +6,7 @@ import ContactMap from "@/components/contact/contact-map";
 import Footer from "@/layout/footers/footer";
 
 export const metadata = {
-  title: "Shofy - Contact Page",
+  title: "Jo - Contact",
 };
 
 export default function ContactPage() {

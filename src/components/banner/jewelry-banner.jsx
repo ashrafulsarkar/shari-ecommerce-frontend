@@ -18,18 +18,18 @@ import text_shape from '@assets/img/slider/4/shape/rounded-test.png';
 
 // slider data
 const slider_data = [
-  { subtitle: 'The original', title: 'Shine bright', img: slider_img_1 },
-  { subtitle: 'The original', title: 'Creative Design', img: slider_img_2 },
-  { subtitle: 'The original', title: 'Gold Plateted', img: slider_img_3 },
-  { subtitle: 'The original', title: 'Unique shapes', img: slider_img_4 },
+  { subtitle: 'Wrapped in', title: ' Soulful Heritage', img: slider_img_1 },
+  { subtitle: 'Timeless', title: ' Threads of Tradition ', img: slider_img_2 },
+  { subtitle: 'From Monipuri', title: ' Homes to Yours', img: slider_img_3 },
+  { subtitle: 'Elegance', title: ' in Every Line ', img: slider_img_4 },
 ]
 
 // slider nav data
 const slider_nav_data = [
-  { icon: nav_icon_1, title: <>Ring <br />& Earring</> },
-  { icon: nav_icon_2, title: <>Bangles & <br />Bracelets</> },
-  { icon: nav_icon_3, title: <>Drop <br /> Necklaces</> },
-  { icon: nav_icon_4, title: <>Diamond <br /> Necklaces</> },
+  { icon: nav_icon_1, title: <>Jamdani  <br />Saree</> },
+  { icon: nav_icon_2, title: <>Basak  & <br />Saree</> },
+  { icon: nav_icon_3, title: <>Monipuri  <br /> Saree</> },
+  { icon: nav_icon_4, title: <>Tangail Handloom <br /> Saree</> },
 ]
 
 const JewelryBanner = () => {
