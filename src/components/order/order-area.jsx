@@ -1,13 +1,12 @@
 'use client';
 import React, { useRef } from "react";
-import Image from "next/image";
 import dayjs from "dayjs";
 import ReactToPrint from "react-to-print";
 // internal
-import logo from "@assets/img/logo/logo.svg";
 import ErrorMsg from "@/components/common/error-msg";
 import { useGetUserOrderByIdQuery } from "@/redux/features/order/orderApi";
 import PrdDetailsLoader from "@/components/loader/prd-details-loader";
+import Logo from "../Logo/Logo";
 
 
 const OrderArea = ({ orderId }) => {
@@ -43,7 +42,7 @@ const OrderArea = ({ orderId }) => {
                       <div className="row align-items-end">
                         <div className="col-md-4 col-sm-6">
                           <div className="invoice__left">
-                            <Image src={logo} alt="logo" width={'auto'} height={'auto'}/>
+                            <Logo/>
                             <p>2879 Elk Creek Road <br /> Stone Mountain, Georgia </p>
                           </div>
                         </div>
