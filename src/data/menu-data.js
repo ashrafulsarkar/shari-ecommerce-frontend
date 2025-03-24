@@ -13,8 +13,8 @@ const menu_data = [
   {
     id: 7,
     single_link: true,
-    title: 'JA',
-    link: '/brand/ja',
+    title: 'JO',
+    link: '/brand/jo',
   },
   {
     id: 8,
@@ -132,8 +132,8 @@ export const mobile_menu = [
   {
     id: 8,
     single_link: true,
-    title: 'Ja',
-    link: '/brand/ja',
+    title: 'Jo',
+    link: '/brand/jo',
   },
   {
     id: 9,
