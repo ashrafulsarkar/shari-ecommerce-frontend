@@ -34,14 +34,14 @@ const HeaderTwo = ({ style_2 = false }) => {
                       <a href="https://www.facebook.com/exclusivejamdanisaree" target='_blank' >
                         <span>
                           <Facebook />
-                        </span> 7500k Followers
+                        </span>
                       </a>
                     </div>
                     <div className="tp-header-info-item">
-                      <a href="tel:402-763-282-46">
+                      <a href="tel:01613-634246">
                         <span>
                           <PhoneTwo />
-                        </span> +(402) 763 282 46
+                        </span> 01613-634246
                       </a>
                     </div>
                   </div>
