@@ -11,52 +11,64 @@ const menu_data = [
     link: '/',
   },
   {
-    id: 2,
-    products: true,
-    title: 'Products',
-    link: '/shop',
-    product_pages: [
-      {
-        title: 'Shop Page',
-        link: '/shop',
-        mega_menus: [
-          { title: 'Only Categories', link: '/shop-category' },
-          { title: 'Shop Grid with Sideber', link: '/shop' },
-          { title: 'Product Details', link: '/product-details' },
-        ]
-      },
-      {
-        title: 'Products',
-        link: '/product-details',
-        mega_menus: [
-          { title: 'Product Simple', link: '/product-details' },
-          { title: 'With Video', link: '/product-details-video' },
-          { title: 'With Countdown Timer', link: '/product-details-countdown' },
-          { title: 'Variations Swatches', link: '/product-details-swatches' },
-        ]
-      },
-      {
-        title: 'eCommerce',
-        link: '/shop',
-        mega_menus: [
-          { title: 'Shopping Cart', link: '/cart' },
-          { title: 'Compare', link: '/compare' },
-          { title: 'Wishlist', link: '/wishlist' },
-          { title: 'Checkout', link: '/checkout' },
-          { title: 'My account', link: '/profile' },
-        ]
-      },
-      {
-        title: 'More Pages',
-        link: '/shop',
-        mega_menus: [
-          { title: 'Login', link: '/login' },
-          { title: 'Register', link: '/register' },
-          { title: 'Forgot Password', link: '/forgot' },
-        ]
-      },
-    ]
+    id: 7,
+    single_link: true,
+    title: 'JA',
+    link: '/brand/ja',
   },
+  {
+    id: 8,
+    single_link: true,
+    title: 'Lee',
+    link: '/brand/lee',
+  },
+  // {
+  //   id: 2,
+  //   products: true,
+  //   title: 'Products',
+  //   link: '/shop',
+  //   product_pages: [
+  //     {
+  //       title: 'Shop Page',
+  //       link: '/shop',
+  //       mega_menus: [
+  //         { title: 'Only Categories', link: '/shop-category' },
+  //         { title: 'Shop Grid with Sideber', link: '/shop' },
+  //         { title: 'Product Details', link: '/product-details' },
+  //       ]
+  //     },
+  //     {
+  //       title: 'Products',
+  //       link: '/product-details',
+  //       mega_menus: [
+  //         { title: 'Product Simple', link: '/product-details' },
+  //         { title: 'With Video', link: '/product-details-video' },
+  //         { title: 'With Countdown Timer', link: '/product-details-countdown' },
+  //         { title: 'Variations Swatches', link: '/product-details-swatches' },
+  //       ]
+  //     },
+  //     {
+  //       title: 'eCommerce',
+  //       link: '/shop',
+  //       mega_menus: [
+  //         { title: 'Shopping Cart', link: '/cart' },
+  //         { title: 'Compare', link: '/compare' },
+  //         { title: 'Wishlist', link: '/wishlist' },
+  //         { title: 'Checkout', link: '/checkout' },
+  //         { title: 'My account', link: '/profile' },
+  //       ]
+  //     },
+  //     {
+  //       title: 'More Pages',
+  //       link: '/shop',
+  //       mega_menus: [
+  //         { title: 'Login', link: '/login' },
+  //         { title: 'Register', link: '/register' },
+  //         { title: 'Forgot Password', link: '/forgot' },
+  //       ]
+  //     },
+  //   ]
+  // },
   {
     id: 3,
     single_link: true,
@@ -81,18 +93,8 @@ const menu_data = [
     title: 'Album',
     link: '/album',
   },
-  {
-    id: 7,
-    single_link: true,
-    title: 'Hanloom',
-    link: '/brand/handloom-jamdani',
-  },
-  {
-    id: 8,
-    single_link: true,
-    title: 'Lee',
-    link: '/brand/lee',
-  },
+
+
 ]
 
 export default menu_data;
@@ -105,44 +107,56 @@ export const mobile_menu = [
     title: 'Home',
     link: '/',
     home_pages: [
-      {
-        img: home_1,
-        title: 'Electronics',
-        link: '/'
-      },
-      {
-        img: home_2,
-        title: 'Fashion',
-        link: '/home-2'
-      },
-      {
-        img: home_3,
-        title: 'Beauty',
-        link: '/home-3'
-      },
-      {
-        img: home_4,
-        title: 'Jewelry',
-        link: '/home-4'
-      }
+      // {
+      //   img: home_1,
+      //   title: 'Electronics',
+      //   link: '/'
+      // },
+      // {
+      //   img: home_2,
+      //   title: 'Fashion',
+      //   link: '/home-2'
+      // },
+      // {
+      //   img: home_3,
+      //   title: 'Beauty',
+      //   link: '/home-3'
+      // },
+      // {
+      //   img: home_4,
+      //   title: 'Jewelry',
+      //   link: '/home-4'
+      // }
     ]
   },
   {
-    id: 2,
-    sub_menu: true,
-    title: 'Products',
-    link: '/shop',
-    sub_menus: [
-      { title: 'Shop', link: '/shop' },
-      { title: 'Right Sidebar', link: '/shop-right-sidebar' },
-      { title: 'Hidden Sidebar', link: '/shop-hidden-sidebar' },
-      { title: 'Only Categories', link: '/shop-category' },
-      { title: 'Product Simple', link: '/product-details' },
-      { title: 'With Video', link: '/product-details-video' },
-      { title: 'With Countdown Timer', link: '/product-details-countdown' },
-      { title: 'Variations Swatches', link: '/product-details-swatches' },
-    ],
+    id: 8,
+    single_link: true,
+    title: 'Ja',
+    link: '/brand/ja',
   },
+  {
+    id: 9,
+    single_link: true,
+    title: 'Lee',
+    link: '/brand/lee',
+  },
+  // {
+  //   id: 2,
+  //   sub_menu: true,
+  //   title: 'Products',
+  //   link: '/shop',
+  //   sub_menus: [
+  //     { title: 'Shop', link: '/shop' },
+  //     { title: 'Right Sidebar', link: '/shop-right-sidebar' },
+  //     { title: 'Hidden Sidebar', link: '/shop-hidden-sidebar' },
+  //     { title: 'Only Categories', link: '/shop-category' },
+  //     { title: 'Product Simple', link: '/product-details' },
+  //     { title: 'With Video', link: '/product-details-video' },
+  //     { title: 'With Countdown Timer', link: '/product-details-countdown' },
+  //     { title: 'Variations Swatches', link: '/product-details-swatches' },
+  //   ],
+  // },
   {
     id: 3,
     sub_menu: true,
@@ -180,11 +194,11 @@ export const mobile_menu = [
     title: 'Blog',
     link: '/blog',
     sub_menus: [
-      { title: 'Blog Standard', link: '/blog' },
-      { title: 'Blog Grid', link: '/blog-grid' },
-      { title: 'Blog List', link: '/blog-list' },
-      { title: 'Blog Details', link: '/blog-details' },
-      { title: 'Blog Details Full Width', link: '/blog-details-2' },
+      // { title: 'Blog Standard', link: '/blog' },
+      // { title: 'Blog Grid', link: '/blog-grid' },
+      // { title: 'Blog List', link: '/blog-list' },
+      // { title: 'Blog Details', link: '/blog-details' },
+      // { title: 'Blog Details Full Width', link: '/blog-details-2' },
     ]
   },
   {
@@ -199,16 +213,5 @@ export const mobile_menu = [
     title: 'Album',
     link: '/album',
   },
-  {
-    id: 8,
-    single_link: true,
-    title: 'Hanloom',
-    link: '/brand/handloom-jamdani',
-  },
-  {
-    id: 9,
-    single_link: true,
-    title: 'Lee',
-    link: '/brand/lee',
-  },
+
 ]

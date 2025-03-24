@@ -11,7 +11,7 @@ const FooterTwo = () => {
   const social_data =[
     {
       id: 1,
-      link: `https://www.facebook.com/`,
+      link: `https://www.facebook.com/exclusivejamdanisaree`,
       icon: "fa-brands fa-facebook-f",
       title: "Facebook",
     },
@@ -29,9 +29,9 @@ const FooterTwo = () => {
     },
     {
       id: 4,
-      link: `https://www.reddit.com`,
-      icon: "fa-brands fa-reddit",
-      title: "Reddit",
+      link: `https://www.instagram.com/jo_preserving_heritage/`,
+      icon: "fa-brands fa-instagram",
+      title: "Instagram",
     },
   ]
   return (
@@ -52,7 +52,7 @@ const FooterTwo = () => {
                     <div className="tp-footer-widget-content">
                       <div className="tp-footer-talk mb-20">
                         <span>Got Questions? Call us</span>
-                        <h4><a href="tel:670-413-90-762">+670 413 90 762</a></h4>
+                        <h4><a href="tel:01613-634246">01613-634246</a></h4>
                       </div>
                       <div className="tp-footer-contact">
                         <div className="tp-footer-contact-item d-flex align-items-start">
@@ -62,7 +62,7 @@ const FooterTwo = () => {
                             </span>
                           </div>
                           <div className="tp-footer-contact-content">
-                            <p><a href="mailto:shofy@support.com">shofy@mail.com</a></p>
+                            <p><a href="mailto:storyofjo2020@gmail.com">storyofjo2020@gmail.com</a></p>
                           </div>
                         </div>
                         <div className="tp-footer-contact-item d-flex align-items-start">
@@ -72,7 +72,7 @@ const FooterTwo = () => {
                             </span>
                           </div>
                           <div className="tp-footer-contact-content">
-                            <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">79 Sleepy Hollow St. <br /> Jamaica, New York 1432</a></p>
+                            <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">Mirpur, Dhaka, Bangladesh, 1216</a></p>
                           </div>
                         </div>
                       </div>

@@ -6,24 +6,26 @@ export const feature_data = [
   {
     icon: <Delivery />,
     title: 'Free Delivery',
-    subtitle: 'Orders from all item'
+    subtitle: 'When you spend Tk-5000 '
   },
   {
     icon: <Refund />,
     title: 'Return & Refund',
-    subtitle: 'Money back guarantee'
+    subtitle: 'Verify Product Upon Delivery'
   },
   {
     icon: <Discount />,
-    title: 'Member Discount',
-    subtitle: 'Onevery order over $140.00'
+    title: '100% Authentic',
+    subtitle: 'Products Sourced Directly'
   },
   {
     icon: <Support />,
-    title: 'Support 24/7',
-    subtitle: 'Contact us 24 hours a day'
+    title: 'Secure Payment Method',
+    subtitle: '100% secure online payment method'
   },
 ]
+
+
 
 
 const FeatureAreaTwo = () => {
