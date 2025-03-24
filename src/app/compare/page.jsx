@@ -5,7 +5,7 @@ import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
 import CompareArea from "@/components/compare/compare-area";
 
 export const metadata = {
-  title: "Shofy - Compare Page",
+  title: "Jo - Compare",
 };
 
 export default function ComparePage() {

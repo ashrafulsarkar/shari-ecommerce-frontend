@@ -1,7 +1,7 @@
 import ForgotPasswordArea from "@/components/fortgot-password/forgot-password-area";
 
 export const metadata = {
-  title: "Shofy - Forget Password Page",
+  title: "Jo - Forget Password",
 };
 
 export default function ForgetPasswordPage({ params }) {

@@ -5,7 +5,7 @@ import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
 import CheckoutArea from "@/components/checkout/checkout-area";
 
 export const metadata = {
-  title: "Shofy - Checkout Page",
+  title: "Jo - Checkout",
 };
 
 export default function CheckoutPage() {

@@ -13,7 +13,7 @@ const menu_data = [
   {
     id: 7,
     single_link: true,
-    title: 'JO',
+    title: 'Jo',
     link: '/brand/jo',
   },
   {
