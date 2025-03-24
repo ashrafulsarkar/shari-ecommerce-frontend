@@ -3,6 +3,7 @@ import Wrapper from "@/layout/wrapper";
 import Footer from "@/layout/footers/footer";
 import BlogDetailsArea from "@/components/blog-details/blog-details-area";
 import HeaderFour from "@/layout/headers/header-4";
+import HeaderTwo from "@/layout/headers/header-2";
 
 async function getBlogDetails(id) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/blog_post/blog_details/${id}`, {
@@ -24,7 +25,7 @@ const BlogDetails = async({ params }) => {
 
   return (
     <Wrapper>
-      <HeaderFour/>
+      <HeaderTwo style_2={true} />
       <BlogDetailsArea blog={blogData} />
       <Footer primary_style={true} />
     </Wrapper>
