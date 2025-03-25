@@ -12,12 +12,15 @@ import { add_cart_product } from '@/redux/features/cartSlice';
 import { add_to_wishlist } from '@/redux/features/wishlist-slice';
 import { add_to_compare } from '@/redux/features/compareSlice';
 import { handleModalClose } from '@/redux/features/productModalSlice';
+import OffCanvasDialog from '../common/OffCanvasDialog';
+import ReviewItem from './review-item';
 
-const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBottom = false }) => {
-  const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate } = productItem || {};
+const DetailsWrapper = ({hoverClass, productItem, handleImageActive, activeImg, detailsBottom = false }) => {
+  const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate,additionalInformation } = productItem || {};
   const [ratingVal, setRatingVal] = useState(0);
-  const [textMore, setTextMore] = useState(false);
+  const [textMore, setTextMore] = useState("");
   const dispatch = useDispatch()
+  const [isOffCanvasOpen, setIsCanvasOpen] = useState(false);
 
   useEffect(() => {
     if (reviews && reviews.length > 0) {
@@ -52,24 +55,6 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
       </div>
       <h3 className="tp-product-details-title">{title}</h3>
 
-      {/* inventory details */}
-      <div className="tp-product-details-inventory d-flex align-items-center mb-10">
-        <div className="tp-product-details-stock mb-10">
-          <span>{status}</span>
-        </div>
-        <div className="tp-product-details-rating-wrapper d-flex align-items-center mb-10">
-          <div className="tp-product-details-rating">
-            <Rating allowFraction size={16} initialValue={ratingVal} readonly={true} />
-          </div>
-          <div className="tp-product-details-reviews">
-            <span>({reviews && reviews.length > 0 ? reviews.length : 0} Review)</span>
-          </div>
-        </div>
-      </div>
-      <p>{textMore ? description : `${description.substring(0, 100)}...`}
-        <span onClick={() => setTextMore(!textMore)}>{textMore ? 'See less' : 'See more'}</span>
-      </p>
-
       {/* price */}
       <div className="tp-product-details-price-wrapper mb-20">
         {discount > 0 ? (
@@ -84,11 +69,90 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
         )}
       </div>
 
+
+      {/* inventory details */}
+      <div className="tp-product-details-inventory d-flex align-items-center mb-10">
+        <div className="tp-product-details-stock mb-10">
+          <span>{status}</span>
+        </div>
+        <div className="tp-product-details-rating-wrapper d-flex align-items-center mb-10">
+          <div className="tp-product-details-rating" style={{
+            opacity:hoverClass ? 0 :1
+          }}>
+            <Rating allowFraction size={16} initialValue={ratingVal} readonly={true} />
+          </div>
+          <div className="tp-product-details-reviews" >
+            <span>({reviews && reviews.length > 0 ? reviews.length : 0} Review)</span>
+          </div>
+        </div>
+      </div>
+      {/* <p>{textMore ? description : `${description.substring(0, 100)}...`}
+        <span onClick={() => setTextMore(!textMore)}>{textMore ? 'See less' : 'See more'}</span>
+      </p> */}
+      <div>
+        <div className="p_description " style={{
+          borderTop:"1px solid #000"
+        }} onClick={() =>{
+          setTextMore("des")
+          setIsCanvasOpen(true)
+        } }
+        >
+            <span>Product Description</span>  <i className="fas fa-chevron-right"></i>
+        </div>
+        <div className="p_description mb-3" onClick={() =>{
+          setTextMore("rev")
+          setIsCanvasOpen(true)
+        } }>
+           <span>Reviews</span> <i className="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <OffCanvasDialog isOffCanvasOpen={isOffCanvasOpen} setIsCanvasOpen={setIsCanvasOpen}>
+
+            {
+              textMore ==='des' && <>
+
+
+                  <div class="product attribute description mb-3">
+                        <h4>Product Description</h4>
+                        <div class="value">{description}</div>
+                  </div>
+                  <h4>Specifications</h4>
+                  <table>
+                    <tbody>
+                      {additionalInformation?.map((item, i) => (
+                        <tr key={i}>
+                          <td>{item.key}</td>
+                          <td>{item.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  </>
+            }
+
+            {
+              textMore ==='rev' && <>
+              <h3 className="tp-product-details-review-title">Rating & Review</h3>
+                      {reviews.length === 0 && <h3 className="tp-product-details-review-title">
+                        There are no reviews yet.
+                      </h3>
+                      }
+                      {reviews.length > 0 && reviews.map(item => (
+                        <ReviewItem key={item._id} review={item} />
+                      ))}
+              </>
+            }
+      </OffCanvasDialog>
+
       {/* variations */}
-      {imageURLs.some(item => item?.color && item?.color?.name) && <div className="tp-product-details-variation">
+
+        {imageURLs.some(item => item?.color && item?.color?.name) && <div className="tp-product-details-variation">
         <div className="tp-product-details-variation-item">
           <h4 className="tp-product-details-variation-title">Color :</h4>
-          <div className="tp-product-details-variation-list">
+          <div className={`tp-product-details-variation-list`} style={{
+            opacity:hoverClass ? 0 :1
+          }} >
             {imageURLs.map((item, i) => (
               <button onClick={() => handleImageActive(item)} key={i} type="button"
                 className={`color tp-color-variation-btn ${item.img === activeImg ? "active" : ""}`} >
@@ -105,7 +169,9 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
             ))}
           </div>
         </div>
-      </div>}
+      </div>
+      }
+
 
       {/* if ProductDetailsCountdown true start */}
       {offerDate?.endDate && <ProductDetailsCountdown offerExpiryTime={offerDate?.endDate} />}
@@ -114,9 +180,11 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
       {/* actions */}
       <div className="tp-product-details-action-wrapper">
         <h3 className="tp-product-details-action-title">Quantity</h3>
-        <div className="tp-product-details-action-item-wrapper d-sm-flex align-items-center">
+        <div className="tp-product-details-action-item-wrapper d-sm-flex align-items-center" >
           {/* product quantity */}
-          <ProductQuantity />
+
+          <ProductQuantity hoverClass={hoverClass}  />
+
           {/* product quantity */}
           <div className="tp-product-details-add-to-cart mb-15 w-100">
             <button onClick={() => handleAddProduct(productItem)} disabled={status === 'out-of-stock'} className="tp-product-details-add-to-cart-btn w-100">Add To Cart</button>
@@ -127,20 +195,31 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
         </Link>
       </div>
       {/* product-details-action-sm start */}
-      <div className="tp-product-details-action-sm">
+
+
+      <div className="tp-product-details-action-sm" style={{
+            opacity:hoverClass ? 0 :1
+          }}>
         <button disabled={status === 'out-of-stock'} onClick={() => handleCompareProduct(productItem)} type="button" className="tp-product-details-action-sm-btn">
+
           <CompareTwo />
+
           Compare
         </button>
         <button disabled={status === 'out-of-stock'} onClick={() => handleWishlistProduct(productItem)} type="button" className="tp-product-details-action-sm-btn">
+
           <WishlistTwo />
+
           Add Wishlist
         </button>
         <button type="button" className="tp-product-details-action-sm-btn">
+
           <AskQuestion />
+
           Ask a question
         </button>
       </div>
+
       {/* product-details-action-sm end */}
 
       {detailsBottom && <DetailsBottomInfo category={category?.name} sku={sku} tag={tags[0]} />}

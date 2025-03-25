@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import PopupVideo from "../common/popup-video";
 import ImageZoom from "react-image-magnifier-zoom";
+import ImageMagnifierSide from "../ImageMagnifierSide/ImageMagnifierSide";
 
 const DetailsThumbWrapper = ({
   imageURLs,
@@ -40,11 +41,23 @@ const DetailsThumbWrapper = ({
         </nav>
         <div className="tab-content m-img">
           <div className="tab-pane fade show active">
-            <div className="tp-product-details-nav-main-thumb p-relative zoomImage " onMouseEnter={()=>setHoverClass(true)}
-            onMouseLeave={()=>setHoverClass(false)}
+            <div className="tp-product-details-nav-main-thumb p-relative zoomImage "
+            //  onMouseEnter={()=>setHoverClass(true)}
+            // onMouseLeave={()=>setHoverClass(false)}
 
             >
-               <ImageZoom
+              <ImageMagnifierSide
+                src={activeImg}
+                alt="Product description"
+                width={imgWidth}
+                height={imgHeight}
+                previewWidth={350}
+                previewHeight={350}
+                zoomLevel={2}
+                setHoverClass={setHoverClass}
+              />
+
+               {/* <ImageZoom
                className="zoomImage"
                       src={activeImg}
                       width={imgWidth}
@@ -52,7 +65,7 @@ const DetailsThumbWrapper = ({
                       magnifierSize={100}
                       zoomLevel={2}
                       enabled={true}
-                    />
+                    /> */}
               {/* <Image
                 src={activeImg}
                 alt="product img"

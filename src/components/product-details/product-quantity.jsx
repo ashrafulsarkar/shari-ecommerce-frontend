@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Minus, Plus } from '@/svg';
 import { decrement, increment } from '@/redux/features/cartSlice';
 
-const ProductQuantity = () => {
+const ProductQuantity = ({hoverClass}) => {
   const { orderQuantity } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   // handleIncrease
@@ -18,7 +18,9 @@ const ProductQuantity = () => {
   };
   return (
     <div className="tp-product-details-quantity">
-    <div className="tp-product-quantity mb-15 mr-15">
+    <div className="tp-product-quantity mb-15 mr-15" style={{
+            opacity:hoverClass ? 0 :1
+          }}>
       <span className="tp-cart-minus" onClick={handleDecrease}>
         <Minus />
       </span>
