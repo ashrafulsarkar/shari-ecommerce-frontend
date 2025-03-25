@@ -27,9 +27,9 @@ export default function HomePageFour() {
       <JewelryAbout/>
       <PopularProducts/>
       <ProductArea/>
-      <JewelryCollectionBanner/>
+      {/* <JewelryCollectionBanner/> */}
       <BestSellerPrd/>
-      <JewelryBrands/>
+      {/* <JewelryBrands/> */}
       {/* <InstagramAreaFour/> */}
       <FooterTwo/>
     </Wrapper>

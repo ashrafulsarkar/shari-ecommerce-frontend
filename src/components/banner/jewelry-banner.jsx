@@ -4,10 +4,16 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import Link from 'next/link';
 // internal
-import slider_img_1 from '@assets/img/slider/4/slider-1.png';
-import slider_img_2 from '@assets/img/slider/4/slider-2.png';
-import slider_img_3 from '@assets/img/slider/4/slider-3.png';
-import slider_img_4 from '@assets/img/slider/4/slider-4.png';
+// import slider_img_1 from '@assets/img/slider/4/slider-1.png';
+// import slider_img_2 from '@assets/img/slider/4/slider-2.png';
+// import slider_img_3 from '@assets/img/slider/4/slider-3.png';
+// import slider_img_4 from '@assets/img/slider/4/slider-4.png';
+
+import slider_img_1 from '@assets/img/slider/4/1-u.png';
+import slider_img_2 from '@assets/img/slider/4/2-u.png';
+import slider_img_3 from '@assets/img/slider/4/3-u.png';
+import slider_img_4 from '@assets/img/slider/4/4-u.png';
+
 // nav icon
 import nav_icon_1 from '@assets/img/slider/4/nav/icon-1.png';
 import nav_icon_2 from '@assets/img/slider/4/nav/icon-2.png';
@@ -27,7 +33,7 @@ const slider_data = [
 // slider nav data
 const slider_nav_data = [
   { icon: nav_icon_1, title: <>Jamdani  <br />Saree</> },
-  { icon: nav_icon_2, title: <>Basak  & <br />Saree</> },
+  { icon: nav_icon_2, title: <>Basak  <br />Saree</> },
   { icon: nav_icon_3, title: <>Monipuri  <br /> Saree</> },
   { icon: nav_icon_4, title: <>Tangail Handloom <br /> Saree</> },
 ]
