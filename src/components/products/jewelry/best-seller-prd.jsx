@@ -71,7 +71,7 @@ const BestSellerPrd = () => {
   }
   return (
     <>
-      <section className="tp-best-area pt-115">
+      <section className="tp-best-area ">
         <div className="container">
             <div className="row">
               <div className="col-xl-12">
