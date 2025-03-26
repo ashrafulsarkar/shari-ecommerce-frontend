@@ -9,7 +9,7 @@ import RelatedProducts from "./related-products";
 const ProductDetailsContent = ({ productItem }) => {
   const { _id, img, imageURLs, videoId,status } = productItem || {};
   const [activeImg, setActiveImg] = useState(img);
-  const [hoverClass, setHoverClass] = useState("");
+  const [hoverClass, setHoverClass] = useState(false);
   const dispatch = useDispatch();
   // active image change when img change
   useEffect(() => {
@@ -41,16 +41,17 @@ const ProductDetailsContent = ({ productItem }) => {
             </div>
             <div className="col-xl-5 col-lg-6">
               {/* product-details-wrapper start */}
-              {
-                !hoverClass &&
+
+
 
               <DetailsWrapper
+              hoverClass={hoverClass}
                 productItem={productItem}
                 handleImageActive={handleImageActive}
                 activeImg={activeImg}
                 detailsBottom={true}
               />
-            }
+
               {/* product-details-wrapper end */}
             </div>
           </div>
@@ -58,7 +59,7 @@ const ProductDetailsContent = ({ productItem }) => {
       </div>
 
       {/* product details description */}
-      <div className="tp-product-details-bottom pb-140">
+      {/* <div className="tp-product-details-bottom pb-140">
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
@@ -66,11 +67,11 @@ const ProductDetailsContent = ({ productItem }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* product details description */}
 
       {/* related products start */}
-      <section className="tp-related-product pt-95 pb-50">
+      <section className="tp-related-product  pb-50">
         <div className="container">
           <div className="row">
             <div className="tp-section-title-wrapper-6 text-center mb-40">
