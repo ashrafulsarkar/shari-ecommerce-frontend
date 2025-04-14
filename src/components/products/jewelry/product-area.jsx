@@ -1,19 +1,26 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import ErrorMsg from '@/components/common/error-msg';
-import { useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
+import { useGetAllTypesQuery, useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import ProductItem from './product-item';
 import { HomeTwoPrdLoader } from '@/components/loader';
 
-// tabs
-const tabs = ["All Collection", "Bracelets", "Necklaces", "Earrings"];
 
 const ProductArea = () => {
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+  const [activeTab, setActiveTab] = useState("All Collection");
   const activeRef = useRef(null);
   const marker = useRef(null);
    const { data: products, isError, isLoading } =
     useGetPopularProductByTypeQuery({ type: 'typeFeatureProduct', query: `new=true` });
+
+   const { data: alltypes, isError:typeIsError, isLoading:typeIsloading } =
+   useGetAllTypesQuery();
+
+   const typeTabs = alltypes?.result?.map(type => type.name) || [];
+   const tabs = ["All Collection", ...typeTabs];
+
+
+
   // handleActiveTab
   useEffect(() => {
     // Position the marker after the active tab has been updated
@@ -46,15 +53,8 @@ const ProductArea = () => {
     let product_items = products.data;
     if (activeTab === 'All Collection') {
       product_items = products.data
-    }
-    else if (activeTab === 'Bracelets') {
-      product_items = products.data.filter(p => p.category.name === 'Bracelets')
-    } else if (activeTab === 'Necklaces') {
-      product_items = products.data.filter(p => p.category.name === 'Necklaces')
-    } else if (activeTab === 'Earrings') {
-      product_items = products.data.filter(p => p.category.name === 'Earrings')
-    } else {
-      product_items = products.data;
+    } else{
+      product_items = products.data.filter(p => p.type?.name === activeTab);
     }
     content = <>
       <div className="row align-items-end">

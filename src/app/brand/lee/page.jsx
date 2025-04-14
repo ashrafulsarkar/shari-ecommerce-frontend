@@ -13,7 +13,7 @@ export default function page() {
       <HeaderFour/>
       <HomeHeroSlider/>
       <FashionCategory/>
-      <PopularProducts type="lee" />
+      <PopularProducts type="typeTopSeller" />
       <BannerArea/>
       <Footer primary_style={true} />
     </Wrapper>

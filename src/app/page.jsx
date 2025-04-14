@@ -25,10 +25,11 @@ export default function HomePageFour() {
       <FeatureAreaThree />
       <JewelryShopBanner/>
       <JewelryAbout/>
-      <PopularProducts/>
+      <PopularProducts title="Shop Trending Collection" />
       <ProductArea/>
       {/* <JewelryCollectionBanner/> */}
-      <BestSellerPrd/>
+      <BestSellerPrd title="Jo" subtitle="" type="popular" />
+      <BestSellerPrd title="Lee" subtitle="" type="typeTopSeller" />
       {/* <JewelryBrands/> */}
       {/* <InstagramAreaFour/> */}
       <FooterTwo/>

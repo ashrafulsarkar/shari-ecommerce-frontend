@@ -38,9 +38,9 @@ const slider_setting = {
 		}
 }
 
-const BestSellerPrd = () => {
+const BestSellerPrd = ({type="",title="Best Seller This Week’s",subtitle="Top Sellers In Dress for You"}) => {
     const { data: products, isError, isLoading } =
-    useGetPopularProductByTypeQuery({ type: 'typeTopSeller', query: `new=true` });
+    useGetPopularProductByTypeQuery({ type: type ? type :'typeTopSeller', query: `new=true` });
   // decide what to render
   let content = null;
 
@@ -74,12 +74,19 @@ const BestSellerPrd = () => {
       <section className="tp-best-area ">
         <div className="container">
             <div className="row">
-              <div className="col-xl-12">
+              {/* <div className="col-xl-12">
                   <div className="tp-section-title-wrapper-4 mb-50 text-center">
-                    <span className="tp-section-title-pre-4">Best Seller This Week’s</span>
-                    <h3 className="tp-section-title-4">Top Sellers In Dress for You</h3>
+                    <span className="tp-section-title-pre-4">{title}</span>
+                    <h3 className="tp-section-title-4">{subtitle}</h3>
                   </div>
+              </div> */}
+              <div className="col-xl-12">
+              <div className="tp-section-title-wrapper-4 mb-60 text-center">
+                <span className="tp-section-title-pre-4">{subtitle}</span>
+                <h3 className="tp-section-title-4">{title}</h3>
               </div>
+            </div>
+
             </div>
             <div className="row">
               <div className="col-xl-12">
