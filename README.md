@@ -1,3 +1,0 @@
-boishakh-collection
-eid-collection
-tranding
