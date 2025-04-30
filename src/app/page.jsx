@@ -14,7 +14,7 @@ import FooterTwo from '@/layout/footers/footer-2';
 
 
 export const metadata = {
-  title: "Jo",
+  title: "Jo - The Story of Handloom Jamdani",
 };
 
 export default function HomePageFour() {
