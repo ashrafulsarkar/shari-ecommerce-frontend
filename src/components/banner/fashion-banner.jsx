@@ -16,20 +16,20 @@ import thumb_shape_2 from '@assets/img/slider/2/shape/shape-3.png';
 const slider_data = [
   {
     id: 1,
-    subtitle: 'New Arrivals 2023',
-    title: 'The Clothing Collection',
+    subtitle: 'Wrapped In Sharee',
+    title: ' Rooted In Culture.',
     img: slider_img_1,
   },
   {
     id: 2,
-    subtitle: 'Best Selling 2023',
-    title: 'The Summer Collection',
+    subtitle: 'From Looms Of Bengal',
+    title: ' To Hearts Worldwide',
     img: slider_img_2,
   },
   {
     id: 3,
-    subtitle: 'Winter Has Arrived',
-    title: 'Amazing New designs',
+    subtitle: 'Where Each Motif',
+    title: ' Carries A Century Of Stories',
     img: slider_img_3,
   },
 ]

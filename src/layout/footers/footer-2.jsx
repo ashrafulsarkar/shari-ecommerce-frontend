@@ -33,6 +33,7 @@ const FooterTwo = () => {
       icon: "fa-brands fa-instagram",
       title: "Instagram",
     },
+
   ]
   return (
     <>

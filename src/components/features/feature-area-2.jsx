@@ -1,27 +1,32 @@
 'use client';
 import React from 'react';
-import { Delivery, Discount, Refund, Support } from '@/svg';
+import { CartTwo, Delivery, Discount, Refund, Support } from '@/svg';
 
 export const feature_data = [
   {
     icon: <Delivery />,
-    title: 'Free Delivery',
-    subtitle: 'When you spend Tk-5000 '
+    title: 'Inside Dhaka',
+    subtitle: 'Within 3 Days, Cash on  Delivery' ,
+    subtitle1: ' '
   },
   {
-    icon: <Refund />,
-    title: 'Return & Refund',
-    subtitle: 'Verify Product Upon Delivery'
+    icon: <Delivery />,
+    title: 'Outside Dhaka',
+    subtitle: 'Within 5 Days Advanced Payment.',
+    subtitle1:""
   },
   {
-    icon: <Discount />,
-    title: '100% Authentic',
-    subtitle: 'Products Sourced Directly'
+    icon: <><svg xmlns="http://www.w3.org/2000/svg" width="50"
+      height="50" viewBox="0 0 33 27" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></>,
+    title: 'Shipping Charge',
+    subtitle: 'For Jo, Delivery is Free',
+    subtitle1: 'For Lee, Depends on the product’s Weight',
   },
   {
     icon: <Support />,
-    title: 'Secure Payment Method',
-    subtitle: '100% secure online payment method'
+    title: 'Chat With Us',
+    subtitle: 'We offer business-hour chat support',
+    subtitle1:""
   },
 ]
 
@@ -45,6 +50,7 @@ const FeatureAreaTwo = () => {
                   <div className="tp-feature-content-2">
                     <h3 className="tp-feature-title-2">{item.title}</h3>
                     <p>{item.subtitle}</p>
+                    <p>{item.subtitle1}</p>
                   </div>
                 </div>
               </div>

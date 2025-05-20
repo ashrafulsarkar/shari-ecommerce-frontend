@@ -8,7 +8,7 @@ import ErrorMsg from '@/components/common/error-msg';
 import { useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import { HomeThreePrdLoader } from '@/components/loader';
 
-const ProductArea = ({type}) => {
+const ProductArea = ({type,isOff=true}) => {
   const { data: products, isError, isLoading } =
   useGetPopularProductByTypeQuery({ type: type ? type :'popular', query: `topSellers=true` });
   // decide what to render
@@ -37,6 +37,9 @@ const ProductArea = ({type}) => {
     <>
       <section className="tp-product-area grey-bg-8 pt-95 pb-80">
         <div className="container">
+          {
+            isOff &&
+
           <div className="row align-items-end">
             <div className="col-lg-6 col-md-8">
               <div className="tp-section-title-wrapper-3 mb-55">
@@ -53,6 +56,7 @@ const ProductArea = ({type}) => {
               </div>
             </div>
           </div>
+           }
           <div className="row">
             {content}
           </div>

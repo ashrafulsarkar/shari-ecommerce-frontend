@@ -5,6 +5,7 @@ import HomeHeroSlider from '@/components/hero-banner/home-hero-slider'
 import ProductArea from '@/components/products/beauty/product-area'
 import ProductBanner from '@/components/products/electronics/product-banner'
 import Footer from '@/layout/footers/footer'
+import FooterTwo from '@/layout/footers/footer-2'
 import HeaderFour from '@/layout/headers/header-4'
 import Wrapper from '@/layout/wrapper'
 import React from 'react'
@@ -14,10 +15,10 @@ export default function page() {
     <Wrapper>
       <HeaderFour/>
       <FashionBanner bg={'khaki-bg'} />
-      <BeautyFeatured />
-      <ProductArea type="popular" />
-      <ProductBanner/>
-      <Footer primary_style={true} />
+      {/* <BeautyFeatured /> */}
+      <ProductArea type="popular" isOff={false} />
+      {/* <ProductBanner/> */}
+      <FooterTwo />
     </Wrapper>
   )
 }

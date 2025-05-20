@@ -3,8 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // internal
-import about_img from '@assets/img/about/about-1.jpg';
-import about_thumb from '@assets/img/about/about-2.jpg';
+import about_img from '@assets/pic/Layer-01.png';
+import about_thumb from '@assets/pic/g100.png';
 import { ArrowRightLong } from '@/svg';
 
 const JewelryAbout = () => {

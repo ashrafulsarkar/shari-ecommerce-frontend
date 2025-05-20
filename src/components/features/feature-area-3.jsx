@@ -19,6 +19,7 @@ const FeatureAreaThree = () => {
                 <div className="tp-feature-content-2">
                   <h3 className="tp-feature-title-2">{item.title}</h3>
                   <p>{item.subtitle}</p>
+                  <p>{item.subtitle1}</p>
                 </div>
               </div>
               ))}

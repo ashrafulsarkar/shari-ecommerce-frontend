@@ -7,6 +7,7 @@ import { useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux
 import ProductSliderItem from './product-slider-item';
 import ErrorMsg from '@/components/common/error-msg';
 import { HomeTwoPopularPrdLoader } from '@/components/loader';
+import ProductItem from './product-item';
 
 
 // slider setting
@@ -68,7 +69,8 @@ const PopularProducts = ({title="Popular on the Shofy store.",sub_title=""}) => 
       <Swiper {...slider_setting} modules={[Scrollbar, Pagination]} className="tp-category-slider-active-4 swiper-container mb-70">
         {product_items.map(item => (
           <SwiperSlide key={item._id}>
-            <ProductSliderItem product={item} />
+            {/* <ProductSliderItem product={item} /> */}
+            <ProductItem product={item} />
           </SwiperSlide>
         ))}
       </Swiper>
