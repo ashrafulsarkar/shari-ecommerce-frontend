@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 // internal
@@ -7,6 +7,8 @@ import { Email, Location } from '@/svg';
 // import pay from '@assets/img/footer/footer-pay.png';
 import pay from '@assets/pic/payment.png';
 import Logo from '@/components/Logo/Logo';
+import { api } from '@/env';
+import axios from 'axios';
 
 const FooterTwo = () => {
   const social_data =[
@@ -17,18 +19,6 @@ const FooterTwo = () => {
       title: "Facebook",
     },
     {
-      id: 2,
-      link: `https://twitter.com/intent`,
-      icon: "fa-brands fa-twitter",
-      title: "Twitter",
-    },
-    {
-      id: 3,
-      link: `https://www.linkedin.com`,
-      icon: "fa-brands fa-linkedin-in",
-      title: "LinkedIn",
-    },
-    {
       id: 4,
       link: `https://www.instagram.com/jo_preserving_heritage/`,
       icon: "fa-brands fa-instagram",
@@ -36,6 +26,33 @@ const FooterTwo = () => {
     },
 
   ]
+
+  const [message, setMessage] = useState('');
+  const emailRef = useRef(null);
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  const email = emailRef.current?.value;
+
+  if (!email) {
+    setMessage('Please enter an email address.');
+    return;
+  }
+
+  try {
+    const res = await axios.post(`${api.baseUrl}/api/subscribe`, { email });
+
+    // Access the response data directly
+    setMessage('Subscription successful!');
+    emailRef.current.value = '';
+  } catch (error) {
+    const msg =
+      error?.response?.data?.message || 'Subscription failed. Please try again.';
+    setMessage(msg);
+  }
+};
+
+
   return (
     <>
       <footer>
@@ -117,12 +134,13 @@ const FooterTwo = () => {
                       <div className="tp-footer-subscribe">
                         <p>Our conversation is just getting started</p>
                         <div className="tp-footer-subscribe-form mb-30">
-                          <form action="#">
+                          <form onSubmit={handleSubmit}>
                             <div className="tp-footer-subscribe-input">
-                              <input type="email" placeholder="Enter Your Email" />
+                              <input ref={emailRef} type="email" placeholder="Enter Your Email" />
                               <button type="submit">Subscribe</button>
                             </div>
                           </form>
+                          {message && <p>{message}</p>}
                         </div>
                         <div className="tp-footer-social-4 tp-footer-social">
                           <h4 className="tp-footer-social-title-4">Follow Us On</h4>

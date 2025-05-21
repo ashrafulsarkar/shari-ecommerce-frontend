@@ -14,7 +14,7 @@ import ShopTopRight from "./shop-top-right";
 import ResetButton from "./shop-filter/reset-button";
 import PaginationShop from '@/ui/PaginationShop';
 
-const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar}) => {
+const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar,isBrand=false,brandName=""}) => {
   const {priceFilterValues,selectHandleFilter,currPage,setCurrPage} = otherProps;
   const {setPriceValue} = priceFilterValues || {};
   const [filteredRows, setFilteredRows] = useState(products);
@@ -41,21 +41,22 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
                 <div className="tp-shop-sidebar mr-10">
                   {/* filter */}
                   <PriceFilter
+                  isBrand={isBrand} brandName={brandName}
                     priceFilterValues={priceFilterValues}
                     maxPrice={maxPrice}
                   />
                   {/* status */}
-                  <StatusFilter setCurrPage={setCurrPage} />
+                  <StatusFilter isBrand={isBrand} brandName={brandName} setCurrPage={setCurrPage} />
                   {/* categories */}
-                  <CategoryFilter setCurrPage={setCurrPage} />
+                  <CategoryFilter isBrand={isBrand} brandName={brandName} setCurrPage={setCurrPage} />
                   {/* color */}
-                  <ColorFilter setCurrPage={setCurrPage} />
+                  {/* <ColorFilter setCurrPage={setCurrPage} /> */}
                   {/* product rating */}
                   <TopRatedProducts />
                   {/* brand */}
-                  <ProductBrand setCurrPage={setCurrPage} />
+                  <ProductBrand setCurrPage={setCurrPage} isBrand={isBrand} brandName={brandName} />
                   {/* reset filter */}
-                  <ResetButton setPriceValues={setPriceValue} maxPrice={maxPrice} />
+                  <ResetButton isBrand={isBrand} brandName={brandName} setPriceValues={setPriceValue} maxPrice={maxPrice} />
                 </div>
               </div>
             )}
@@ -157,7 +158,7 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
                   {/* categories */}
                   <CategoryFilter setCurrPage={setCurrPage} />
                   {/* color */}
-                  <ColorFilter setCurrPage={setCurrPage} />
+                  {/* <ColorFilter setCurrPage={setCurrPage} /> */}
                   {/* product rating */}
                   <TopRatedProducts />
                   {/* brand */}

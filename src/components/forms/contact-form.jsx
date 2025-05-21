@@ -6,6 +6,9 @@ import * as Yup from "yup";
 // internal
 import ErrorMsg from "../common/error-msg";
 import { notifySuccess } from "@/utils/toast";
+import { api } from "@/env";
+import axios from "axios";
+import { set } from "js-cookie";
 
 // schema
 const schema = Yup.object().shape({
@@ -13,24 +16,45 @@ const schema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   subject: Yup.string().required().label("Subject"),
   message: Yup.string().required().label("Subject"),
-  remember: Yup.bool()
-    .oneOf([true], "You must agree to the terms and conditions to proceed.")
-    .label("Terms and Conditions"),
+  // remember: Yup.bool()
+  //   .oneOf([true], "You must agree to the terms and conditions to proceed.")
+  //   .label("Terms and Conditions"),
 });
 
 const ContactForm = () => {
+  const [message, setMessage] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
 
     // react hook form
     const {register,handleSubmit,formState: { errors },reset} = useForm({
       resolver: yupResolver(schema),
     });
     // on submit
-    const onSubmit = (data) => {
-      if(data){
-        notifySuccess('Message sent successfully!');
-      }
-
+    const onSubmit = async (data) => {
+      console.log(data)
+      setLoading(true);
+      try {
+      await axios.post(`${api.baseUrl}/api/contact`, {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message,
+      });
+      setLoading(false);
+      setMessage("Message sent successfully!");
       reset();
+      setError("");
+    } catch (error) {
+      const msg =
+        error?.response?.data?.message || "Something went wrong. Please try again.";
+      // notifyError(msg);
+      setError(msg);
+      console.log(msg)
+      setLoading(false);
+      setMessage("");
+    }
+
     };
 
   return (
@@ -73,16 +97,20 @@ const ContactForm = () => {
           <ErrorMsg msg={errors.message?.message} />
         </div>
       </div>
-      <div className="tp-contact-suggetions mb-20">
+      {/* <div className="tp-contact-suggetions mb-20">
         <div className="tp-contact-remeber">
           <input  {...register("remember", {required: `Terms and Conditions is required!`})} name="remember" id="remember" type="checkbox" />
           <label htmlFor="remember">Save my name, email, and website in this browser for the next time I comment.</label>
           <ErrorMsg msg={errors.remember?.message} />
         </div>
-      </div>
+      </div> */}
       <div className="tp-contact-btn">
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </div>
+      {message && <p className="success">{message}</p>}
+      {error && <p className="error">{error}</p>}
     </form>
   );
 };

@@ -4,15 +4,10 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import Link from 'next/link';
 // internal
-// import slider_img_1 from '@assets/img/slider/4/slider-1.png';
-// import slider_img_2 from '@assets/img/slider/4/slider-2.png';
-// import slider_img_3 from '@assets/img/slider/4/slider-3.png';
-// import slider_img_4 from '@assets/img/slider/4/slider-4.png';
-
-import slider_img_1 from '@assets/img/slider/4/1-u.png';
-import slider_img_2 from '@assets/img/slider/4/2-u.png';
-import slider_img_3 from '@assets/img/slider/4/3-u.png';
-import slider_img_4 from '@assets/img/slider/4/4-u.png';
+import slider_img_1 from '@assets/fpic/Home_01.png';
+import slider_img_2 from '@assets/fpic/Home_02.png';
+import slider_img_3 from '@assets/fpic/Home_03.png';
+import slider_img_4 from '@assets/fpic/Home_4.png';
 
 // nav icon
 import nav_icon_1 from '@assets/img/slider/4/nav/icon-1.png';
@@ -93,14 +88,14 @@ const JewelryBanner = () => {
 
               <div className="tp-slider-video-wrapper">
                 {/* <!-- video --> */}
-                <div className={`tp-slider-video transition-3 ${play?'full-width':''}`}>
+                {/* <div className={`tp-slider-video transition-3 ${play?'full-width':''}`}>
 
                   <video loop>
                     <source type="video/mp4" src="https://html.hixstudio.net/videos/shofy/jewellery-1.mp4" />
                   </video>
-                </div>
+                </div> */}
                 {/* <!-- video button --> */}
-                <div className="tp-slider-play">
+                {/* <div className="tp-slider-play">
 
                   <button onClick={handleToggle} type="button" className={`tp-slider-play-btn tp-slider-video-move-btn tp-video-toggle-btn ${play?'hide':''}`}>
                     <Image className="text-shape" src={text_shape} alt="text shape" priority  width={'auto'} height={'auto'}/>
@@ -111,7 +106,7 @@ const JewelryBanner = () => {
                       <Pause/>
                     </span>
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="container">

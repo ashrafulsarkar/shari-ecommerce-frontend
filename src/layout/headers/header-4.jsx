@@ -17,6 +17,7 @@ import useCartInfo from '@/hooks/use-cart-info';
 import CartMiniSidebar from '@/components/common/cart-mini-sidebar';
 import { openCartMini } from '@/redux/features/cartSlice';
 import Logo from '@/components/Logo/Logo';
+import HeaderTopRightUser from './header-com/header-profile';
 
 const HeaderFour = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -76,6 +77,9 @@ const HeaderFour = () => {
                       <button onClick={() => setIsCanvasOpen(true)} type="button" className="tp-offcanvas-open-btn">
                         <Menu />
                       </button>
+                    </div>
+                    <div>
+                      <HeaderTopRightUser/>
                     </div>
                   </div>
                 </div>

@@ -2,12 +2,12 @@
 import InputRange from "@/ui/input-range";
 import { useRouter } from "next/navigation";
 
-const PriceFilter = ({ priceFilterValues,maxPrice }) => {
+const PriceFilter = ({ priceFilterValues,maxPrice,isBrand=false,brandName="" }) => {
   const { priceValue,handleChanges } = priceFilterValues;
   const router = useRouter();
 
   const handlePriceFilter = () => {
-    router.push(`/shop?minPrice=${priceValue[0]}&maxPrice=${priceValue[1]}`);
+    router.push(`/${isBrand? brandName:'shop'}?minPrice=${priceValue[0]}&maxPrice=${priceValue[1]}`);
   };
   return (
     <>
@@ -27,7 +27,7 @@ const PriceFilter = ({ priceFilterValues,maxPrice }) => {
             </div>
             <div className="tp-shop-widget-filter-info d-flex align-items-center justify-content-between">
               <span className="input-range">
-                ${priceValue[0]} - ${priceValue[1]}
+                ৳{priceValue[0]} - ৳{priceValue[1]}
               </span>
               <button onClick={handlePriceFilter} className="tp-shop-widget-filter-btn" type="button">
                 Filter

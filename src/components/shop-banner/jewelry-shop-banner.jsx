@@ -3,10 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 // internal
 import { ArrowRightLong } from '@/svg';
-import banner_bg_1 from '@assets/pic/G-01.png';
-import banner_bg_2 from '@assets/pic/g-4.png';
-import banner_bg_3 from '@assets/pic/G-7.png';
-import banner_bg_4 from '@assets/pic/G-9.png';
+import banner_bg_1 from '@assets/fpic/Tranding_.png';
+import banner_bg_2 from '@assets/fpic/New_arrivals.png';
+import banner_bg_3 from '@assets/fpic/PopularChoice.png';
+import banner_bg_4 from '@assets/fpic/EidCollection_01.png';
 
 // BannerItem
 function BannerItem({ cls,clsitem="", bg_clr, bg, content, title,link,isBtn=false}) {
@@ -47,7 +47,7 @@ const JewelryShopBanner = () => {
 
                 </div>
                 <div className="col-md-6 col-sm-6">
-                <BannerItem cls="has-brown sm-banner" clsitem='eid_collection_part' bg_clr="F8F1E6" bg={banner_bg_3} content="POPULAR CHOICE " isBtn={true} link="/shop?category=eid-collection" title="" />
+                <BannerItem cls="has-brown sm-banner" clsitem='eid_collection_part' bg_clr="F8F1E6" bg={banner_bg_3} content="POPULAR CHOICE " isBtn={true} link="/shop?category=popular-choice" title="" />
                 </div>
               </div>
             </div>
@@ -58,10 +58,10 @@ const JewelryShopBanner = () => {
                 <div className="tp-banner-full-content">
                   {/* <span>Collection</span> */}
                   <h3 className="tp-banner-full-title">
-                    <Link href="/shop?category=boishakh-collection">EID COLLECTION </Link>
+                    <Link href="/shop?category=eid-collection">EID COLLECTION </Link>
                   </h3>
                   <div className="tp-banner-full-btn">
-                    <Link href="/shop?category=boishakh-collection" className="tp-btn tp-btn-border">
+                    <Link href="/shop?category=eid-collection" className="tp-btn tp-btn-border">
                       Shop Now{" "}<ArrowRightLong/>
                     </Link>
                   </div>

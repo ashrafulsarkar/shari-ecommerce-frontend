@@ -4,18 +4,18 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { handleFilterSidebarClose } from "@/redux/features/shop-filter-slice";
 
-const StatusFilter = ({setCurrPage,shop_right=false}) => {
+const StatusFilter = ({setCurrPage,shop_right=false,isBrand=false,brandName=""}) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const status = ["On sale", "In Stock"];
   const searchParams = useSearchParams();
   const router_status = searchParams.get('status');
 
-  // handle status route 
+  // handle status route
   const handleStatusRoute = (status) => {
     setCurrPage(1)
     router.push(
-      `/${shop_right?'shop-right-sidebar':'shop'}?status=${status
+      `/${shop_right?'shop-right-sidebar':isBrand? brandName:'shop'}?status=${status
         .toLowerCase()
         .replace("&", "")
         .split(" ")

@@ -73,13 +73,11 @@ const ContactArea = () => {
                         </h4>
 
                         <div className="tp-contact-social-icon">
-                          <a href="#">
+                          <a href="https://www.facebook.com/exclusivejamdanisaree">
                             <i className="fa-brands fa-facebook-f"></i>
                           </a>
-                          <a href="#">
-                            <i className="fa-brands fa-twitter"></i>
-                          </a>
-                          <a href="#">
+
+                          <a href="https://www.instagram.com/jo_preserving_heritage/">
                             <i className="fa-brands fa-linkedin-in"></i>
                           </a>
                         </div>

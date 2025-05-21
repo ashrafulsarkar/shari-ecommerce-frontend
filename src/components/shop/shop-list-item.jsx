@@ -106,7 +106,7 @@ const ShopListItem = ({ product }) => {
             )}
           </div>
           <p>
-            {description.substring(0, 100)}
+            {description && description.substring(0, 100)}
           </p>
           <div className="tp-product-list-add-to-cart">
             <button onClick={() => handleAddProduct(product)} className="tp-product-list-add-to-cart-btn">

@@ -10,7 +10,7 @@ import { ArrowRightLong } from '@/svg';
 const JewelryAbout = () => {
   return (
     <>
-      <section className="tp-about-area pt-125 pb-180">
+      <section className="tp-about-area pt-80 pb-80">
         <div className="container">
           <div className="row">
             <div className="col-xl-5 col-lg-6">

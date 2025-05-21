@@ -52,7 +52,7 @@ const ShopFilterOffCanvas = ({
             {/* categories */}
             <CategoryFilter setCurrPage={setCurrPage} shop_right={right_side} />
             {/* color */}
-            <ColorFilter setCurrPage={setCurrPage} shop_right={right_side} />
+            {/* <ColorFilter setCurrPage={setCurrPage} shop_right={right_side} /> */}
             {/* product rating */}
             <TopRatedProducts />
             {/* brand */}

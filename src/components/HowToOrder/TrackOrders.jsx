@@ -17,7 +17,6 @@ export default function TrackOrders() {
   };
 
 
-  const paymentSections = [];
 
   return (
     <div className={styles.container}>
@@ -37,34 +36,35 @@ export default function TrackOrders() {
           <h1 className={styles.pageTitle}>Track Your Order</h1>
 
           <p className={styles.introText}>
-          To track your order simply go to the contact us page and select Online Orders under Topic drop down menu. Please note down your order number to insert into the required field. We will get back to you.
-
-If you are a registered user you can check your order status at any time.
-To do so click on my order history after logging into your Aarong account.
-
-Alternatively you may call (+88) 09 678 444 777 seven days a week, 10am – 8pm BST or email us at customerservice.aarong@brac.net.
+          Tracking your JO-BD order is quick and easy!
           </p>
 
           <div className={styles.accordionSections}>
-            {paymentSections.map((section) => (
-              <div key={section.id} className={styles.accordionItem}>
-                <button
-                  onClick={() => toggleSection(section.id)}
-                  className={styles.accordionButton}
-                >
-                  <h3 className={styles.accordionTitle}>
-                    {section.title}
-                  </h3>
-                  <Plus size={24} />
-                </button>
+              <div dangerouslySetInnerHTML={{__html: `
 
-                {openSection === section.id && (
-                  <div className={styles.accordionContent}>
-                   <div dangerouslySetInnerHTML={{ __html: section.content }} />
-                  </div>
-                )}
-              </div>
-            ))}
+                <h6>1. Via Contact Us Form</h6>
+                <ul style="margin-left: 40px; margin-bottom: 20px;" >
+                    <li>Go to our Contact Us page.</li>
+                    <li>From the <b>Topic</b> dropdown menu, select <b>Online Orders.</b></li>
+                    <li>Enter your <b>Order Number</b> in the required field.</li>
+                    <li>Submit the form - our support team will get back to you shortly.</li>
+                </ul>
+                <h6>2. For Registered Users</h6>
+                <ul style="margin-left: 40px; margin-bottom: 20px;" >
+                    <li>Log in to your JO-BD account.</li>
+                    <li>Go to <b>My Account > Order History</b> to view the real-time status of your orders.</li>
+                </ul>
+                <h6>3. By Phone or Email</h6>
+                <p>Need immediate assistance? We’re here to help:</p>
+                <ul style="margin-left: 40px; margin-bottom: 20px;" >
+                    <li><b>Call</b> us at <b>(+88) 01613-634246</b></li>
+                    <li> (Available <b>7 days a week, 10:00 AM – 8:00 PM</b>)</li>
+                    <li> <b>Email:</b> storyofjo2020@gmail.com</li>
+                </ul>
+
+
+
+                `}} />
           </div>
         </div>
       </div>

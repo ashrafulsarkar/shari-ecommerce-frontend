@@ -7,7 +7,7 @@ import { HomeTwoPrdLoader } from '@/components/loader';
 
 
 const ProductArea = () => {
-  const [activeTab, setActiveTab] = useState("All Collection");
+  const [activeTab, setActiveTab] = useState("");
   const activeRef = useRef(null);
   const marker = useRef(null);
    const { data: products, isError, isLoading } =
@@ -17,7 +17,7 @@ const ProductArea = () => {
    useGetAllTypesQuery();
 
    const typeTabs = alltypes?.result?.map(type => type.name) || [];
-   const tabs = ["All Collection", ...typeTabs];
+   const tabs = [...typeTabs];
 
 
 
@@ -57,15 +57,15 @@ const ProductArea = () => {
       product_items = products.data.filter(p => p.type?.name === activeTab);
     }
     content = <>
-      <div className="row align-items-end">
+      <div className="row align-items-end pt-70">
         <div className="col-xl-6 col-lg-6">
-          <div className="tp-section-title-wrapper-4 mb-40 text-center text-lg-start">
+          <div className="tp-section-title-wrapper-4 text-center text-lg-start">
             <span className="tp-section-title-pre-4">Product Collection</span>
             <h3 className="tp-section-title-4">Discover our Products</h3>
           </div>
         </div>
         <div className="col-xl-6 col-lg-6">
-          <div className="tp-product-tab-2 tp-product-tab-3  tp-tab mb-45">
+          <div className="tp-product-tab-2 tp-product-tab-3  tp-tab ">
             <div className="tp-product-tab-inner-3 d-flex align-items-center justify-content-center justify-content-lg-end">
               <nav>
                 <div className="nav nav-tabs justify-content-center tp-product-tab tp-tab-menu p-relative" id="nav-tab" role="tablist">
@@ -102,7 +102,7 @@ const ProductArea = () => {
 
   return (
     <>
-      <section className="tp-product-area pt-115 pb-80">
+      <section className="tp-product-area">
         <div className="container">
           {content}
         </div>
