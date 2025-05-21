@@ -18,9 +18,9 @@ const JewelryAbout = () => {
                 <div className="tp-about-thumb m-img">
                   <Image src={about_img} alt="about_img" width={'auto'} height={'auto'}/>
                 </div>
-                <div className="tp-about-thumb-2">
+                {/* <div className="tp-about-thumb-2">
                   <Image src={about_thumb} alt="about_thumb" width={'auto'} height={'auto'} />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-xl-7 col-lg-6">
@@ -29,7 +29,7 @@ const JewelryAbout = () => {
                   <span className="tp-section-title-pre-4">Threads of Heritage</span>
                   <h3 className="tp-section-title-4 fz-50">Tradition Draped in Style</h3>
                 </div>
-                <div className="tp-about-content pl-120">
+                <div className="tp-about-content ">
                   <p>Jo is your go-to destination for authentic Bangladeshi sarees;  from the timeless elegance of Dhakaiya Jamdani, and the vibrant charm of Sylheti Monipuri, to the cultural grace of Basak and Tangail sarees.  <br /> Each piece at Jo is a tribute to heritage, handpicked to connect you with your roots.</p>
 
                   <div className="tp-about-btn">

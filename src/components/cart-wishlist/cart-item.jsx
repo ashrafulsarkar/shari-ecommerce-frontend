@@ -20,7 +20,7 @@ const CartItem = ({product}) => {
     const handleDecrement = (prd) => {
       dispatch(quantityDecrement(prd))
     }
-  
+
     // handle remove product
     const handleRemovePrd = (prd) => {
       dispatch(remove_product(prd))
@@ -40,7 +40,7 @@ const CartItem = ({product}) => {
       </td>
       {/* price */}
       <td className="tp-cart-price">
-        <span>${(price * orderQuantity).toFixed(2)}</span>
+        <span>৳{(price * orderQuantity).toFixed(2)}</span>
       </td>
       {/* quantity */}
       <td className="tp-cart-quantity">

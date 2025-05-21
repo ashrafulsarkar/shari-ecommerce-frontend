@@ -68,7 +68,7 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
               <span className="tp-product-tooltip">Quick View</span>
             </button>
 
-            <button disabled={status === 'out-of-stock'} onClick={()=> handleWishlistProduct(product)} className={`tp-product-action-btn-3 
+            <button disabled={status === 'out-of-stock'} onClick={()=> handleWishlistProduct(product)} className={`tp-product-action-btn-3
             ${isAddedToWishlist?'active':''} tp-product-add-to-wishlist-btn`}>
               <Wishlist />
               <span className="tp-product-tooltip">Add To Wishlist</span>
@@ -105,7 +105,7 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
           <Link href={`/product-details/${_id}`}>{title}</Link>
         </h3>
         <div className="tp-product-price-wrapper-3">
-          <span className="tp-product-price-3">${price.toFixed(2)}</span>
+          <span className="tp-product-price-3">৳{price.toFixed(2)}</span>
         </div>
       </div>
     </div>

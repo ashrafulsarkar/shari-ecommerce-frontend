@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // internal
 import logo from '@assets/img/ja-logo.png'
-import pay from '@assets/img/footer/footer-pay.png';
+// import pay from '@assets/img/footer/footer-pay.png';
+import pay from '@assets/pic/payment.png';
 import { Email, Location } from '@/svg';
 import Logo from '@/components/Logo/Logo';
 
@@ -111,7 +112,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                 <div className="col-md-6">
                   <div className="tp-footer-payment text-md-end">
                     <p>
-                      <Image src={pay} alt="pay"  width={'auto'} height={'auto'}/>
+                      <Image src={pay} alt="pay" className='payment_img'  width={'auto'} height={'auto'} />
                     </p>
                   </div>
                 </div>

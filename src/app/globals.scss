@@ -54,5 +54,15 @@
     background-size: 80%;
 }
 
+.payment_img{
+    width: 100%;
+    height: 100px;
+}
+@media screen and (max-width: 600px) {
+    .payment_img{
+        width: 100%;
+        height: 50px;
+    }
 
+}
 // trandind end

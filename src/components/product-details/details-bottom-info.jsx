@@ -24,7 +24,7 @@ const DetailsBottomInfo = ({sku,category,tag}) => {
 
       {/*  product-details-social*/}
 
-      <div className="tp-product-details-social">
+      {/* <div className="tp-product-details-social">
         <span>Share: </span>
         <a href="#">
           <i className="fa-brands fa-facebook-f"></i>
@@ -38,7 +38,7 @@ const DetailsBottomInfo = ({sku,category,tag}) => {
         <a href="#">
           <i className="fa-brands fa-vimeo-v"></i>
         </a>
-      </div>
+      </div> */}
 
       {/* product-details-msg */}
 
@@ -49,12 +49,12 @@ const DetailsBottomInfo = ({sku,category,tag}) => {
         </ul>
       </div>
       {/* product-details-payment */}
-      <div className="tp-product-details-payment d-flex align-items-center flex-wrap justify-content-between">
+      {/* <div className="tp-product-details-payment d-flex align-items-center flex-wrap justify-content-between">
         <p>
           Guaranteed safe <br /> & secure checkout
         </p>
         <Image src={payment_option_img} alt="payment_option_img" width={'auto'} height={'auto'}/>
-      </div>
+      </div> */}
     </>
   );
 };

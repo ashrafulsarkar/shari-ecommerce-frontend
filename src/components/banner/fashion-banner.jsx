@@ -13,26 +13,26 @@ import thumb_shape_1 from '@assets/img/slider/2/shape/shape-2.png';
 import thumb_shape_2 from '@assets/img/slider/2/shape/shape-3.png';
 
 // slider data
-const slider_data = [
-  {
-    id: 1,
-    subtitle: 'Wrapped In Sharee',
-    title: ' Rooted In Culture.',
-    img: slider_img_1,
-  },
-  {
-    id: 2,
-    subtitle: 'From Looms Of Bengal',
-    title: ' To Hearts Worldwide',
-    img: slider_img_2,
-  },
-  {
-    id: 3,
-    subtitle: 'Where Each Motif',
-    title: ' Carries A Century Of Stories',
-    img: slider_img_3,
-  },
-]
+// const slider_data = [
+//   {
+//     id: 1,
+//     subtitle: 'Wrapped In Sharee',
+//     title: ' Rooted In Culture.',
+//     img: slider_img_1,
+//   },
+//   {
+//     id: 2,
+//     subtitle: 'From Looms Of Bengal',
+//     title: ' To Hearts Worldwide',
+//     img: slider_img_2,
+//   },
+//   {
+//     id: 3,
+//     subtitle: 'Where Each Motif',
+//     title: ' Carries A Century Of Stories',
+//     img: slider_img_3,
+//   },
+// ]
 
 // slider setting
 const slider_setting = {
@@ -49,7 +49,7 @@ const slider_setting = {
   },
 }
 
-const FashionBanner = ({bg="grey-bg-5"}) => {
+const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
   return (
     <>
       <section className="tp-slider-area p-relative z-index-1">

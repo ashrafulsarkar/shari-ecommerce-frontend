@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // internal
 import { Email, Location } from '@/svg';
-import pay from '@assets/img/footer/footer-pay.png';
+// import pay from '@assets/img/footer/footer-pay.png';
+import pay from '@assets/pic/payment.png';
 import Logo from '@/components/Logo/Logo';
 
 const FooterTwo = () => {
@@ -150,7 +151,7 @@ const FooterTwo = () => {
                   <div className="col-md-6">
                     <div className="tp-footer-payment text-md-end">
                       <p>
-                        <Image src={pay} alt="pay"  width={'auto'} height={'auto'}/>
+                        <Image src={pay} alt="pay" className='payment_img'  width={'auto'} height={'auto'}/>
                       </p>
                     </div>
                   </div>

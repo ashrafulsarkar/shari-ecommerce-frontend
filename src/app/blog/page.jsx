@@ -5,6 +5,7 @@ import Footer from "@/layout/footers/footer";
 import { constructApiUrl } from "@/lib/constructApiUrl";
 import HeaderFour from "@/layout/headers/header-4";
 import HeaderTwo from "@/layout/headers/header-2";
+import FooterTwo from "@/layout/footers/footer-2";
 
 
 export const metadata = {
@@ -28,7 +29,8 @@ export default async function BlogPage({ params, searchParams }) {
         apiUrl: constructApiUrl(filters, currentPage)
       }}
       />
-      <Footer primary_style={true} />
+      {/* <Footer primary_style={true} /> */}
+      <FooterTwo />
     </Wrapper>
   );
 }

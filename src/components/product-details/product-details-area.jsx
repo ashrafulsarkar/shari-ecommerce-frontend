@@ -8,6 +8,7 @@ import ProductDetailsContent from "./product-details-content";
 
 const ProductDetailsArea = ({id="6431364df5a812bd37e765ac"}) => {
   const { data: product, isLoading, isError } = useGetProductQuery(id);
+
   // decide what to render
   let content = null;
   if (isLoading) {

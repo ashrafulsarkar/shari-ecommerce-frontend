@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React from 'react'
 import './album.css'
 import LightboxGallery from './LightboxGallery';
+import FooterTwo from '@/layout/footers/footer-2';
 
 async function getAlbum() {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/album`, {
@@ -45,7 +46,8 @@ export default async function RecentPost() {
           </div> */}
       </div>
       </section>
-      <Footer primary_style={true} />
+      {/* <Footer primary_style={true} /> */}
+      <FooterTwo />
     </Wrapper>
   )
 

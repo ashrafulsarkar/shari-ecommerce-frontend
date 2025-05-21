@@ -4,6 +4,7 @@ import ContactBreadcrumb from "@/components/breadcrumb/contact-breadcrumb";
 import ContactArea from "@/components/contact/contact-area";
 import ContactMap from "@/components/contact/contact-map";
 import Footer from "@/layout/footers/footer";
+import FooterTwo from "@/layout/footers/footer-2";
 
 export const metadata = {
   title: "Jo - Contact",
@@ -16,7 +17,8 @@ export default function ContactPage() {
       <ContactBreadcrumb />
       <ContactArea/>
       <ContactMap/>
-      <Footer primary_style={true} />
+      {/* <Footer primary_style={true} /> */}
+      <FooterTwo />
     </Wrapper>
   );
 }

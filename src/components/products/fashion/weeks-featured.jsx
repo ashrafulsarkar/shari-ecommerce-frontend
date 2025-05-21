@@ -10,7 +10,7 @@ import { ArrowRightLong, NextLongArr, PrevLongArr, TextShapeLine } from '@/svg';
 import ErrorMsg from '@/components/common/error-msg';
 import { HomeTwoFeaturedPrdLoader } from '@/components/loader';
 
-// slider setting 
+// slider setting
 const slider_setting = {
   slidesPerView: 3,
   spaceBetween: 10,
@@ -70,13 +70,13 @@ const WeeksFeatured = () => {
                 <div className="tp-featured-price-wrapper">
                   {discount > 0 ? (
                     <>
-                      <span className="tp-featured-price new-price">${price}</span>
+                      <span className="tp-featured-price new-price">৳{price}</span>
                       <span className="tp-featured-price old-price">
                         {" "} $ {(Number(price) - (Number(price) * Number(discount)) / 100).toFixed(2)}
                       </span>
                     </>
                   ) : (
-                    <span className="tp-featured-price new-price">${price}</span>
+                    <span className="tp-featured-price new-price">৳{price}</span>
                   )}
                 </div>
                 <div className="tp-product-rating-icon tp-product-rating-icon-2">
