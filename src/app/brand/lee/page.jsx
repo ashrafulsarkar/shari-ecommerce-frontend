@@ -11,7 +11,7 @@ import Wrapper from '@/layout/wrapper'
 import React from 'react'
 
 import slider_img_1 from '@assets/pic/G-01.png';
-import slider_img_2 from '@assets/pic/g-08.png';
+import slider_img_2 from '@assets/pic/G-08.png';
 import slider_img_3 from '@assets/pic/14.png';
 
 
