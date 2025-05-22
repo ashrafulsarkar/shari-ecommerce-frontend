@@ -20,6 +20,7 @@ const schema = Yup.object().shape({
 const LoginForm = () => {
   const [showPass, setShowPass] = useState(false);
   const [loginUser, { }] = useLoginUserMutation();
+  const [error, setError] = useState('');
   const router = useRouter();
   // react hook form
   const {
@@ -42,14 +43,17 @@ const LoginForm = () => {
           router.push('/checkout' || "/");
         }
         else {
-          notifyError(data?.error?.data?.error)
+          console.log(data)
+          // notifyError(data?.error?.data?.error)
+          setError(data?.error?.data?.error);
         }
       })
-    reset();
+    // reset();
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="tp-login-input-wrapper">
+
         <div className="tp-login-input-box">
           <div className="tp-login-input">
             <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="shofy@mail.com" />
@@ -90,6 +94,13 @@ const LoginForm = () => {
           <Link href="/forgot">Forgot Password?</Link>
         </div>
       </div>
+      {
+          error &&
+        <div className='mb-4 '>
+
+        <ErrorMsg msg={error} />
+        </div>
+        }
       <div className="tp-login-bottom">
         <button type='submit' className="tp-login-btn w-100">Login</button>
       </div>

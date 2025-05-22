@@ -29,6 +29,8 @@ const schemaTwo = Yup.object().shape({
 const ChangePassword = () => {
   const { user } = useSelector((state) => state.auth);
   const [changePassword, {}] = useChangePasswordMutation();
+  const [message, setMessage] = React.useState("");
+  const [error, setError] = React.useState("");
   // react hook form
   const {
     register,
@@ -48,9 +50,14 @@ const ChangePassword = () => {
       googleSignIn: user?.googleSignIn,
     }).then((result) => {
       if (result?.error) {
-        notifyError(result?.error?.data?.message);
+        console.log(result.error)
+        // notifyError(result?.error?.data?.message);
+        setError(result?.error?.data?.message);
+        setMessage("");
       } else {
-        notifySuccess(result?.data?.message);
+        // notifySuccess(result?.data?.message);
+        setMessage(result?.data?.message);
+        setError("");
       }
     });
     reset();
@@ -59,6 +66,19 @@ const ChangePassword = () => {
     <div className="profile__password">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
+          <div>
+            {
+              message ? (
+                <div className="alert alert-success" role="alert">
+                  {message}
+                </div>
+              ) : error ? (
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              ) : null
+            }
+          </div>
           {!user?.googleSignIn && (
             <div className="col-xxl-12">
               <div className="tp-profile-input-box">

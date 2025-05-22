@@ -153,7 +153,7 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false,isBrand=false,type=null
       product_items = product_items.filter((p) => Number(p.price) >= Number(minPrice) &&
       Number(p.price) <= Number(maxPrice))
     }
-    console.log("product_items",product_items)
+    // console.log("product_items",product_items)
 
 
     content = (

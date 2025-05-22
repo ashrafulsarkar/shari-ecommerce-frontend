@@ -10,7 +10,7 @@ const LoginArea = () => {
 
   return (
     <>
-      <section className="tp-login-area pb-140 p-relative z-index-1 fix">
+      <section className="tp-login-area pt-80 pb-80 p-relative z-index-1 fix">
         <LoginShapes />
         <div className="container">
           <div className="row justify-content-center">
@@ -31,11 +31,11 @@ const LoginArea = () => {
                       <GoogleSignUp/>
                     </div>
                   </div> */}
-                  <div className="tp-login-mail text-center mb-40">
+                  {/* <div className="tp-login-mail text-center mb-40">
                     <p>
                       or Sign in with <a href="#">Email</a>
                     </p>
-                  </div>
+                  </div> */}
                   <LoginForm />
                 </div>
               </div>

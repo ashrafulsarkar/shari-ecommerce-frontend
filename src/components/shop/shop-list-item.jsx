@@ -49,7 +49,7 @@ const ShopListItem = ({ product }) => {
         {/* <!-- product action --> */}
         <div className="tp-product-action-2 tp-product-action-blackStyle">
           <div className="tp-product-action-item-2 d-flex flex-column">
-            <button
+            {/* <button
               type="button"
               className="tp-product-action-btn-2 tp-product-quick-view-btn"
               onClick={() => dispatch(handleProductModal(product))}
@@ -58,7 +58,7 @@ const ShopListItem = ({ product }) => {
               <span className="tp-product-tooltip tp-product-tooltip-right">
                 Quick View
               </span>
-            </button>
+            </button> */}
             <button
               type="button"
               onClick={()=> handleWishlistProduct(product)}
@@ -69,7 +69,7 @@ const ShopListItem = ({ product }) => {
                 Add To Wishlist
               </span>
             </button>
-            <button
+            {/* <button
               type="button"
               onClick={()=> handleCompareProduct(product)}
               className="tp-product-action-btn-2 tp-product-add-to-compare-btn"
@@ -78,7 +78,7 @@ const ShopListItem = ({ product }) => {
               <span className="tp-product-tooltip tp-product-tooltip-right">
                 Add To Compare
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

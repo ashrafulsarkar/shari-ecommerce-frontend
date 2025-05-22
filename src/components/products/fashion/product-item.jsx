@@ -85,7 +85,7 @@ const ProductItem = ({ product, style_2 = false }) => {
                 </span>
               </button>
             )}
-            <button
+            {/* <button
               onClick={() => dispatch(handleProductModal(product))}
               className="tp-product-action-btn-2 tp-product-quick-view-btn"
             >
@@ -93,19 +93,19 @@ const ProductItem = ({ product, style_2 = false }) => {
               <span className="tp-product-tooltip tp-product-tooltip-right">
                 Quick View
               </span>
-            </button>
+            </button> */}
             <button disabled={status === 'out-of-stock'} onClick={() => handleWishlistProduct(product)} className={`tp-product-action-btn-2 ${isAddedToWishlist ? 'active' : ''} tp-product-add-to-wishlist-btn`}>
               <Wishlist />
               <span className="tp-product-tooltip tp-product-tooltip-right">
                 Add To Wishlist
               </span>
             </button>
-            <button disabled={status === 'out-of-stock'} onClick={() => handleCompareProduct(product)} className="tp-product-action-btn-2 tp-product-add-to-compare-btn">
+            {/* <button disabled={status === 'out-of-stock'} onClick={() => handleCompareProduct(product)} className="tp-product-action-btn-2 tp-product-add-to-compare-btn">
               <CompareThree />
               <span className="tp-product-tooltip tp-product-tooltip-right">
                 Add To Compare
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
