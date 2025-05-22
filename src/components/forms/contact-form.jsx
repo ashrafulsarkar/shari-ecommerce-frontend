@@ -5,10 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 // internal
 import ErrorMsg from "../common/error-msg";
-import { notifySuccess } from "@/utils/toast";
 import { api } from "@/env";
 import axios from "axios";
-import { set } from "js-cookie";
 
 // schema
 const schema = Yup.object().shape({
@@ -62,7 +60,7 @@ const ContactForm = () => {
       <div className="tp-contact-input-wrapper">
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Shahnewaz Sakil" />
+            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Enter your name" />
           </div>
           <div className="tp-contact-input-title">
             <label htmlFor="name">Your Name</label>
@@ -71,7 +69,7 @@ const ContactForm = () => {
         </div>
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="shofy@mail.com" />
+            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="example@mail.com" />
           </div>
           <div className="tp-contact-input-title">
             <label htmlFor="email">Your Email</label>
