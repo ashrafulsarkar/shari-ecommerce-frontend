@@ -4,10 +4,41 @@ import ErrorMsg from '@/components/common/error-msg';
 import { useGetAllTypesQuery, useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import ProductItem from './product-item';
 import { HomeTwoPrdLoader } from '@/components/loader';
+import { Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// slider setting
+const slider_setting = {
+    slidesPerView: 4,
+		spaceBetween: 24,
+		scrollbar: {
+			el: '.tp-best-swiper-scrollbar',
+			draggable: true,
+			dragClass: 'tp-swiper-scrollbar-drag',
+			snapOnRelease: true,
+		  },
+
+		breakpoints: {
+			'1200': {
+				slidesPerView: 4,
+			},
+			'992': {
+				slidesPerView: 4,
+			},
+			'768': {
+				slidesPerView: 2,
+			},
+			'576': {
+				slidesPerView: 2,
+			},
+			'0': {
+				slidesPerView: 1,
+			},
+		}
+}
 
 const ProductArea = () => {
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("All Collection");
   const activeRef = useRef(null);
   const marker = useRef(null);
    const { data: products, isError, isLoading } =
@@ -17,7 +48,7 @@ const ProductArea = () => {
    useGetAllTypesQuery();
 
    const typeTabs = alltypes?.result?.map(type => type.name) || [];
-   const tabs = [...typeTabs];
+   const tabs = ["All Collection",...typeTabs];
 
 
 
@@ -57,7 +88,7 @@ const ProductArea = () => {
       product_items = products.data.filter(p => p.type?.name === activeTab);
     }
     content = <>
-      <div className="row align-items-end pt-70">
+      <div className="row align-items-end pt-70 pb-40 ">
         <div className="col-xl-6 col-lg-6">
           <div className="tp-section-title-wrapper-4 text-center text-lg-start">
             <span className="tp-section-title-pre-4">Product Collection</span>
@@ -90,11 +121,18 @@ const ProductArea = () => {
         </div>
       </div>
       <div className="row">
-        {product_items.map((prd) => (
+        {/* {product_items.map((prd) => (
           <div key={prd._id} className="col-xl-3 col-lg-4 col-sm-6">
             <ProductItem product={prd} />
           </div>
-        ))}
+        ))} */}
+        <Swiper {...slider_setting} modules={[Scrollbar]} className="tp-best-slider-active swiper-container mb-10">
+                {product_items.map(item => (
+                  <SwiperSlide key={item._id} className="tp-best-item-4">
+                    <ProductItem product={item} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
       </div>
     </>
   }
