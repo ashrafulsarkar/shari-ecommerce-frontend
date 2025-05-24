@@ -20,7 +20,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
                 </label>
                 <input
                   {...register("firstName", {
-                    required: `firstName is required!`,
+                    required: `First Name is required!`,
                   })}
                   name="firstName"
                   id="firstName"
@@ -38,7 +38,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
                 </label>
                 <input
                   {...register("lastName", {
-                    required: `lastName is required!`,
+                    required: `Last Name is required!`,
                   })}
                   name="lastName"
                   id="lastName"
@@ -54,18 +54,18 @@ const CheckoutBillingArea = ({ register, errors }) => {
                   Country <span>*</span>
                 </label>
                 <input
-                  {...register("country", { required: `country is required!` })}
+                  {...register("country", { required: `Country is required!` })}
                   name="country"
                   id="country"
                   type="text"
-                  placeholder="United States (US)"
+                  placeholder="BD"
                 />
                 <ErrorMsg msg={errors?.lastName?.message} />
               </div>
             </div>
             <div className="col-md-12">
               <div className="tp-checkout-input">
-                <label>Street address</label>
+                <label>Street address <span>*</span></label>
                 <input
                   {...register("address", { required: `Address is required!` })}
                   name="address"
@@ -78,7 +78,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
             </div>
             <div className="col-md-6">
               <div className="tp-checkout-input">
-                <label>Town / City</label>
+                <label>Town / City <span>*</span></label>
                 <input
                   {...register("city", { required: `City is required!` })}
                   name="city"
@@ -91,9 +91,9 @@ const CheckoutBillingArea = ({ register, errors }) => {
             </div>
             <div className="col-md-6">
               <div className="tp-checkout-input">
-                <label>Postcode ZIP</label>
+                <label>Postcode ZIP <span>*</span></label>
                 <input
-                  {...register("zipCode", { required: `zipCode is required!` })}
+                  {...register("zipCode", { required: `Post code is required!` })}
                   name="zipCode"
                   id="zipCode"
                   type="text"
@@ -109,7 +109,7 @@ const CheckoutBillingArea = ({ register, errors }) => {
                 </label>
                 <input
                   {...register("contactNo", {
-                    required: `ContactNumber is required!`,
+                    required: `Phone number is required!`,
                   })}
                   name="contactNo"
                   id="contactNo"

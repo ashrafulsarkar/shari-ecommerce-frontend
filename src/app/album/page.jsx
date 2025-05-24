@@ -30,7 +30,7 @@ export default async function RecentPost() {
       <HeaderTwo style_2={true} />
 
         <div className='heading_album'>
-        <h3 className="breadcrumb__title">Our Galler </h3>
+        <h3 className="breadcrumb__title">Our Gallery  </h3>
         </div>
       <section className="tp-postbox-area  pb-120 fawards_gallery">
       <div className="container">

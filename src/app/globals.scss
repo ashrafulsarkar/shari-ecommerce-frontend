@@ -33,9 +33,9 @@
 // trandind start
 
 .tanding_part{
-    background-position: 70% 23px;
-    background-size: 33%;
-    background-color: #E1F4F5;
+  background-color: #E1F4F5;
+    // background-position: 70% 23px;
+    // background-size: 33%;
 }
 
 .new_arrival_part{
@@ -45,13 +45,14 @@
 }
 .eid_collection_part {
     background-color: #F8F2E6;
-    background-position: 96% 100%;
-    background-size: 55%;
+    // background-position: 96% 100%;
+    // background-size: 55%;
+    background-position: -50%;
 }
 .boisaki_collection_part {
     background-color: #F0F5EF;
-    background-position: 50% 100%;
-    background-size: 64%;
+    background-position: 100% 100%;
+   background-size: 64%;
 }
 
 .spec-title {
@@ -105,15 +106,22 @@
     width: 100%;
     height: 100px;
 }
+
+.tp-feature-border-3 .tp-feature-item-2:not(:last-child)::after {
+    background-color: #e9eaed00;
+}
+.tp-product-thumb img,.tp-product-thumb-4 img {
+  width: 100%;
+}
 @media screen and (max-width: 600px) {
     .payment_img{
         width: 100%;
         height: 50px;
     }
-    .tanding_part {
-        background-position: 70% 30px;
-        background-size: 50%;
-    }
+    // .tanding_part {
+    //     background-position: 70% 30px;
+    //     background-size: 50%;
+    // }
     .eid_collection_part {
         background-position: 100% 100%;
         background-size: 74%;

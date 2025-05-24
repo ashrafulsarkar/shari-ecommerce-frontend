@@ -34,7 +34,13 @@ const WishlistItem = ({ product }) => {
         </Link>
       </td>
       <td className="tp-cart-title">
-        <Link href={`/product-details/${_id}`}>{title}</Link>
+        <div style={{
+          paddingLeft: '10px'
+        }}>
+          <Link style={{
+            marginLeft: '0px'
+          }} href={`/product-details/${_id}`}>{title}</Link>
+        </div>
       </td>
       <td className="tp-cart-price">
         <span>৳{price.toFixed(2)}</span>
@@ -62,7 +68,9 @@ const WishlistItem = ({ product }) => {
         </div>
       </td>
 
-      <td className="tp-cart-add-to-cart">
+      <td className="tp-cart-add-to-cart" style={{
+        width: '130px'
+      }} >
         <button
           onClick={() => handleAddProduct(product)}
           type="button"

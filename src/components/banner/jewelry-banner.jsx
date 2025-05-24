@@ -19,10 +19,10 @@ import text_shape from '@assets/img/slider/4/shape/rounded-test.png';
 
 // slider data
 const slider_data = [
-  { subtitle: 'Wrapped in', title: ' Soulful Heritage', img: slider_img_1 },
   { subtitle: 'Timeless', title: ' Threads of Tradition ', img: slider_img_2 },
   { subtitle: 'From Monipuri', title: ' Homes to Yours', img: slider_img_3 },
   { subtitle: 'Elegance', title: ' in Every Line ', img: slider_img_4 },
+  { subtitle: 'Wrapped in', title: ' Soulful Heritage', img: slider_img_1 },
 ]
 
 // slider nav data

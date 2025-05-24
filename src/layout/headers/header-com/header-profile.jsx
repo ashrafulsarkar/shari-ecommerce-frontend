@@ -28,12 +28,21 @@ function ProfileLogin({active,handleActive}) {
         <User/>
       </span>
       <ul className={active === 'setting' ? "tp-setting-list-open" : ""}>
-        <li>
-          <Link href="/login">Login</Link>
+          {
+          user?.name && <>
+          <li>
+          <Link href="/profile">My Profile</Link>
         </li>
         <li>
-          <Link href="/register">Register</Link>
+          <Link href="/wishlist">Wishlist</Link>
         </li>
+          </>
+
+        }
+
+        {!user?.name && <li><Link href="/login" className="cursor-pointer">Login</Link></li>}
+        {!user?.name &&<li><Link href="/register" className="cursor-pointer">Register</Link> </li>}
+        {user?.name &&<li><a onClick={handleLogout} className="cursor-pointer">Logout</a> </li>}
 
       </ul>
     </div>

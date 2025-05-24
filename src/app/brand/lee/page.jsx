@@ -20,6 +20,13 @@ export default function page() {
       <FashionBanner bg={'khaki-bg'}
       slider_data={
               [
+                 {
+                  id: 3,
+                  subtitle: 'Tradition in Threads',
+                  title: 'Style in Every Stitch',
+                  img: slider_img_3,
+                  link: '/brand/lee',
+                },
                 {
                   id: 1,
                   subtitle: 'A Fabric of Faith',
@@ -34,13 +41,7 @@ export default function page() {
                   img: slider_img_2,
                   link: '/brand/lee',
                 },
-                {
-                  id: 3,
-                  subtitle: 'Tradition in Threads',
-                  title: 'Style in Every Stitch',
-                  img: slider_img_3,
-                  link: '/brand/lee',
-                },
+
               ]
             }
              />

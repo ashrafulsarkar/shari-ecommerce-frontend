@@ -122,7 +122,7 @@ const FooterTwo = () => {
                       <li><Link href="/terms-conditions">Terms & Conditions</Link></li>
                       <li><Link href="/blog">Latest News</Link></li>
                       <li><Link href="/contact">Contact Us</Link></li>
-                      <li><Link href="/faq">Faq</Link></li>
+                      <li><Link href="/faq"  >FAQ</Link></li>
                       </ul>
                     </div>
                   </div>

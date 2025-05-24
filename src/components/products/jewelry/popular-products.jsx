@@ -26,7 +26,7 @@ const slider_setting = {
   },
   breakpoints: {
     '1400': {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
     '1200': {
       slidesPerView: 4,

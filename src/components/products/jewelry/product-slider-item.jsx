@@ -59,14 +59,14 @@ const ProductSliderItem = ({ product }) => {
               <span className="tp-product-tooltip">Add to Cart</span>
             </button>
           )}
-          <button
+          {/* <button
             type="button"
             className="tp-product-action-btn-3 tp-product-quick-view-btn"
             onClick={() => dispatch(handleProductModal(product))}
           >
             <QuickView />
             <span className="tp-product-tooltip">Quick View</span>
-          </button>
+          </button> */}
           <button
             type="button"
             onClick={() => handleWishlistProduct(product)}
