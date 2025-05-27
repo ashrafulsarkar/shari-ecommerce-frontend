@@ -20,7 +20,14 @@ const BlogDetailsArea = ({blog}) => {
           </div>
           <div className="col-xl-12">
             <div className="tp-postbox-details-thumb">
-              <Image src={blog.img} alt="blog-big-img m-auto " width={1000} height={500} />
+              <Image src={blog.img} alt="blog-big-img m-auto "
+
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+              width={1000} height={500} />
             </div>
           </div>
         </div>
@@ -29,8 +36,8 @@ const BlogDetailsArea = ({blog}) => {
             <div className="tp-postbox-details-main-wrapper">
               <div className="tp-postbox-details-content">
                 {
-                  blog?.description &&
-              <div dangerouslySetInnerHTML={{__html: blog?.description}}></div>
+                  blog?.long_description &&
+                  <div dangerouslySetInnerHTML={{__html: blog?.long_description}}></div>
                 }
 
                 <div className="tp-postbox-details-share-wrapper">
@@ -38,18 +45,16 @@ const BlogDetailsArea = ({blog}) => {
 
                     {
                       blog?.tags.length > 0 &&
-
-                    <div className="col-xl-8 col-lg-6">
-                      <div className="tp-postbox-details-tags tagcloud">
-                        <span>Tags:</span>
-                        {
-                      blog?.tags?.map((item,index)=>(
-                            <a href="#" key={index}>{item}</a>
-                      ))
-                    }
-
+                      <div className="col-xl-8 col-lg-6">
+                        <div className="tp-postbox-details-tags tagcloud">
+                          <span>Tags:</span>
+                          {
+                            blog?.tags?.map((item,index)=>(
+                                  <a href="#" key={index}>{item}</a>
+                            ))
+                          }
+                        </div>
                       </div>
-                    </div>
                     }
 
                     <div className="col-xl-4 col-lg-6">
@@ -67,9 +72,9 @@ const BlogDetailsArea = ({blog}) => {
                 {/* author details end */}
 
 
-                  {/* BlogDetailsComments */}
-                  <BlogDetailsComments blog={blog} />
-                  {/* BlogDetailsComments */}
+                {/* BlogDetailsComments */}
+                <BlogDetailsComments blog={blog} />
+                {/* BlogDetailsComments */}
 
 
                 <div className="tp-postbox-details-form">

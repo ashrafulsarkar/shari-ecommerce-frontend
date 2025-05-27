@@ -13,6 +13,8 @@ const ShopFilterOffCanvas = ({
   all_products,
   otherProps,
   right_side = false,
+  isBrand=false,
+  brandName=""
 }) => {
   const { priceFilterValues, setCurrPage } = otherProps;
   const { filterSidebar } = useSelector((state) => state.shopFilter);
@@ -44,19 +46,24 @@ const ShopFilterOffCanvas = ({
           <div className="tp-shop-sidebar">
             {/* filter */}
             <PriceFilter
+              isBrand={isBrand} brandName={brandName}
               priceFilterValues={priceFilterValues}
               maxPrice={maxPrice}
             />
             {/* status */}
-            <StatusFilter setCurrPage={setCurrPage} shop_right={right_side} />
+            <StatusFilter isBrand={isBrand} brandName={brandName} setCurrPage={setCurrPage} shop_right={right_side} />
             {/* categories */}
-            <CategoryFilter setCurrPage={setCurrPage} shop_right={right_side} />
+            <CategoryFilter isBrand={isBrand} brandName={brandName} setCurrPage={setCurrPage} shop_right={right_side} />
             {/* color */}
             {/* <ColorFilter setCurrPage={setCurrPage} shop_right={right_side} /> */}
             {/* product rating */}
-            <TopRatedProducts />
+            {/* <TopRatedProducts /> */}
             {/* brand */}
-            <ProductBrand setCurrPage={setCurrPage} shop_right={right_side} />
+            {
+              !isBrand &&
+              <ProductBrand setCurrPage={setCurrPage} shop_right={right_side} />
+            }
+            {/* <ProductBrand setCurrPage={setCurrPage} shop_right={right_side} /> */}
             {/* reset filter */}
             <ResetButton shop_right={right_side} />
           </div>

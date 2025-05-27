@@ -52,9 +52,13 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
                   {/* color */}
                   {/* <ColorFilter setCurrPage={setCurrPage} /> */}
                   {/* product rating */}
-                  <TopRatedProducts />
+                  {/* <TopRatedProducts /> */}
                   {/* brand */}
-                  <ProductBrand setCurrPage={setCurrPage} isBrand={isBrand} brandName={brandName} />
+                  {
+                    !isBrand &&
+                    <ProductBrand setCurrPage={setCurrPage} isBrand={isBrand} brandName={brandName} />
+                  }
+                  {/* <ProductBrand setCurrPage={setCurrPage} isBrand={isBrand} brandName={brandName} /> */}
                   {/* reset filter */}
                   <ResetButton isBrand={isBrand} brandName={brandName} setPriceValues={setPriceValue} maxPrice={maxPrice} />
                 </div>

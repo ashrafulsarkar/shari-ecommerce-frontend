@@ -10,7 +10,7 @@ import slider_img_3 from '@assets/fpic/Home_03.png';
 import slider_img_4 from '@assets/fpic/Home_4.png';
 
 // nav icon
-import nav_icon_1 from '@assets/img/slider/4/nav/icon-1.png';
+import nav_icon_1 from '@assets/img/slider/4/nav/new.png';
 import nav_icon_2 from '@assets/img/slider/4/nav/icon-2.png';
 import nav_icon_3 from '@assets/img/slider/4/nav/icon-3.png';
 import nav_icon_4 from '@assets/img/slider/4/nav/icon-4.png';
@@ -28,12 +28,12 @@ const slider_data = [
 // slider nav data
 const slider_nav_data = [
   { icon: nav_icon_1, title: <>Jamdani  <br />Saree</> },
-  { icon: nav_icon_2, title: <>Basak  <br />Saree</> },
   { icon: nav_icon_3, title: <>Monipuri  <br /> Saree</> },
   { icon: nav_icon_4, title: <>Tangail Handloom <br /> Saree</> },
+  { icon: nav_icon_2, title: <>Basak  <br />Saree</> },
 ]
 
-const JewelryBanner = () => {
+const JewelryBanner = ({slider_result=[]}) => {
   const [slider1, setSlider1] = useState(null);
   const [slider2, setSlider2] = useState(null);
 
@@ -76,10 +76,10 @@ const JewelryBanner = () => {
     <>
       <section className="tp-slider-area p-relative z-index-1 fix">
         <Slider {...main_slider_setting} asNavFor={slider2} ref={(slider) => setSlider1(slider)} className="tp-slider-active-4 khaki-bg">
-          {slider_data.map((item, i) => (
+          {slider_result.map((item, i) => (
             <div key={i} className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center" >
               <div className="tp-slider-thumb-4">
-                <Image src={item.img} alt="slider img" width={'auto'} height={'auto'} />
+                <img src={item.img} alt="slider img" width={'auto'} height={'auto'} />
                 <div className="tp-slider-thumb-4-shape">
                   <span className="tp-slider-thumb-4-shape-1"></span>
                   <span className="tp-slider-thumb-4-shape-2"></span>
@@ -113,8 +113,8 @@ const JewelryBanner = () => {
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-8">
                     <div className="tp-slider-content-4 p-relative z-index-1">
-                      <span>{item.subtitle}</span>
-                      <h3 className="tp-slider-title-4">{item.title}</h3>
+                      <span>{item.sub_title_1}</span>
+                      <h3 className="tp-slider-title-4">{item.title_1}</h3>
                       <div className="tp-slider-btn-4">
                         <Link href="/shop" className="tp-btn tp-btn-border tp-btn-border-white">Shop Now</Link>
                       </div>
@@ -140,15 +140,19 @@ const JewelryBanner = () => {
         <div className="tp-slider-nav">
 
           <Slider {...nav_slider_setting} asNavFor={slider1} ref={(slider) => setSlider2(slider)} className="tp-slider-nav-active">
-            {slider_nav_data.map((item, i) => (
+            {slider_result.map((item, i) => (
               <div key={i} className="tp-slider-nav-item d-flex align-items-center">
                 <div className="tp-slider-nav-icon">
                   <span>
-                    <Image src={item.icon} alt="icon" width={'auto'} height={'auto'}/>
+                    <img src={item.icon} alt="icon" width={'auto'} height={'auto'}/>
                   </span>
                 </div>
                 <div className="tp-slider-nav-content">
-                  <h3 className="tp-slider-nav-title">{item.title}</h3>
+                  <div className="tp-slider-nav-title">
+                    {item.title_2}
+                      <br/>
+                    {item.sub_title_2}
+                    </div>
                 </div>
               </div>
             ))}

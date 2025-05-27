@@ -170,6 +170,8 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false,isBrand=false,type=null
       />
 
          <ShopFilterOffCanvas
+         isBrand={isBrand}
+        brandName={brandName}
           all_products={products.data}
           otherProps={otherProps}
         />

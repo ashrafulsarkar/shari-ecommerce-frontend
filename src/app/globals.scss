@@ -113,6 +113,10 @@
 .tp-product-thumb img,.tp-product-thumb-4 img {
   width: 100%;
 }
+.tp-shop-widget-categories {
+    height: 140px;
+    overflow-y: inherit;
+}
 @media screen and (max-width: 600px) {
     .payment_img{
         width: 100%;
