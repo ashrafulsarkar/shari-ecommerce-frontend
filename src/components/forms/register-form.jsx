@@ -22,6 +22,8 @@ const schema = Yup.object().shape({
 
 const RegisterForm = () => {
   const [showPass, setShowPass] = useState(false);
+  const [errorMsg, setError] = useState([]);
+  const [successMsg, setSuccess] = useState(null);
   const [registerUser, {}] = useRegisterUserMutation();
   const router = useRouter();
   // react hook form
@@ -30,23 +32,38 @@ const RegisterForm = () => {
   });
   // on submit
   const onSubmit = (data) => {
+    console.log(data)
     registerUser({
       name: data.name,
       email: data.email,
       password: data.password,
     }).then((result) => {
+      console.log(result)
       if (result?.error) {
-        notifyError("Register Failed");
+        // notifyError("Register Failed");
+        setError(result?.error?.data?.errorMessages);
       } else {
-        notifySuccess(result?.data?.message);
-        router.push('/checkout');
+        // notifySuccess(result?.data?.message);
+        // setError(result?.data?.message);
+        // router.push('/checkout');
+        setSuccess(result?.data);
       }
     });
-    reset();
+    // reset();
   };
+  console.log(errorMsg)
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="tp-login-input-wrapper">
+        {
+          successMsg && (
+            <div className="tp-login-input-box">
+              <div className="tp-login-input">
+                <p style={{ color: "green", textAlign: "center", fontSize: "20px",fontWeight:"bold" }}>{successMsg?.message}</p>
+              </div>
+            </div>
+          )
+        }
         <div className="tp-login-input-box">
           <div className="tp-login-input">
             <input
@@ -60,7 +77,13 @@ const RegisterForm = () => {
           <div className="tp-login-input-title">
             <label htmlFor="name">Your Name</label>
           </div>
-          <ErrorMsg msg={errors.name?.message} />
+          {errorMsg && (
+          <ErrorMsg
+            msg={
+              errorMsg.find((error) => error?.path === 'name')?.message
+            }
+          />
+        )}
         </div>
         <div className="tp-login-input-box">
           <div className="tp-login-input">
@@ -75,7 +98,13 @@ const RegisterForm = () => {
           <div className="tp-login-input-title">
             <label htmlFor="email">Your Email</label>
           </div>
-          <ErrorMsg msg={errors.email?.message} />
+          {errorMsg && (
+          <ErrorMsg
+            msg={
+              errorMsg.find((error) => error?.path === 'email')?.message
+            }
+          />
+        )}
         </div>
         <div className="tp-login-input-box">
           <div className="p-relative">

@@ -63,11 +63,39 @@ export default function BillingAndPayments() {
           <h1 className={styles.pageTitle}>Billing & Payments</h1>
 
           <p className={styles.introText}>
-            We want to give our customers flexibility when making any purchase from Aarong.com. Check out our payment options below for any order shipped within Bangladesh or outside of Bangladesh.
+           At Jo, we ensure your payment experience is secure and hassle-free, whether you're ordering from Bangladesh or overseas.
+
           </p>
 
           <div className={styles.accordionSections}>
-            {paymentSections.map((section) => (
+            <div dangerouslySetInnerHTML={{ __html: `
+
+             <h6> For deliveries within Bangladesh:</h6>
+<p> You can pay via cash on delivery, bKash, Nagad, or any local debit/credit card. All payments are processed securely for your convenience.</p>
+
+<h6>For deliveries to a shipping address other than Bangladesh:</h6>
+<p> Customers abroad can pay using international cards like Visa or Mastercard through our trusted payment gateway.
+</p>
+
+<h6>Payment method for deliveries within Bangladesh:</h6>
+<p> Choose what suits you best: mobile wallet, card payment, or cash on delivery. It's safe, simple, and very flexible.</p>
+
+<h6>Payment method for deliveries to a shipping address other than Bangladesh:</h6>
+<p> All international orders must be prepaid using a valid card. Customs duties or VAT (if applicable) are charged separately by your country.</p>
+
+<h6>Custom Duties:</h6>
+<p>If you're ordering from outside Bangladesh, your country may apply <b>customs duties, VAT, or import taxes</b> on your purchase.
+These charges are:</p>
+<ul>
+        <li> <strong>Not included</strong> in the product or shipping price</li>
+        <li> <strong>Collected by your local customs authority</strong> </li>
+        <li> <strong>Based on your country’s import rules and thresholds</strong></li>
+      </ul>
+
+` }} />
+
+
+            {/* {paymentSections.map((section) => (
               <div key={section.id} className={styles.accordionItem}>
                 <button
                   onClick={() => toggleSection(section.id)}
@@ -85,7 +113,7 @@ export default function BillingAndPayments() {
                   </div>
                 )}
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

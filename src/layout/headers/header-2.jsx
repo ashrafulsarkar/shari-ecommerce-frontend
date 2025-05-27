@@ -30,12 +30,22 @@ const HeaderTwo = ({ style_2 = false }) => {
               <div className="row align-items-center">
                 <div className="col-md-6">
                   <div className="tp-header-info d-flex align-items-center">
-                    <div className="tp-header-info-item">
+                    <div className="tp-header-info-item" style={{
+                      display:"flex",
+                      justifyContent:'center',
+                      alignItems:'center',
+                      gap:'10px'
+                    }} >
                       <a href="https://www.facebook.com/exclusivejamdanisaree" target='_blank' >
                         <span>
                           <Facebook />
                         </span>
                       </a>
+                    <a target='_blank' href="https://www.instagram.com/jo_preserving_heritage/">
+                            <span>
+                              <i className="fa-brands fa-instagram"></i>
+                            </span>
+                          </a>
                     </div>
                     <div className="tp-header-info-item">
                       <a href="tel:01613-634246">

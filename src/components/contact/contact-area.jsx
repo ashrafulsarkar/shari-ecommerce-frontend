@@ -16,7 +16,7 @@ const ContactArea = () => {
             <div className="row">
               <div className="col-xl-9 col-lg-8">
                 <div className="tp-contact-wrapper">
-                  <h3 className="tp-contact-title">Sent A Message</h3>
+                  <h3 className="tp-contact-title">Send A Message</h3>
 
                   <div className="tp-contact-form">
                     {/* form start */}
@@ -36,7 +36,7 @@ const ContactArea = () => {
                     </div>
                     <div className="tp-contact-info-content">
                       <p data-info="mail">
-                        <a href="mailto:contact@shofy.com">contact@shofy.com</a>
+                        <a href="mailto:storyofjo2020@gmail.com">storyofjo2020@gmail.com</a>
                       </p>
                       <p data-info="phone">
                         <a href="tel:01613-634246">01613-634246</a>
@@ -52,10 +52,10 @@ const ContactArea = () => {
                     <div className="tp-contact-info-content">
                       <p>
                         <a
-                          href="https://www.google.com/maps/place/New+York,+NY,+USA/@40.6976637,-74.1197638,11z/data=!3m1!4b1!4m6!3m5!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62!8m2!3d40.7127753!4d-74.0059728!16zL20vMDJfMjg2"
+                          href="https://www.google.com/maps/place/Mirpur,+Dhaka/@23.8105822,90.3436544,14z/data=!4m6!3m5!1s0x3755c0c1c61277db:0xc7d18838730e2e59!8m2!3d23.8223486!4d90.3654204!16s%2Fm%2F02phghv?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoASAFQAw%3D%3D"
                           target="_blank"
                         >
-                          84 sleepy hollow st. <br /> jamaica, New York 1432
+                          Mirpur, Dhaka, Bangladesh, 1216
                         </a>
                       </p>
                     </div>
@@ -73,14 +73,12 @@ const ContactArea = () => {
                         </h4>
 
                         <div className="tp-contact-social-icon">
-                          <a href="#">
+                          <a href="https://www.facebook.com/exclusivejamdanisaree">
                             <i className="fa-brands fa-facebook-f"></i>
                           </a>
-                          <a href="#">
-                            <i className="fa-brands fa-twitter"></i>
-                          </a>
-                          <a href="#">
-                            <i className="fa-brands fa-linkedin-in"></i>
+
+                          <a href="https://www.instagram.com/jo_preserving_heritage/">
+                            <i className="fa-brands fa-instagram"></i>
                           </a>
                         </div>
                       </div>

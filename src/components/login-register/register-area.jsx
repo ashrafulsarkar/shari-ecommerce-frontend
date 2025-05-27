@@ -10,7 +10,7 @@ import GoogleSignUp from "./google-sign-up";
 const RegisterArea = () => {
   return (
     <>
-      <section className="tp-login-area pb-140 p-relative z-index-1 fix">
+      <section className="tp-login-area pb-80 pt-80 p-relative z-index-1 fix">
         <LoginShapes />
         <div className="container">
           <div className="row justify-content-center">
@@ -31,11 +31,11 @@ const RegisterArea = () => {
                       <GoogleSignUp/>
                     </div>
                   </div> */}
-                  <div className="tp-login-mail text-center mb-40">
+                  {/* <div className="tp-login-mail text-center mb-40">
                     <p>
                       or Sign up with <a href="#">Email</a>
                     </p>
-                  </div>
+                  </div> */}
                   {/* form start */}
                   <RegisterForm />
                   {/* form end */}

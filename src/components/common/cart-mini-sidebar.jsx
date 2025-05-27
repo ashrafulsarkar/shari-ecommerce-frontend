@@ -38,9 +38,9 @@ const handleCloseCartMini = () => {
                 </button>
               </div>
             </div>
-            <div className="cartmini__shipping">
+            {/* <div className="cartmini__shipping">
               <RenderCartProgress/>
-            </div>
+            </div> */}
             {cart_products.length > 0 && <div className="cartmini__widget">
               {cart_products.map((item,i) => (
                 <div key={i} className="cartmini__widget-item">

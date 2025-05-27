@@ -18,17 +18,16 @@ const BlogDetailsAuthor = ({blog}) => {
           <a href="#">{blog?.created_by?.name}</a>
         </h5>
         <p>
-        {blog?.created_by?.bio}
-
+          {blog?.created_by?.bio}
         </p>
 
-        <div className="tp-postbox-details-author-social">
+        {/* <div className="tp-postbox-details-author-social">
           {blog?.social_data.map((s) => (
             <a href={s.link} target="_blank" className="me-1" key={s.id}>
               <i className={s.icon}></i>
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

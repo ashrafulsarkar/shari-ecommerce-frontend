@@ -12,7 +12,7 @@ import ProductItem from './product-item';
 
 // slider setting
 const slider_setting = {
-  slidesPerView: 5,
+  slidesPerView: 4,
   spaceBetween: 25,
   pagination: {
     el: ".tp-category-slider-dot-4",
@@ -26,7 +26,7 @@ const slider_setting = {
   },
   breakpoints: {
     '1400': {
-      slidesPerView: 5,
+      slidesPerView: 4,
     },
     '1200': {
       slidesPerView: 4,
@@ -78,8 +78,8 @@ const PopularProducts = ({title="Popular on the Shofy store.",sub_title=""}) => 
   }
   return (
     <>
-      <section className="tp-category-area pt-115 pb-105 tp-category-plr-85" style={{backgroundColor:`#EFF1F5`}}>
-        <div className="container-fluid">
+      <section className="tp-category-area pt-70 pb-70 tp-category-plr-85" style={{backgroundColor:`#EFF1F5`}}>
+        <div className="container">
           <div className="row">
             <div className="col-xl-12">
               <div className="tp-section-title-wrapper-4 mb-60 text-center">

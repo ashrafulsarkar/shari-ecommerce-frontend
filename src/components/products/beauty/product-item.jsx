@@ -60,13 +60,13 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
                 <span className="tp-product-tooltip">Add to Cart</span>
               </button>
             )}
-            <button
+            {/* <button
               onClick={() => dispatch(handleProductModal(product))}
               className="tp-product-action-btn-3 tp-product-quick-view-btn"
             >
               <QuickView />
               <span className="tp-product-tooltip">Quick View</span>
-            </button>
+            </button> */}
 
             <button disabled={status === 'out-of-stock'} onClick={()=> handleWishlistProduct(product)} className={`tp-product-action-btn-3
             ${isAddedToWishlist?'active':''} tp-product-add-to-wishlist-btn`}>

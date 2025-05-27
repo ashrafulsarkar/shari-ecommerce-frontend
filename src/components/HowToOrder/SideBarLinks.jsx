@@ -13,8 +13,8 @@ export default function SideBarLinks() {
     { title: 'Shipping & Delivery', href: '/shipping-and-delivery' },
     { title: 'Track Your Orders', href: '/track-orders' },
     { title: 'Return & Exchange', href: '/return-exchange' },
-    { title: 'Policy', href: '/policy' },
-    { title: 'Terms And Conditions', href: '/terms-conditions' },
+    // { title: 'Policy', href: '/policy' },
+    // { title: 'Terms And Conditions', href: '/terms-conditions' },
   ];
 
   return (

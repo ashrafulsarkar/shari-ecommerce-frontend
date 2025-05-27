@@ -4,7 +4,38 @@ import ErrorMsg from '@/components/common/error-msg';
 import { useGetAllTypesQuery, useGetPopularProductByTypeQuery, useGetProductTypeQuery } from '@/redux/features/productApi';
 import ProductItem from './product-item';
 import { HomeTwoPrdLoader } from '@/components/loader';
+import { Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+// slider setting
+const slider_setting = {
+    slidesPerView: 4,
+		spaceBetween: 24,
+		scrollbar: {
+			el: '.tp-best-swiper-scrollbar',
+			draggable: true,
+			dragClass: 'tp-swiper-scrollbar-drag',
+			snapOnRelease: true,
+		  },
+
+		breakpoints: {
+			'1200': {
+				slidesPerView: 4,
+			},
+			'992': {
+				slidesPerView: 4,
+			},
+			'768': {
+				slidesPerView: 2,
+			},
+			'576': {
+				slidesPerView: 2,
+			},
+			'0': {
+				slidesPerView: 1,
+			},
+		}
+}
 
 const ProductArea = () => {
   const [activeTab, setActiveTab] = useState("All Collection");
@@ -17,7 +48,7 @@ const ProductArea = () => {
    useGetAllTypesQuery();
 
    const typeTabs = alltypes?.result?.map(type => type.name) || [];
-   const tabs = ["All Collection", ...typeTabs];
+   const tabs = ["All Collection",...typeTabs];
 
 
 
@@ -57,15 +88,15 @@ const ProductArea = () => {
       product_items = products.data.filter(p => p.type?.name === activeTab);
     }
     content = <>
-      <div className="row align-items-end">
+      <div className="row align-items-end pt-70 pb-40 ">
         <div className="col-xl-6 col-lg-6">
-          <div className="tp-section-title-wrapper-4 mb-40 text-center text-lg-start">
+          <div className="tp-section-title-wrapper-4 text-center text-lg-start">
             <span className="tp-section-title-pre-4">Product Collection</span>
             <h3 className="tp-section-title-4">Discover our Products</h3>
           </div>
         </div>
         <div className="col-xl-6 col-lg-6">
-          <div className="tp-product-tab-2 tp-product-tab-3  tp-tab mb-45">
+          <div className="tp-product-tab-2 tp-product-tab-3  tp-tab ">
             <div className="tp-product-tab-inner-3 d-flex align-items-center justify-content-center justify-content-lg-end">
               <nav>
                 <div className="nav nav-tabs justify-content-center tp-product-tab tp-tab-menu p-relative" id="nav-tab" role="tablist">
@@ -90,11 +121,18 @@ const ProductArea = () => {
         </div>
       </div>
       <div className="row">
-        {product_items.map((prd) => (
+        {/* {product_items.map((prd) => (
           <div key={prd._id} className="col-xl-3 col-lg-4 col-sm-6">
             <ProductItem product={prd} />
           </div>
-        ))}
+        ))} */}
+        <Swiper {...slider_setting} modules={[Scrollbar]} className="tp-best-slider-active swiper-container mb-10">
+                {product_items.map(item => (
+                  <SwiperSlide key={item._id} className="tp-best-item-4">
+                    <ProductItem product={item} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
       </div>
     </>
   }
@@ -102,7 +140,7 @@ const ProductArea = () => {
 
   return (
     <>
-      <section className="tp-product-area pt-115 pb-80">
+      <section className="tp-product-area">
         <div className="container">
           {content}
         </div>

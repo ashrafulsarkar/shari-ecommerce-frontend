@@ -84,7 +84,7 @@ const ProductItem = ({ product, offer_style = false }) => {
                   <span className="tp-product-tooltip">Add to Cart</span>
                 </button>
               )}
-              <button
+              {/* <button
                 onClick={() => dispatch(handleProductModal(product))}
                 type="button"
                 className="tp-product-action-btn tp-product-quick-view-btn"
@@ -92,7 +92,7 @@ const ProductItem = ({ product, offer_style = false }) => {
                 <QuickView />
 
                 <span className="tp-product-tooltip">Quick View</span>
-              </button>
+              </button> */}
               <button
                 type="button"
                 className={`tp-product-action-btn ${isAddedToWishlist ? 'active' : ''} tp-product-add-to-wishlist-btn`}

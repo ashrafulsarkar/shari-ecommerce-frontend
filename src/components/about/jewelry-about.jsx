@@ -3,18 +3,22 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // internal
-import about_img from '@assets/pic/Layer-01.png';
+import about_img from '@assets/pic/about.png';
 import about_thumb from '@assets/pic/g100.png';
 import { ArrowRightLong } from '@/svg';
 
 const JewelryAbout = () => {
   return (
     <>
-      <section className="tp-about-area pt-125 pb-180">
+      <section className="tp-about-area pt-80 pb-80">
         <div className="container">
           <div className="row">
             <div className="col-xl-5 col-lg-6">
-              <div className="tp-about-thumb-wrapper p-relative mr-35">
+              <div className="tp-about-thumb-wrapper p-relative mr-35" style={{
+                    background: "#f8f2e6",
+                     margin: 0
+
+              }} >
                 <div className="tp-about-thumb m-img">
                   <Image src={about_img} alt="about_img" width={'auto'} height={'auto'}/>
                 </div>

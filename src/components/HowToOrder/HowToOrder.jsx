@@ -21,33 +21,36 @@ export default function HowToOrder() {
     {
       id: 1,
       title: ' Step 1: Select your location',
-      content: `Our product offering and catalogues vary based on your intended delivery location. Customers can select the country product catalogue based on their intended shipping address from the top menu bar (see image below).
-You will see BGD, AUS, GER, SIN, UAE, UK or USA on the top menu bar which will indicate the country catalogue page you are currently browsing.`
+      content: `Start by choosing where you want your order delivered. This helps us show you the right stock, delivery time, and shipping cost,  whether you're shopping from Bangladesh or overseas.
+`
     },
     {
       id: 2,
       title: 'Step 2: Browse items by category',
-      content: 'To browse the online store, use the main navigation menu (visible at the bottom part of the page) which has the names of the different product categories – Women, Men, Kids, Home Décor, Wedding, Jewellery, Gifts & Crafts, Skin & Hair, Brands.'
+      content: 'Dive into our collections, from Dhakaiya Jamdani to handloom classics. Filter by fabric, color, or price to discover sarees that match your style. Every piece tells a story; find the one that speaks to you.'
     },
     {
       id: 3,
       title: 'Step 3: Selecting your desired product',
-      content: `Once you click or tap on a sub-category to will take you to the product listing page. Each subcategory of the products can be filtered or sorted based on price, size, colour etc.
-      <div>
-      <img src="https://www.aarong.com/media/How-to-order/3-1-how-to-order-06122023.png" alt="">
-      </div>
-
-      `
+      content: `Click on the product to view detailed photos, material info, and care tips. Happy with your pick? Choose any variation if available, then click “Add to Cart.” You can keep browsing or move to checkout.`
     },
     {
       id: 4,
       title: 'Payment method for deliveries to a shipping address other than Bangladesh',
-      content: 'Specific payment methods available for international deliveries would go here.'
+      content: `We support international orders with secure payment via major credit/debit cards. Shipping charges and delivery time will be shown clearly before you place your order.`
     },
     {
       id: 5,
       title: 'Custom Duties',
-      content: 'Information about custom duties would go here.'
+      content: `
+      <p>If you're ordering from outside Bangladesh, your country may apply <b>customs duties, VAT, or import taxes</b> on your purchase.</p>
+      <h5>These charges are:</h5>
+      <ul>
+        <li> <strong>Not included</strong> in the product or shipping price</li>
+        <li> <strong>Collected by your local customs authority</strong> </li>
+        <li> <strong>Based on your country’s import rules and thresholds</strong></li>
+      </ul>
+      `
     }
   ];
 
@@ -69,7 +72,8 @@ You will see BGD, AUS, GER, SIN, UAE, UK or USA on the top menu bar which will i
           <h1 className={styles.pageTitle}>How To Order</h1>
 
           <p className={styles.introText}>
-          Follow these simple steps to successfully place your order on Aarong website
+          Your perfect saree is just a few steps away. Here’s how to order from <a target="_blank" style={{ color: 'blue' }} href="http://jo-bd.com">Jo-BD.com </a>
+
           </p>
 
           <div className={styles.accordionSections}>

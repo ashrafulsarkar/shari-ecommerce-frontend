@@ -4,10 +4,10 @@ import {useSearchParams, useRouter} from 'next/navigation';
 import ShopLoader from "../loader/shop/shop-loader";
 import ErrorMsg from "../common/error-msg";
 import ShopFilterOffCanvas from "../common/shop-filter-offcanvas";
-import { useGetAllProductsQuery } from "@/redux/features/productApi";
+import { useGetAllProductsQuery, useGetPopularProductByTypeQuery } from "@/redux/features/productApi";
 import ShopContent from "./shop-content";
 
-const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
+const ShopArea = ({shop_right=false,hidden_sidebar=false,isBrand=false,type=null,brandName=""}) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const category = searchParams.get('category');
@@ -17,7 +17,10 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
   const subCategory = searchParams.get('subCategory');
   const filterColor = searchParams.get('color');
   const status = searchParams.get('status');
-  const { data: products, isError, isLoading } = useGetAllProductsQuery();
+
+
+  const { data: products, isError, isLoading } = isBrand ? useGetPopularProductByTypeQuery({ type: type ? type :'popular', query: `topSellers=true` }) : useGetAllProductsQuery();
+
   const [priceValue, setPriceValue] = useState([0, 0]);
   const [selectValue, setSelectValue] = useState("");
   const [currPage, setCurrPage] = useState(1);
@@ -150,7 +153,7 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
       product_items = product_items.filter((p) => Number(p.price) >= Number(minPrice) &&
       Number(p.price) <= Number(maxPrice))
     }
-    console.log("product_items",product_items)
+    // console.log("product_items",product_items)
 
 
     content = (
@@ -162,9 +165,13 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
         otherProps={otherProps}
         shop_right={shop_right}
         hidden_sidebar={hidden_sidebar}
+        isBrand={isBrand}
+        brandName={brandName}
       />
 
          <ShopFilterOffCanvas
+         isBrand={isBrand}
+        brandName={brandName}
           all_products={products.data}
           otherProps={otherProps}
         />

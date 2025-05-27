@@ -80,19 +80,22 @@ function ProfileSetting({active,handleActive}) {
         Setting
       </span>
       <ul className={active === 'setting' ? "tp-setting-list-open" : ""}>
-        <li>
+        {
+          user?.name && <>
+          <li>
           <Link href="/profile">My Profile</Link>
         </li>
         <li>
           <Link href="/wishlist">Wishlist</Link>
         </li>
-        <li>
-          <Link href="/cart">Cart</Link>
-        </li>
-        <li>
-          {!user?.name &&<Link href="/login" className="cursor-pointer">Login</Link>}
-          {user?.name &&<a onClick={handleLogout} className="cursor-pointer">Logout</a>}
-        </li>
+          </>
+
+        }
+
+        {!user?.name && <li><Link href="/login" className="cursor-pointer">Login</Link></li>}
+        {!user?.name &&<li><Link href="/register" className="cursor-pointer">Register</Link> </li>}
+        {user?.name &&<li><a onClick={handleLogout} className="cursor-pointer">Logout</a> </li>}
+
       </ul>
     </div>
   );

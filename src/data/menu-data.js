@@ -103,10 +103,10 @@ export default menu_data;
 export const mobile_menu = [
   {
     id: 1,
-    homes: true,
+    homes: false,
     title: 'Home',
     link: '/',
-    home_pages: [
+    // home_pages: [
       // {
       //   img: home_1,
       //   title: 'Electronics',
@@ -127,7 +127,7 @@ export const mobile_menu = [
       //   title: 'Jewelry',
       //   link: '/home-4'
       // }
-    ]
+    // ]
   },
   {
     id: 8,
@@ -157,53 +157,55 @@ export const mobile_menu = [
   //     { title: 'Variations Swatches', link: '/product-details-swatches' },
   //   ],
   // },
-  {
-    id: 3,
-    sub_menu: true,
-    title: 'eCommerce',
-    link: '/cart',
-    sub_menus: [
-      { title: 'Shopping Cart', link: '/cart' },
-      { title: 'Compare', link: '/compare' },
-      { title: 'Wishlist', link: '/wishlist' },
-      { title: 'Checkout', link: '/checkout' },
-      { title: 'My account', link: '/profile' },
-    ],
+   {
+    id: 33,
+    sub_menu: false,
+    title: 'Shop',
+    link: '/shop',
+
   },
-  {
-    id: 4,
-    sub_menu: true,
-    title: 'More Pages',
-    link: '/login',
-    sub_menus: [
-      { title: 'Login', link: '/login' },
-      { title: 'Register', link: '/register' },
-      { title: 'Forgot Password', link: '/forgot' },
-      { title: '404 Error', link: '/404' },
-    ],
-  },
-  {
-    id: 4,
-    single_link: true,
-    title: 'Coupons',
-    link: '/coupon',
-  },
+
+  // {
+  //   id: 4,
+  //   sub_menu: true,
+  //   title: 'More Pages',
+  //   link: '/login',
+  //   sub_menus: [
+  //     { title: 'Login', link: '/login' },
+  //     { title: 'Register', link: '/register' },
+  //     { title: 'Forgot Password', link: '/forgot' },
+  //     { title: '404 Error', link: '/404' },
+  //   ],
+  // },
+  // {
+  //   id: 4,
+  //   single_link: true,
+  //   title: 'Coupons',
+  //   link: '/coupon',
+  // },
   {
     id: 5,
-    sub_menu: true,
+    sub_menu: false,
     title: 'Blog',
     link: '/blog',
-    sub_menus: [
+    // sub_menus: [
       // { title: 'Blog Standard', link: '/blog' },
       // { title: 'Blog Grid', link: '/blog-grid' },
       // { title: 'Blog List', link: '/blog-list' },
       // { title: 'Blog Details', link: '/blog-details' },
       // { title: 'Blog Details Full Width', link: '/blog-details-2' },
-    ]
+    // ]
   },
+  //  {
+  //   id: 3,
+  //   sub_menu: false,
+  //   title: 'Cart',
+  //   link: '/cart',
+
+  // },
   {
     id: 6,
-    single_link: true,
+    single_link: false,
     title: 'Contact',
     link: '/contact',
   },

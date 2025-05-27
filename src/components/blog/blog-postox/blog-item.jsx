@@ -34,14 +34,26 @@ const BlogItem = ({ item = {} }) => {
           !item.slider && (
             <div className="tp-postbox-thumb w-img">
               <Link href={`/blog-details/${item.slug}`}>
-                <Image src={item.img}  width={500} height={300} alt={item.title} />
+                <Image src={item.img}  width={500} height={300}
+                style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+               alt={item.title} />
               </Link>
             </div>
           )}
         {item?.video && (
           <div className="tp-postbox-thumb tp-postbox-video w-img p-relative">
             <Link href={`/blog-details/${item.id}`}>
-              <Image src={item.img}  width={500} height={300} alt={item.title} />
+              <Image src={item.img}  width={500} height={300}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+              alt={item.title} />
             </Link>
             <a
               onClick={() => setIsVideoOpen(true)}
@@ -99,10 +111,8 @@ const BlogItem = ({ item = {} }) => {
               </Link>
             </h3>
             <div className="tp-postbox-text">
-              <p>
-                {item.description.slice(0,150)}
+              <div dangerouslySetInnerHTML={{ __html: item.description.slice(0,150) }} />
 
-              </p>
             </div>
             <div className="tp-postbox-read-more">
               <Link href={`/blog-details/${item.slug}`} className="tp-btn">
