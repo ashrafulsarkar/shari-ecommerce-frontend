@@ -13,12 +13,12 @@ import useCheckoutSubmit from "@/hooks/use-checkout-submit";
 
 const CheckoutArea = () => {
   const router = useRouter();
-  useEffect(() => {
-    const isAuthenticate = Cookies.get("userInfo");
-    if(!isAuthenticate){
-      router.push("/login")
-    }
-  },[router]);
+  // useEffect(() => {
+  //   const isAuthenticate = Cookies.get("userInfo");
+  //   if(!isAuthenticate){
+  //     router.push("/login")
+  //   }
+  // },[router]);
   const checkoutData = useCheckoutSubmit();
   const {handleSubmit,submitHandler,register,errors,handleCouponCode,couponRef,couponApplyMsg} = checkoutData;
   const { cart_products } = useSelector((state) => state.cart);

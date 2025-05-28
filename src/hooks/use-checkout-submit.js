@@ -39,6 +39,7 @@ const useCheckoutSubmit = () => {
   // shippingCost
   const [shippingCost, setShippingCost] = useState(0);
   const [shippingType, setShippingType] = useState('');
+  const [shippingArea, setShippingArea] = useState('');
   // discountAmount
   const [discountAmount, setDiscountAmount] = useState(0);
   // discountPercentage
@@ -199,7 +200,7 @@ const useCheckoutSubmit = () => {
     setIsCheckoutSubmit(true);
 
     let orderInfo = {
-      name: `${data.firstName} ${data.lastName}`,
+      name: `${data?.firstName || ""} ${data?.lastName || ""}`,
       address: data.address,
       contact: data.contactNo,
       email: data.email,
@@ -212,10 +213,11 @@ const useCheckoutSubmit = () => {
       paymentMethod: data.payment,
       subTotal: total,
       shippingCost: shippingCost,
+      shippingArea: shippingArea,
       discount: discountAmount,
       totalAmount: cartTotal,
       orderNote:data.orderNote,
-      user: `${user?._id}`,
+      user: user?._id || "tempUser",
     };
     // Card  stripe
     // if (data.payment === 'Card') {
@@ -350,6 +352,8 @@ const useCheckoutSubmit = () => {
     setShippingType,
     discountPercentage,
     discountProductType,
+    setShippingArea,
+    shippingArea,
     isCheckoutSubmit,
     setTotal,
     register,

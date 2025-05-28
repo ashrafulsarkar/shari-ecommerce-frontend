@@ -20,7 +20,7 @@ const OrderArea = ({ orderId }) => {
     content = <ErrorMsg msg="There was an error" />;
   }
   if (!isLoading && !isError) {
-    const { name, country, city, contact, payment_status,invoice, createdAt, cart, shippingCost, discount, totalAmount,paymentMethod} = order.order;
+    const { name, country,address, city, contact, payment_status,invoice, createdAt, cart, shippingCost, discount, totalAmount,paymentMethod} = order.order;
     content = (
       <>
         <section className="invoice__area pt-120 pb-120">
@@ -43,7 +43,11 @@ const OrderArea = ({ orderId }) => {
                         <div className="col-md-4 col-sm-6">
                           <div className="invoice__left">
                             <Logo/>
-                            <p>2879 Elk Creek Road <br /> Stone Mountain, Georgia </p>
+                            <p>
+                              {
+                               address
+                              }
+                            </p>
                           </div>
                         </div>
                         <div className="col-md-8 col-sm-6">

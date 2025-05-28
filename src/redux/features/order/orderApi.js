@@ -61,6 +61,11 @@ export const authApi = apiSlice.injectEndpoints({
       query: () => `/api/business_setting/front_end/shipping_info`,
       keepUnusedDataFor: 600,
     }),
+    // getUserOrders
+    getShippingArea: builder.query({
+      query: () => `/api/area`,
+      keepUnusedDataFor: 600,
+    }),
     // sslcommerze
     getSSLCommerzeOrderById: builder.query({
       query: (id) => `/api/sslcommerze/pay_sslcommerze/${id}`,
@@ -86,5 +91,6 @@ export const {
   useGetUserOrderByIdQuery,
   useGetUserOrdersQuery,
   useGetShippingInfoQuery,
+  useGetShippingAreaQuery,
   useAddSSLCommerzeOrderByIdMutation,
 } = authApi;

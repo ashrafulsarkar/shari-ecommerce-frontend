@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 // internal
 import useCartInfo from "@/hooks/use-cart-info";
 import ErrorMsg from "../common/error-msg";
-import { useGetShippingInfoQuery } from "@/redux/features/order/orderApi";
+import { useGetShippingAreaQuery, useGetShippingInfoQuery } from "@/redux/features/order/orderApi";
 
 const CheckoutOrderArea = ({ checkoutData }) => {
   const {
@@ -21,13 +21,19 @@ const CheckoutOrderArea = ({ checkoutData }) => {
     shippingCost,
     discountAmount,
     setShippingType,
-    shippingType
+    shippingType,
+    setShippingArea,
+    shippingArea,
   } = checkoutData;
   const { cart_products } = useSelector((state) => state.cart);
   const { total } = useCartInfo();
   const { data: settings, isError, isLoading } = useGetShippingInfoQuery();
+  const { data: areas, isError: areaError, isLoading: areaLoading } = useGetShippingAreaQuery();
 
-
+  const handleShippingArea = (e) => {
+    console.log(e)
+    setShippingArea(e);
+  };
 
   return (
     <div className="tp-checkout-place white-bg">
@@ -68,6 +74,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                   onClick={() => {
                     handleShippingCost(Number(settings?.inside_dhaka))
                     setShippingType('inside_dhaka')
+                    setShippingArea('')
                   }}
                   htmlFor="flat_shipping"
                 >
@@ -88,6 +95,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                   onClick={() => {
                     handleShippingCost(Number(settings?.outside_dhaka))
                     setShippingType('outside_dhaka')
+                    setShippingArea('')
                   }}
                   htmlFor="flat_rate"
                 >
@@ -97,7 +105,28 @@ const CheckoutOrderArea = ({ checkoutData }) => {
               </span>
             </div>
           </li>
+          {
+            shippingType ==='inside_dhaka' &&
 
+          <li className="tp-order-info-list-shipping">
+            <label
+
+                >
+                  <span>Select Area</span>
+                </label>
+                  <select
+                    style={{width: '60%'}}
+                  onChange={(e) => handleShippingArea(e.target.value)}
+                  >
+                    <option value="">Select Area</option>
+                    {
+                      areas?.map((area) => (
+                        <option key={area._id} value={area.name}>{area.name}</option>
+                      ))
+                    }
+                  </select>
+          </li>
+  }
            {/*  subtotal */}
            <li className="tp-order-info-list-subtotal">
             <span>Subtotal</span>
@@ -172,7 +201,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
 
 
 {
-  shippingType ==='inside_dhaka' &&
+  shippingType ==='inside_dhaka' && shippingArea &&
 
         <div className="tp-checkout-payment-item">
           <input
