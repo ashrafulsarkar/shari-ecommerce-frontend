@@ -11,35 +11,28 @@ import slider_img_2 from '@assets/fpic/JO_2.png';
 import slider_img_3 from '@assets/fpic/JO_03.png';
 import ShopArea from '@/components/shop/shop-area'
 
-export default function page() {
+async function getAlbum() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/slider/slider_data?type=jo`, {
+        next: { revalidate: 10 },
+      });
+
+    if (!response.ok) {
+        return [];
+    }
+    const data = await response.json();
+    return data ;
+  }
+
+
+
+export default async function page() {
+  const result = await getAlbum();
   return (
     <Wrapper>
       <HeaderFour/>
-      <FashionBanner bg={'khaki-bg'} slider_data={
-        [
-          {
-            id: 1,
-            subtitle: 'Draped in  Saree',
-            title: 'Wrapped in Culture',
-            img: slider_img_1,
-            link: '/brand/jo',
-          },
-          {
-            id: 2,
-            subtitle: 'Woven in Bengal',
-            title: 'Worn Worldwide',
-            img: slider_img_2,
-            link: '/brand/jo',
-          },
-          {
-            id: 3,
-            subtitle: 'Where Every Thread',
-            title: 'Holds a Heritage',
-            img: slider_img_3,
-            link: '/brand/jo',
-          },
-        ]
-      } />
+      <FashionBanner bg={'khaki-bg'}
+      slider_data={result}
+      />
       {/* <BeautyFeatured /> */}
       {/* <ProductArea type="popular" isOff={false} /> */}
       <div className="tp-product-area pt-80">

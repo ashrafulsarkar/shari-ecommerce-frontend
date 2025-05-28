@@ -64,10 +64,10 @@ const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
                   <div className="row align-items-center">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-slider-content-2">
-                        <span>{item.subtitle}</span>
-                        <h3 className="tp-slider-title-2">{item.title}</h3>
+                        <span>{item.sub_title_1}</span>
+                        <h3 className="tp-slider-title-2">{item.title_1}</h3>
                         <div className="tp-slider-btn-2">
-                          <Link href={item.link} className="tp-btn tp-btn-border">Shop Collection</Link>
+                          <Link href='/brand/jo' className="tp-btn tp-btn-border">Shop Collection</Link>
                         </div>
                       </div>
                     </div>
@@ -79,7 +79,7 @@ const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
                         </div>
                         <div className="tp-slider-thumb-2 text-end">
                           <span className="tp-slider-thumb-2-gradient"></span>
-                          <Image src={item.img} alt="slider img" priority width={'auto'} height={'auto'} />
+                          <img src={item.img} alt="slider img" priority width={'auto'} height={'auto'} />
                         </div>
                       </div>
                     </div>

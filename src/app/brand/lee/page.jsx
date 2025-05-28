@@ -10,40 +10,28 @@ import slider_img_1 from '@assets/fpic/11.png';
 import slider_img_2 from '@assets/fpic/12.png';
 import slider_img_3 from '@assets/fpic/13.png';
 import ShopArea from '@/components/shop/shop-area'
+async function getAlbum() {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/slider/slider_data?type=lee`, {
+        next: { revalidate: 10 },
+      });
+
+    if (!response.ok) {
+        return [];
+    }
+    const data = await response.json();
+    return data ;
+  }
 
 
-export default function page() {
+
+export default async function page() {
+  const result = await getAlbum();
   return (
     <Wrapper>
       <HeaderFour/>
       {/* <HomeHeroSlider/> */}
       <FashionBanner bg={'khaki-bg'}
-      slider_data={
-              [
-                 {
-                  id: 3,
-                  subtitle: 'Tradition in Threads',
-                  title: 'Style in Every Stitch',
-                  img: slider_img_3,
-                  link: '/brand/lee',
-                },
-                {
-                  id: 1,
-                  subtitle: 'A Fabric of Faith',
-                  title: 'A Dress of Devotion',
-                  img: slider_img_1,
-                  link: '/brand/lee',
-                },
-                {
-                  id: 2,
-                  subtitle: 'Rooted in Ritual',
-                  title: 'Worn with Wonder',
-                  img: slider_img_2,
-                  link: '/brand/lee',
-                },
-
-              ]
-            }
+      slider_data={result}
              />
       {/* <FashionCategory/> */}
       {/* <PopularProducts type="typeTopSeller" /> */}
