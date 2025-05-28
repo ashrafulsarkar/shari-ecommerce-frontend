@@ -63,7 +63,7 @@ const DetailsWrapper = ({ hoverClass, productItem, handleImageActive, activeImg,
           <>
             <span className="tp-product-details-price old-price">৳{price}</span>
             <span className="tp-product-details-price new-price">
-              {" "}${(Number(price) - (Number(price) * Number(discount)) / 100).toFixed(2)}
+              {" "}৳{(Number(price) +  Number(discount)).toFixed(2)}
             </span>
           </>
         ) : (
