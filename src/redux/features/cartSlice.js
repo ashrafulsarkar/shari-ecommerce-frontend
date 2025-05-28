@@ -14,13 +14,11 @@ export const cartSlice = createSlice({
   reducers: {
     add_cart_product: (state, { payload }) => {
       const isExist = state.cart_products.some((i) => i._id === payload._id);
-      console.log(isExist)
       if (!isExist) {
         const newItem = {
           ...payload,
           orderQuantity: state.orderQuantity,
         };
-        console.log(newItem)
         state.cart_products.push(newItem);
         notifySuccess(`${state.orderQuantity} ${payload.title} added to cart`);
       } else {
