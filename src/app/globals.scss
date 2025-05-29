@@ -117,6 +117,12 @@
     height: 140px;
     overflow-y: inherit;
 }
+.product.attribute.description ul {
+    padding-left: 23px;
+}
+.product.attribute.description p {
+    margin-bottom: 0px;
+}
 @media screen and (max-width: 600px) {
     .payment_img{
         width: 100%;
