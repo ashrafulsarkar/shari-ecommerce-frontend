@@ -141,7 +141,7 @@ const OrderArea = ({ orderId }) => {
               </div>
 
             </div>
-            <div className="invoice__print text-end mt-3">
+            {/* <div className="invoice__print text-end mt-3">
               <div className="row">
                 <div className="col-xl-12">
                   <ReactToPrint
@@ -161,7 +161,7 @@ const OrderArea = ({ orderId }) => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </>

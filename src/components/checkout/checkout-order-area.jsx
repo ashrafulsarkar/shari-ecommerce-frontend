@@ -24,6 +24,8 @@ const CheckoutOrderArea = ({ checkoutData }) => {
     shippingType,
     setShippingArea,
     shippingArea,
+    areaCharge,
+    setAreaCharge,
   } = checkoutData;
   const { cart_products } = useSelector((state) => state.cart);
   const { total } = useCartInfo();
@@ -31,8 +33,9 @@ const CheckoutOrderArea = ({ checkoutData }) => {
   const { data: areas, isError: areaError, isLoading: areaLoading } = useGetShippingAreaQuery();
 
   const handleShippingArea = (e) => {
-    console.log(e)
     setShippingArea(e);
+    const result = areas?.find((area) => area.name === e);
+    setAreaCharge(result?.charge);
   };
 
   return (
@@ -96,6 +99,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                     handleShippingCost(Number(settings?.outside_dhaka))
                     setShippingType('outside_dhaka')
                     setShippingArea('')
+                    setAreaCharge(0)
                   }}
                   htmlFor="flat_rate"
                 >
@@ -121,7 +125,7 @@ const CheckoutOrderArea = ({ checkoutData }) => {
                     <option value="">Select Area</option>
                     {
                       areas?.map((area) => (
-                        <option key={area._id} value={area.name}>{area.name}</option>
+                        <option key={area._id} value={area.name}>{area.name} - Charge =({area.charge})TK</option>
                       ))
                     }
                   </select>
@@ -130,25 +134,25 @@ const CheckoutOrderArea = ({ checkoutData }) => {
            {/*  subtotal */}
            <li className="tp-order-info-list-subtotal">
             <span>Subtotal</span>
-            <span>৳{total.toFixed(2)}</span>
+            <span>৳{total}</span>
           </li>
 
            {/*  shipping cost */}
            <li className="tp-order-info-list-subtotal">
             <span>Shipping Cost</span>
-            <span>৳{shippingCost.toFixed(2)}</span>
+            <span>৳{shippingCost+areaCharge}</span>
           </li>
 
            {/* discount */}
            <li className="tp-order-info-list-subtotal">
             <span>Discount</span>
-            <span>৳{discountAmount.toFixed(2)}</span>
+            <span>৳{discountAmount}</span>
           </li>
 
           {/* total */}
           <li className="tp-order-info-list-total">
             <span>Total</span>
-            <span>৳{parseFloat(cartTotal).toFixed(2)}</span>
+            <span>৳{parseFloat(cartTotal)+areaCharge}</span>
           </li>
         </ul>
       </div>

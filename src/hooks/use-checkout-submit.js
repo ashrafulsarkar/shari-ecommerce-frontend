@@ -40,6 +40,7 @@ const useCheckoutSubmit = () => {
   const [shippingCost, setShippingCost] = useState(0);
   const [shippingType, setShippingType] = useState('');
   const [shippingArea, setShippingArea] = useState('');
+  const [areaCharge, setAreaCharge] = useState(0);
   // discountAmount
   const [discountAmount, setDiscountAmount] = useState(0);
   // discountPercentage
@@ -212,8 +213,9 @@ const useCheckoutSubmit = () => {
       cart: cart_products,
       paymentMethod: data.payment,
       subTotal: total,
-      shippingCost: shippingCost,
+      shippingCost: shippingCost+areaCharge,
       shippingArea: shippingArea,
+      areaCharge: areaCharge,
       discount: discountAmount,
       totalAmount: cartTotal,
       orderNote:data.orderNote,
@@ -369,6 +371,7 @@ const useCheckoutSubmit = () => {
     couponApplyMsg,
     showCard,
     setShowCard,
+    areaCharge, setAreaCharge
   };
 };
 
