@@ -7,13 +7,15 @@ const useCartInfo = () => {
     const [ total, setTotal] = useState(0);
     const { cart_products } = useSelector((state) => state.cart);
 
+
+
+
     useEffect(() => {
         const cart = cart_products.reduce((cartTotal, cartItem) => {
             const { price, orderQuantity } = cartItem;
             const itemTotal = price * orderQuantity;
             cartTotal.total += itemTotal
             cartTotal.quantity += orderQuantity
-
             return cartTotal;
         }, {
             total: 0,
