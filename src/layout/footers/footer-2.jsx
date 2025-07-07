@@ -9,6 +9,7 @@ import pay from '@assets/pic/payment.png';
 import Logo from '@/components/Logo/Logo';
 import { api } from '@/env';
 import axios from 'axios';
+import { Mail, MapPin, Timer } from 'lucide-react';
 
 const FooterTwo = () => {
   const social_data =[
@@ -77,7 +78,7 @@ const FooterTwo = () => {
                         <div className="tp-footer-contact-item d-flex align-items-start">
                           <div className="tp-footer-contact-icon">
                             <span>
-                              <Email />
+                              <Mail size={16} />
                             </span>
                           </div>
                           <div className="tp-footer-contact-content">
@@ -85,13 +86,23 @@ const FooterTwo = () => {
                           </div>
                         </div>
                         <div className="tp-footer-contact-item d-flex align-items-start">
-                          <div className="tp-footer-contact-icon">
+                          <div className="tp-footer-contact-icon" style={{position: 'relative', left: '-2px'}}>
                             <span>
-                              <Location />
+                              <MapPin size={20} />
                             </span>
                           </div>
                           <div className="tp-footer-contact-content">
-                            <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">Mirpur, Dhaka, Bangladesh, 1216</a></p>
+                            <p><a href="https://www.google.com/maps/place/Sleepy+Hollow+Rd,+Gouverneur,+NY+13642,+USA/@44.3304966,-75.4552367,17z/data=!3m1!4b1!4m6!3m5!1s0x4cccddac8972c5eb:0x56286024afff537a!8m2!3d44.3304928!4d-75.453048!16s%2Fg%2F1tdsjdj4" target="_blank">House: 1243 (Lift 2), Road: 10, Avenue: 2 Mirpur DOHS Mirpur, Dhaka-1216</a></p>
+                          </div>
+                        </div>
+                        <div className="tp-footer-contact-item d-flex align-items-start">
+                          <div className="tp-footer-contact-icon" style={{position: 'relative', left: '-2px'}}>
+                            <span>
+                              <Timer size={20}/>
+                            </span>
+                          </div>
+                          <div className="tp-footer-contact-content">
+                            <p><a href="#">Opening Time: 11.00 am - 8.00 pm Everyday</a></p>
                           </div>
                         </div>
                       </div>

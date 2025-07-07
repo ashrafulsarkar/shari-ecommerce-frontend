@@ -7,7 +7,7 @@ export const feature_data = [
   {
     icon: <Truck />,
     title: 'Inside Dhaka',
-    subtitle: 'Within 3 Days, Cash on  Delivery' ,
+    subtitle: 'Within 3 Days, Cash on  Delivery.' ,
     subtitle1: ' '
   },
   {
@@ -19,13 +19,13 @@ export const feature_data = [
   {
     icon: <><ShoppingBag /></>,
     title: 'Shipping Charge',
-    subtitle: 'For Jo, Delivery is Free',
-    subtitle1: 'For Lee, Depends on the product’s Weight',
+    subtitle: 'For Jo, Delivery Is Free.',
+    subtitle1: 'For Lee, Depends On The Product’s Weight.',
   },
   {
     icon: <><Headset /></>,
     title: 'Chat With Us',
-    subtitle: 'We offer business-hour chat support',
+    subtitle: 'We offer Business-Hour Chat Support.',
     subtitle1:""
   },
 ]
