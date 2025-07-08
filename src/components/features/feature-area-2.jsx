@@ -25,13 +25,10 @@ export const feature_data = [
   {
     icon: <><Headset /></>,
     title: 'Chat With Us',
-    subtitle: 'We offer Business-Hour Chat Support.',
+    subtitle: 'We Offer Business Hour Chat Support.',
     subtitle1:""
   },
 ]
-
-
-
 
 const FeatureAreaTwo = () => {
   return (
