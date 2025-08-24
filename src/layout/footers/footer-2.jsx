@@ -140,7 +140,7 @@ const FooterTwo = () => {
                 </div>
                 <div className="col-xl-4 col-lg-4 col-md-6 col-sm-7">
                   <div className="tp-footer-widget footer-col-4-4 mb-50">
-                    <h4 className="tp-footer-widget-title">Subcribe.</h4>
+                    <h4 className="tp-footer-widget-title">Subscribes</h4>
                     <div className="tp-footer-widget-content">
                       <div className="tp-footer-subscribe">
                         <p>Our conversation is just getting started</p>
@@ -148,7 +148,7 @@ const FooterTwo = () => {
                           <form onSubmit={handleSubmit}>
                             <div className="tp-footer-subscribe-input">
                               <input ref={emailRef} type="email" placeholder="Enter Your Email" />
-                              <button type="submit">Subscribe</button>
+                              <button type="submit">Subscribes</button>
                             </div>
                           </form>
                           {message && <p>{message}</p>}

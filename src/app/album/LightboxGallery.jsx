@@ -90,6 +90,7 @@ const LightboxGallery = ({ images }) => {
 
   return (
     <>
+    <div className="container">
       <div className="gallery">
         {images.map((image, index) => (
           <div key={index} className="album_image gallery-item" onClick={() => openLightbox(index)}>
@@ -103,7 +104,7 @@ const LightboxGallery = ({ images }) => {
           </div>
         ))}
       </div>
-
+</div>
       {isOpen && (
         <div
           className="lightbox-overlay"
