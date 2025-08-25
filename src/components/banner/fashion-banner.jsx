@@ -87,9 +87,16 @@ const FashionBanner = ({bg="grey-bg-5",slider_data,link='/'}) => {
                 </div>
               </div>
               {/* mobile slider  */}
-              <div className='mobile_slider'>
+              <div className='mobile_slider' style={{background: "#ad9567"}}>
+                <div className="">
+                        <span>{item.sub_title_1}</span>
+                        <h3 className="tp-slider-title-2">{item.title_1}</h3>
+                        <div className="tp-slider-btn-2">
+                          <Link href={link} className="tp-btn tp-btn-border">Shop Collection</Link>
+                        </div>
+                      </div>
                 <Link href={link}>
-                <img src={item.mobileImage} alt="slider img" width={'100%'} height={'auto'} />
+                <img src={item.img} alt="slider img" width={'100%'} height={'auto'} />
                 </Link>
               </div>
               {/* tablet slider  */}

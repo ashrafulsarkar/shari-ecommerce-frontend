@@ -24,10 +24,8 @@ async function getAlbum() {
   }
 
 
-
 export default async function page() {
   const result = await getAlbum();
-  console.log(result)
   return (
     <Wrapper>
       <HeaderFour/>

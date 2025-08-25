@@ -126,16 +126,24 @@ const JewelryBanner = ({slider_result=[]}) => {
             </div>
             {/* mobile slider  */}
             <div className='mobile_slider'>
+              <div className="tp-slider-content-4 p-relative z-index-1">
+                      <span>{item.sub_title_1}</span>
+                      <h3 className="tp-slider-title-4">{item.title_1}</h3>
+                      <div className="tp-slider-btn-4">
+                        <Link href="/shop" className="tp-btn tp-btn-border tp-btn-border-white">Shop Now</Link>
+                      </div>
+                    </div>
+
               <Link href="/shop">
-               <img src={item.mobileImage} alt="slider img" width={'100%'} height={'auto'} />
+               <img src={item.img} alt="slider img" width={'100%'} height={'auto'} />
               </Link>
             </div>
             {/* tablet slider  */}
-            <div className='tablet_slider'>
+            {/* <div className='tablet_slider'>
                <Link href="/shop">
                <img src={item.tabletImage} alt="slider img" width={'100%'} height={'auto'} />
                </Link>
-            </div>
+            </div> */}
             </>
           ))}
         </Slider>

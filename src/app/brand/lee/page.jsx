@@ -38,7 +38,7 @@ export default async function page() {
       {/* <PopularProducts type="typeTopSeller" /> */}
       {/* <ProductArea type="typeTopSeller" isOff={false} /> */}
       <div className="tp-product-area pt-80">
-              <ShopArea
+            <ShopArea
               isBrand = {true}
               type="typeTopSeller"
               brandName="brand/lee"

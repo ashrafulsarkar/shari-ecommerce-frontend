@@ -152,7 +152,9 @@
   display: flex;
 }
 .mobile_slider{
+  padding-top: 50px;
   display: none;
+  text-align: center;
 }
 .tablet_slider{
   display: none;
@@ -167,6 +169,15 @@
       display: none !important;
   }
   .tablet_slider{
+    display: block;
+  }
+  .tp-slider-thumb-4 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: inherit;
+}
+ .mobile_slider{
     display: block;
   }
 
