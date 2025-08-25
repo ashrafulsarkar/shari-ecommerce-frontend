@@ -49,14 +49,14 @@ const slider_setting = {
   },
 }
 
-const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
+const FashionBanner = ({bg="grey-bg-5",slider_data,link='/'}) => {
   return (
     <>
       <section className="tp-slider-area p-relative z-index-1">
         <Swiper {...slider_setting} modules={[Pagination, Navigation, EffectFade]} className="tp-slider-active-2 swiper-container">
           {slider_data.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className={`tp-slider-item-2 tp-slider-height-2 p-relative ${bg} d-flex align-items-end`}>
+              <div className={`tp-slider-item-2 tp-slider-height-2 p-relative ${bg} d-flex align-items-end slider_area`}>
                 <div className="tp-slider-2-shape">
                   <Image className="tp-slider-2-shape-1" src={slider_shape} alt="slider_shape" width={'auto'} height={'auto'} />
                 </div>
@@ -64,10 +64,10 @@ const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
                   <div className="row align-items-center">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-slider-content-2">
-                        <span>{item.subtitle}</span>
-                        <h3 className="tp-slider-title-2">{item.title}</h3>
+                        <span>{item.sub_title_1}</span>
+                        <h3 className="tp-slider-title-2">{item.title_1}</h3>
                         <div className="tp-slider-btn-2">
-                          <Link href={item.link} className="tp-btn tp-btn-border">Shop Collection</Link>
+                          <Link href={link} className="tp-btn tp-btn-border">Shop Collection</Link>
                         </div>
                       </div>
                     </div>
@@ -79,12 +79,31 @@ const FashionBanner = ({bg="grey-bg-5",slider_data}) => {
                         </div>
                         <div className="tp-slider-thumb-2 text-end">
                           <span className="tp-slider-thumb-2-gradient"></span>
-                          <Image src={item.img} alt="slider img" priority width={'auto'} height={'auto'} />
+                          <img src={item.img} alt="slider img" priority width={'auto'} height={'auto'} />
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              {/* mobile slider  */}
+              <div className='mobile_slider' style={{background: "#ad9567"}}>
+                <div className="">
+                        <span>{item.sub_title_1}</span>
+                        <h3 className="tp-slider-title-2">{item.title_1}</h3>
+                        <div className="tp-slider-btn-2">
+                          <Link href={link} className="tp-btn tp-btn-border">Shop Collection</Link>
+                        </div>
+                      </div>
+                <Link href={link}>
+                <img src={item.img} alt="slider img" width={'100%'} height={'auto'} />
+                </Link>
+              </div>
+              {/* tablet slider  */}
+              <div className='tablet_slider'>
+                <Link href={link}>
+                <img src={item.tabletImage} alt="slider img" width={'100%'} height={'auto'} />
+                </Link>
               </div>
             </SwiperSlide>
           ))}

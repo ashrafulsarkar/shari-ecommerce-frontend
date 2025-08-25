@@ -1,7 +1,7 @@
 import JewelryBanner from "@/components/banner/jewelry-banner";
 
 async function getAlbum() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/slider/slider_data`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/slider/slider_data?type=slider`, {
         next: { revalidate: 10 },
       });
 

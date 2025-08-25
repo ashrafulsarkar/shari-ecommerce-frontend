@@ -6,7 +6,7 @@ export default function Logo() {
   return (
     <Image className="logo-light" style={{
       width: "180px",
-      height: 'auto'
+      height: '80px'
     }} src={logo} alt="logo" width={'auto'} height={'auto'} />
   )
 }

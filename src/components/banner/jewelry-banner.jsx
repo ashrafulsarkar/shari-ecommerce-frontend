@@ -77,7 +77,8 @@ const JewelryBanner = ({slider_result=[]}) => {
       <section className="tp-slider-area p-relative z-index-1 fix">
         <Slider {...main_slider_setting} asNavFor={slider2} ref={(slider) => setSlider1(slider)} className="tp-slider-active-4 khaki-bg">
           {slider_result.map((item, i) => (
-            <div key={i} className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center" >
+            <>
+            <div key={i} className="tp-slider-item-4 tp-slider-height-4 p-relative khaki-bg d-flex align-items-center slider_area" >
               <div className="tp-slider-thumb-4">
                 <img src={item.img} alt="slider img" width={'auto'} height={'auto'} />
                 <div className="tp-slider-thumb-4-shape">
@@ -123,11 +124,32 @@ const JewelryBanner = ({slider_result=[]}) => {
                 </div>
               </div>
             </div>
+            {/* mobile slider  */}
+            <div className='mobile_slider'>
+              <div className="tp-slider-content-4 p-relative z-index-1">
+                      <span>{item.sub_title_1}</span>
+                      <h3 className="tp-slider-title-4">{item.title_1}</h3>
+                      <div className="tp-slider-btn-4">
+                        <Link href="/shop" className="tp-btn tp-btn-border tp-btn-border-white">Shop Now</Link>
+                      </div>
+                    </div>
+
+              <Link href="/shop">
+               <img src={item.img} alt="slider img" width={'100%'} height={'auto'} />
+              </Link>
+            </div>
+            {/* tablet slider  */}
+            {/* <div className='tablet_slider'>
+               <Link href="/shop">
+               <img src={item.tabletImage} alt="slider img" width={'100%'} height={'auto'} />
+               </Link>
+            </div> */}
+            </>
           ))}
         </Slider>
 
         {/* arrow start */}
-        <div className="tp-slider-arrow-4">
+        <div className="tp-slider-arrow-4 ">
           <button className="tp-slider-3-button-prev slick-arrow" onClick={() => slider1?.slickPrev()}>
             <ArrowPrevTwo/>
           </button>
@@ -137,7 +159,7 @@ const JewelryBanner = ({slider_result=[]}) => {
           </div>
         {/* arrow end */}
 
-        <div className="tp-slider-nav">
+        <div className="tp-slider-nav slider_area">
 
           <Slider {...nav_slider_setting} asNavFor={slider1} ref={(slider) => setSlider2(slider)} className="tp-slider-nav-active">
             {slider_result.map((item, i) => (

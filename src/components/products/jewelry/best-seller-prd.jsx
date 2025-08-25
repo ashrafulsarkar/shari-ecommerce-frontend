@@ -61,8 +61,8 @@ const BestSellerPrd = ({type="",title="Best Seller This Week’s",subtitle="Top 
     const product_items = products.data.slice(0, 8);
     content = (
       <Swiper {...slider_setting} modules={[Scrollbar]} className="tp-best-slider-active swiper-container mb-10">
-        {product_items.map(item => (
-          <SwiperSlide key={item._id} className="tp-best-item-4">
+        {product_items.map((item,index) => (
+          <SwiperSlide key={index} className="tp-best-item-4">
             <ProductItem product={item} />
           </SwiperSlide>
         ))}

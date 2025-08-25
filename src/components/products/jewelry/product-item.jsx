@@ -81,7 +81,7 @@ const ProductItem = ({ product }) => {
           <Link href={`/product-details/${_id}`}>{title}</Link>
         </h3>
         <div className="tp-product-info-4">
-          <p>{tags[0]}</p>
+          <p>{tags &&tags.length > 0 && tags[0]}</p>
         </div>
 
         <div className="tp-product-price-inner-4">

@@ -32,6 +32,7 @@ export default function HomePageFour() {
       {/* <JewelryCollectionBanner/> */}
       <BestSellerPrd title="Jo" subtitle="" type="popular" />
       <BestSellerPrd title="Lee" subtitle="" type="typeTopSeller" />
+      <BestSellerPrd title="Discount Products" subtitle="" type="discount" />
       {/* <JewelryBrands/> */}
       {/* <InstagramAreaFour/> */}
       <FooterTwo/>

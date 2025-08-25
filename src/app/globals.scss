@@ -117,6 +117,12 @@
     height: 140px;
     overflow-y: inherit;
 }
+.product.attribute.description ul {
+    padding-left: 23px;
+}
+.product.attribute.description p {
+    margin-bottom: 0px;
+}
 @media screen and (max-width: 600px) {
     .payment_img{
         width: 100%;
@@ -133,3 +139,61 @@
 
 }
 // trandind end
+
+.tp-contact-social-icon {
+    display: flex;
+    gap: 10px;
+}
+.tp-contact-social-icon a {
+    border: 1px solid #ffffff;
+    box-shadow: -1px 3px 10px 0px rgba(1, 15, 28, 0.1);
+}
+.slider_area{
+  display: flex;
+}
+.mobile_slider{
+  padding-top: 50px;
+  display: none;
+  text-align: center;
+}
+.tablet_slider{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+   .tp-header-transparent {
+      position: relative;
+      background: #ad9567;
+  }
+  .slider_area {
+      display: none !important;
+  }
+  .tablet_slider{
+    display: block;
+  }
+  .tp-slider-thumb-4 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: inherit;
+}
+ .mobile_slider{
+    display: block;
+  }
+
+}
+@media screen and (max-width: 600px) {
+   .tp-slider-thumb-4 img {
+    transform: scale(.4) !important;
+  }
+
+
+  .tablet_slider{
+    display: none;
+  }
+
+  .mobile_slider{
+    display: block;
+  }
+
+}

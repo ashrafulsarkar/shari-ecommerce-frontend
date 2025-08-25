@@ -33,7 +33,7 @@ export default async function RecentPost() {
         <h3 className="breadcrumb__title">Our Gallery  </h3>
         </div>
       <section className="tp-postbox-area  pb-120 fawards_gallery">
-      <div className="container">
+      {/* <div className="container"> */}
         <LightboxGallery images={result} />
         {/* <div className=' gallery'>
           {result.map((b,index)=>(
@@ -44,7 +44,7 @@ export default async function RecentPost() {
               </div>
             ))}
           </div> */}
-      </div>
+      {/* </div> */}
       </section>
       {/* <Footer primary_style={true} /> */}
       <FooterTwo />

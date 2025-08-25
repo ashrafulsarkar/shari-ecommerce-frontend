@@ -98,7 +98,7 @@ const ShopListItem = ({ product }) => {
               <>
                 <span className="tp-product-price-2 new-price">৳{price}</span>
                 <span className="tp-product-price-2 old-price">
-                  {" "} ${(Number(price) - (Number(price) * Number(discount)) / 100).toFixed(2)}
+                  {" "} ${(Number(price) + Number(discount)).toFixed(2)}
                 </span>
               </>
             ) : (

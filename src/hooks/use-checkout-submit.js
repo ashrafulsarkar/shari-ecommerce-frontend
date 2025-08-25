@@ -39,6 +39,8 @@ const useCheckoutSubmit = () => {
   // shippingCost
   const [shippingCost, setShippingCost] = useState(0);
   const [shippingType, setShippingType] = useState('');
+  const [shippingArea, setShippingArea] = useState('');
+  const [areaCharge, setAreaCharge] = useState(0);
   // discountAmount
   const [discountAmount, setDiscountAmount] = useState(0);
   // discountPercentage
@@ -199,7 +201,7 @@ const useCheckoutSubmit = () => {
     setIsCheckoutSubmit(true);
 
     let orderInfo = {
-      name: `${data.firstName} ${data.lastName}`,
+      name: `${data?.firstName || ""} ${data?.lastName || ""}`,
       address: data.address,
       contact: data.contactNo,
       email: data.email,
@@ -211,11 +213,13 @@ const useCheckoutSubmit = () => {
       cart: cart_products,
       paymentMethod: data.payment,
       subTotal: total,
-      shippingCost: shippingCost,
+      shippingCost: shippingCost+areaCharge,
+      shippingArea: shippingArea,
+      areaCharge: areaCharge,
       discount: discountAmount,
       totalAmount: cartTotal,
       orderNote:data.orderNote,
-      user: `${user?._id}`,
+      user: user?._id || "tempUser",
     };
     // Card  stripe
     // if (data.payment === 'Card') {
@@ -350,6 +354,8 @@ const useCheckoutSubmit = () => {
     setShippingType,
     discountPercentage,
     discountProductType,
+    setShippingArea,
+    shippingArea,
     isCheckoutSubmit,
     setTotal,
     register,
@@ -365,6 +371,7 @@ const useCheckoutSubmit = () => {
     couponApplyMsg,
     showCard,
     setShowCard,
+    areaCharge, setAreaCharge
   };
 };
 

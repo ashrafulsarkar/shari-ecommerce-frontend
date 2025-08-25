@@ -27,9 +27,9 @@
 .gallery-item:hover {
     transform: scale(1.02);
   }
-.fawards_gallery .gallery-item:nth-child(1) {
+/* .fawards_gallery .gallery-item:nth-child(1) {
     grid-area: span 2 / span 2 / span 2 / span 2 !important;
-}
+} */
 .album_image.gallery-item img {
     max-width: 100%;
     margin: 0 !important;
@@ -46,9 +46,9 @@
         margin-left: 0;
         margin-right: 0;
     }
-    .fawards_gallery .gallery-item:nth-child(1) {
+    /* .fawards_gallery .gallery-item:nth-child(1) {
         grid-area: span 1 / span 1 / span 1 / span 1 !important;
-    }
+    } */
 }
 
 
