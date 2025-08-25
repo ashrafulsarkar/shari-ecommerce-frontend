@@ -32,6 +32,7 @@ export default async function page() {
       {/* <HomeHeroSlider/> */}
       <FashionBanner bg={'khaki-bg'}
       slider_data={result}
+      link={'/brand/lee'}
              />
       {/* <FashionCategory/> */}
       {/* <PopularProducts type="typeTopSeller" /> */}

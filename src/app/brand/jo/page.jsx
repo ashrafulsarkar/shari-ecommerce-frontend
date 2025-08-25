@@ -27,11 +27,13 @@ async function getAlbum() {
 
 export default async function page() {
   const result = await getAlbum();
+  console.log(result)
   return (
     <Wrapper>
       <HeaderFour/>
       <FashionBanner bg={'khaki-bg'}
       slider_data={result}
+      link={'/brand/jo'}
       />
       {/* <BeautyFeatured /> */}
       {/* <ProductArea type="popular" isOff={false} /> */}
